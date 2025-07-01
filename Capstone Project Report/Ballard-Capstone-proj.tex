@@ -1,18 +1,21 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{llncs}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{setspace}
+\linespread{1.25}  % ~0.5em spacing assuming default single spacing
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{biblatex}
 \addbibresource{references.bib}
 
 \title{Bridging the Gap: A Data-Driven Analysis of Education and Employment Alignment in North Central Arkansas}
-\author{}
-\date{}
+\author{Jason A. Ballard} \date{August 8, 2025}
+\authorrunning{J. Ballard}
+\institute{Northwest Missouri State University, Maryville MO 64468, USA \\
+\email{s574020@nwmissouri.edu}}
 
 \begin{document}
 
@@ -20,62 +23,98 @@
 
 \begin{abstract}
 (Wait until the project is complete.)
+
+\noindent\textbf{Keywords:} Education-to-Employment Alignment, Rural Workforce Development, CIP-SOC Crosswalk, Predictive Analytics, Data-Driven Policy, Regional Disparities
 \end{abstract}
 
 \section{Introduction}
 
 \subsection{Domain and Topic Selection}
- 
+This project examines educational and economic disparities across counties in rural North Central Arkansas. The selected region—including Baxter, Fulton, Izard, Marion, and neighboring counties—faces long-standing challenges related to poverty, low educational attainment, an aging population, and limited access to high-quality employment opportunities. These structural constraints are compounded by geographic isolation and digital infrastructure gaps, which can impede upward mobility and the ability to participate in modern educational or workforce systems.\par
+The topic was selected due to its practical relevance to regional planning, rural development, and applied data science. As economic transitions accelerate due to automation, demographic change, and uneven broadband access, rural communities risk falling further behind unless institutions can better align educational programming with regional workforce needs. By focusing on a clearly defined geographic region and a small set of socioeconomic indicators, this project aims to generate actionable insights that inform strategic decision-making and support sustainable rural development.
 
 \subsection{The Data Problem}
+Though extensive public data exist on poverty, education, unemployment, and population, these variables are often stored in siloed systems and analyzed in isolation. As a result, there is limited integration of these indicators into comprehensive, county-level assessments of regional need. Many public institutions—especially in rural areas—lack the analytic infrastructure or capacity to perform multivariate analysis or predictive modeling that could guide policy and programming.
 
-The data problem is thus twofold:
-\begin{enumerate}[label=\arabic*.]
-  \item Can we quantify the alignment between educational program completions (CIP codes) and local job demand (SOC codes)?
-  \item Can we identify geographic and structural disparities that influence education-to-employment transitions across rural counties?
+The core data problem is twofold:
+\begin{enumerate}
+    \item Can we identify meaningful patterns and disparities in educational and economic conditions across North Central Arkansas counties?
+    \item Can machine learning models help forecast outcomes or classify counties based on shared vulnerability or potential?
 \end{enumerate}
+    
+Solving this problem requires aggregating and standardizing multiple datasets, performing exploratory data analysis (EDA) to uncover trends, and applying basic predictive techniques to surface deeper insights. These insights can support more informed curriculum development, targeted workforce programs, and grant-seeking efforts across the region.
 
 \subsection{Data Sources}
-The project leverages a diverse range of public, open-source datasets, including:
+The analysis will integrate multiple open-source datasets from national agencies. Key sources include:
+
 \begin{itemize}
-  \item U.S. Census Bureau \href{https://data.census.gov}{(data.census.gov)}
-  \item Bureau of Labor Statistics \href{https://www.bls.gov/data/}{(bls.gov)}
-  \item IPEDS \href{https://nces.ed.gov/ipeds/}{(nces.ed.gov)}
-  \item Arkansas Workforce Services \href{https://www.discover.arkansas.gov}{(discover.arkansas.gov)}
-  \item O*NET and CIP-SOC Crosswalk \href{https://www.onetonline.org}{(onetonline.org)}
-  \item FCC Broadband \href{https://broadbandmap.fcc.gov}{(fcc.gov)}
+    \item \textbf{U.S. Census Bureau (American Community Survey)} \\
+    Demographic characteristics, poverty, education, employment, income \\
+    \href{https://data.census.gov}{https://data.census.gov}
+
+    \item \textbf{Bureau of Labor Statistics (BLS)} \\
+    Labor force participation, unemployment data \\
+    \href{https://www.bls.gov/data/}{https://www.bls.gov/data/}
+
+    \item \textbf{FCC Broadband Data / NTIA Indicators of Broadband Need} \\
+    Infrastructure access at the county level \\
+    \href{https://broadbandmap.fcc.gov}{https://broadbandmap.fcc.gov} \\
+    \href{https://broadbandusa.ntia.gov}{https://broadbandusa.ntia.gov}
+
+    \item \textbf{data.gov}
+    Aggregated socioeconomic indicators relevant to Arkansas counties, including downloadable .csv files curated for this project\\
+    \href{ https://data.gov}{ https://data.gov}
+    
 \end{itemize}
+
+These data will be merged using standardized geographic identifiers (e.g., FIPS codes) to create a master dataset suitable for statistical and machine learning analysis.
 
 \subsection{Project Implementation Steps}
-This project follows a modified CRISP-DM methodology:
-\begin{enumerate}[label=\arabic*.]
-  \item Business Understanding
-  \item Data Collection
-  \item Data Preparation
-  \item Exploratory Data Analysis (EDA)
-  \item Modeling
-  \item Evaluation
-  \item Deployment
+
+This project follows the CRISP-DM framework (Cross-Industry Standard Process for Data Mining) to ensure methodological rigor and clarity of execution:
+\href{https://www.datascience-pm.com/crisp-dm-2/}{https://www.datascience-pm.com/crisp-dm-2/}
+
+\begin{enumerate}
+    \item \textbf{Business Understanding} – Define regional challenges and stakeholder needs related to poverty, education, and workforce alignment.
+    \item \textbf{Data Collection} – Explore the structure and completeness of each dataset, focusing on the selected counties and core indicators. 
+    \item \textbf{Data Preparation} – Clean and merge CSV files using county identifiers. Engineer additional features (e.g., education-to-poverty ratios, population density estimates) to support modeling.
+    \item \textbf{Exploratory Data Analysis (EDA)} – Conduct visual and statistical analysis to uncover trends, outliers, and variable relationships. Techniques will include histograms, correlation matrices, line graphs, and data visualization.
+    \item \textbf{Modeling} – Apply machine learning and statistical models to classify counties and predict economic risk:
+    \begin{itemize}
+        \item K-Means or Hierarchical Clustering to identify county groups based on shared characteristics
+        \item Linear Regression or Ridge Regression to examine how education and population predict poverty or unemployment
+        \item Decision Tree or Random Forest models to explore nonlinear patterns and rank feature importance
+    \end{itemize}
+    \item \textbf{Evaluation} – Evaluate model accuracy using metrics such as silhouette score (clustering), R² and RMSE (regression), and interpret outputs within the rural policy context.
+    \item \textbf{Deployment} – Share findings through a final written report. Deliverables will include data visualizations, model interpretations, and county-level insights to inform educational and workforce planning.
 \end{enumerate}
 
+\textit{A workflow diagram will be included in the methodology section to summarize the data and modeling pipeline.}
+
 \subsection{Key Components and Expected Results}
-Key components include:
+Key components of this project include:
 \begin{itemize}
-  \item County-level mismatch analysis
-  \item Skills pipeline visualization tool
-  \item Predictive modeling
-  \item Disparity mapping
-  \item Policy recommendations
+    \item A cleaned, merged dataset integrating county-level data from multiple public sources.
+    \item A thorough exploratory data analysis (EDA) with visual summaries.
+    \item Predictive models examining the relationships among poverty, education, unemployment, and population.
+    \item Clustering analysis to classify counties based on similar socioeconomic profiles.
+    \item A visualizations highlighting disparities, trends, and strategic opportunities.
+    \item A written report interpreting results and offering data-driven recommendations for regional stakeholders.
 \end{itemize}
 
+Expected results include a clearer picture of which counties are most vulnerable to economic stagnation, how educational attainment correlates with poverty or unemployment, and where interventions may have the greatest impact. These findings may support local institutions in prioritizing training programs, pursuing funding, and coordinating cross-county initiatives.
+
 \subsection{Project Limitations}
-This project excludes:
+To maintain scope and feasibility within a five-week time frame, the project includes the following limitations:
 \begin{itemize}
-  \item Individual-level tracking
-  \item Real-time job posting data
-  \item Causal inference
-  \item Private training data
+    \item No individual-level (microdata) analysis—all data are at the county level.
+    \item No real-time or proprietary labor market data (e.g., Indeed or LinkedIn job postings).
+    \item No qualitative inputs (e.g., surveys, interviews, motivation studies).
+    \item No causal inference or experimental design—the analysis is exploratory and predictive, not explanatory.
+    \item Limited forecasting—models are based on static, historical data, and not designed for real-time projections.
 \end{itemize}
+
+In addition, all interpretations are contingent on the accuracy, completeness, and timeliness of publicly available data. While models may reveal patterns, results must be contextualized within each county’s unique demographic and economic landscape.
 
 \section{Regional and Theoretical Background}
 
