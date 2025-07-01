@@ -1,5 +1,6 @@
+# Ballard Capstone Project
 
-# Applied Machine Learning Mid-term
+The project supports the final requirements necessary to complete the Master of Science in Data Analytics from Northwest Missouri State University
 
 ![Banner](images/banner.png)
 
