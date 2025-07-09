@@ -1,0 +1,306 @@
+﻿,state,area name,attribute,value
+5000,AR,Arkansas,CENSUS_2020_POP,3011524
+5000,AR,Arkansas,ESTIMATES_BASE_2020,3011490
+5000,AR,Arkansas,POP_ESTIMATE_2020,3014348
+5000,AR,Arkansas,POP_ESTIMATE_2021,3028443
+5000,AR,Arkansas,POP_ESTIMATE_2022,3046404
+5000,AR,Arkansas,POP_ESTIMATE_2023,3067732
+5000,AR,Arkansas,N_POP_CHG_2020,2858
+5000,AR,Arkansas,N_POP_CHG_2021,14095
+5000,AR,Arkansas,N_POP_CHG_2022,17961
+5000,AR,Arkansas,N_POP_CHG_2023,21328
+5000,AR,Arkansas,BIRTHS_2020,8509
+5000,AR,Arkansas,BIRTHS_2021,34927
+5000,AR,Arkansas,BIRTHS_2022,36298
+5000,AR,Arkansas,BIRTHS_2023,35566
+5000,AR,Arkansas,DEATHS_2020,8475
+5000,AR,Arkansas,DEATHS_2021,40180
+5000,AR,Arkansas,DEATHS_2022,40362
+5000,AR,Arkansas,DEATHS_2023,36473
+5000,AR,Arkansas,NATURAL_CHG_2020,34
+5000,AR,Arkansas,NATURAL_CHG_2021,-5253
+5000,AR,Arkansas,NATURAL_CHG_2022,-4064
+5000,AR,Arkansas,NATURAL_CHG_2023,-907
+5000,AR,Arkansas,INTERNATIONAL_MIG_2020,94
+5000,AR,Arkansas,INTERNATIONAL_MIG_2021,1346
+5000,AR,Arkansas,INTERNATIONAL_MIG_2022,3215
+5000,AR,Arkansas,INTERNATIONAL_MIG_2023,4096
+5000,AR,Arkansas,DOMESTIC_MIG_2020,2537
+5000,AR,Arkansas,DOMESTIC_MIG_2021,17806
+5000,AR,Arkansas,DOMESTIC_MIG_2022,18841
+5000,AR,Arkansas,DOMESTIC_MIG_2023,18106
+5000,AR,Arkansas,NET_MIG_2020,2631
+5000,AR,Arkansas,NET_MIG_2021,19152
+5000,AR,Arkansas,NET_MIG_2022,22056
+5000,AR,Arkansas,NET_MIG_2023,22202
+5000,AR,Arkansas,RESIDUAL_2020,193
+5000,AR,Arkansas,RESIDUAL_2021,196
+5000,AR,Arkansas,RESIDUAL_2022,-31
+5000,AR,Arkansas,RESIDUAL_2023,33
+5000,AR,Arkansas,GQ_ESTIMATES_BASE_2020,82490
+5000,AR,Arkansas,GQ_ESTIMATES_2020,82455
+5000,AR,Arkansas,GQ_ESTIMATES_2021,82617
+5000,AR,Arkansas,GQ_ESTIMATES_2022,84268
+5000,AR,Arkansas,GQ_ESTIMATES_2023,85120
+5000,AR,Arkansas,R_BIRTH_2021,11.6
+5000,AR,Arkansas,R_BIRTH_2022,12
+5000,AR,Arkansas,R_BIRTH_2023,11.6
+5000,AR,Arkansas,R_DEATH_2021,13.3
+5000,AR,Arkansas,R_DEATH_2022,13.3
+5000,AR,Arkansas,R_DEATH_2023,11.9
+5000,AR,Arkansas,R_NATURAL_CHG_2021,-1.7
+5000,AR,Arkansas,R_NATURAL_CHG_2022,-1.3
+5000,AR,Arkansas,R_NATURAL_CHG_2023,-0.3
+5000,AR,Arkansas,R_INTERNATIONAL_MIG_2021,0.4
+5000,AR,Arkansas,R_INTERNATIONAL_MIG_2022,1.1
+5000,AR,Arkansas,R_INTERNATIONAL_MIG_2023,1.3
+5000,AR,Arkansas,R_DOMESTIC_MIG_2021,5.9
+5000,AR,Arkansas,R_DOMESTIC_MIG_2022,6.2
+5000,AR,Arkansas,R_DOMESTIC_MIG_2023,5.9
+5000,AR,Arkansas,R_NET_MIG_2021,6.3
+5000,AR,Arkansas,R_NET_MIG_2022,7.3
+5000,AR,Arkansas,R_NET_MIG_2023,7.3
+5000,AR,Arkansas,"Less than a high school diploma, 1970",635149
+5000,AR,Arkansas,"High school diploma only, 1970",271150
+5000,AR,Arkansas,"Some college (1-3 years), 1970",80835
+5000,AR,Arkansas,"Four years of college or higher, 1970",70378
+5000,AR,Arkansas,"Percent of adults with less than a high school diploma, 1970",60.1
+5000,AR,Arkansas,"Percent of adults with a high school diploma only, 1970",25.6
+5000,AR,Arkansas,"Percent of adults completing some college (1-3 years), 1970",7.6
+5000,AR,Arkansas,"Percent of adults completing four years of college or higher, 1970",6.7
+5000,AR,Arkansas,"Less than a high school diploma, 1980",595637
+5000,AR,Arkansas,"High school diploma only, 1980",443429
+5000,AR,Arkansas,"Some college (1-3 years), 1980",153375
+5000,AR,Arkansas,"Four years of college or higher, 1980",144677
+5000,AR,Arkansas,"Percent of adults with less than a high school diploma, 1980",44.5
+5000,AR,Arkansas,"Percent of adults with a high school diploma only, 1980",33.2
+5000,AR,Arkansas,"Percent of adults completing some college (1-3 years), 1980",11.5
+5000,AR,Arkansas,"Percent of adults completing four years of college or higher, 1980",10.8
+5000,AR,Arkansas,"Less than high school graduate, 1990",503481
+5000,AR,Arkansas,"High school graduate (or equivalency), 1990",489570
+5000,AR,Arkansas,"Some college or associate degree, 1990",303795
+5000,AR,Arkansas,"Bachelor's degree or higher, 1990",199304
+5000,AR,Arkansas,"Percent of adults who are not high school graduates, 1990",33.7
+5000,AR,Arkansas,"Percent of adults who are high school graduates (or equivalent), 1990",32.7
+5000,AR,Arkansas,"Percent of adults completing some college or associate degree, 1990",20.3
+5000,AR,Arkansas,"Percent of adults with a bachelor's degree or higher, 1990",13.3
+5000,AR,Arkansas,"Less than high school graduate, 2000",427449
+5000,AR,Arkansas,"High school graduate (or equivalency), 2000",590416
+5000,AR,Arkansas,"Some college or associate degree, 2000",424907
+5000,AR,Arkansas,"Bachelor's degree or higher, 2000",288428
+5000,AR,Arkansas,"Percent of adults who are not high school graduates, 2000",24.7
+5000,AR,Arkansas,"Percent of adults who are high school graduates (or equivalent), 2000",34.1
+5000,AR,Arkansas,"Percent of adults completing some college or associate degree, 2000",24.5
+5000,AR,Arkansas,"Percent of adults with a bachelor's degree or higher, 2000",16.7
+5000,AR,Arkansas,"Less than high school graduate, 2008-12",320693
+5000,AR,Arkansas,"High school graduate (or equivalency), 2008-12",674742
+5000,AR,Arkansas,"Some college or associate degree, 2008-12",545270
+5000,AR,Arkansas,"Bachelor's degree or higher, 2008-12",380334
+5000,AR,Arkansas,"Percent of adults who are not high school graduates, 2008-12",16.69372668
+5000,AR,Arkansas,"Percent of adults who are high school graduates (or equivalent), 2008-12",35.1238054
+5000,AR,Arkansas,"Percent of adults completing some college or associate degree, 2008-12",28.38411922
+5000,AR,Arkansas,"Percent of adults with a bachelor's degree or higher, 2008-12",19.79834871
+5000,AR,Arkansas,"Less than high school graduate, 2019-23",233857
+5000,AR,Arkansas,"High school graduate (or equivalency), 2019-23",702778
+5000,AR,Arkansas,"Some college or associate degree, 2019-23",593923
+5000,AR,Arkansas,"Bachelor's degree or higher, 2019-23",513221
+5000,AR,Arkansas,"Percent of adults who are not high school graduates, 2019-23",11.44238198
+5000,AR,Arkansas,"Percent of adults who are high school graduates (or equivalent), 2019-23",34.3862032
+5000,AR,Arkansas,"Percent of adults completing some college or associate degree, 2019-23",29.06004025
+5000,AR,Arkansas,"Percent of adults with a bachelor's degree or higher, 2019-23",25.11137457
+5000,AR,Arkansas,Civilian_labor_force_2000,1260507
+5000,AR,Arkansas,Employed_2000,1207833
+5000,AR,Arkansas,Unemployed_2000,52674
+5000,AR,Arkansas,Unemployment_rate_2000,4.2
+5000,AR,Arkansas,Civilian_labor_force_2001,1261419
+5000,AR,Arkansas,Employed_2001,1201314
+5000,AR,Arkansas,Unemployed_2001,60105
+5000,AR,Arkansas,Unemployment_rate_2001,4.8
+5000,AR,Arkansas,Civilian_labor_force_2002,1276964
+5000,AR,Arkansas,Employed_2002,1209006
+5000,AR,Arkansas,Unemployed_2002,67958
+5000,AR,Arkansas,Unemployment_rate_2002,5.3
+5000,AR,Arkansas,Civilian_labor_force_2003,1282578
+5000,AR,Arkansas,Employed_2003,1208583
+5000,AR,Arkansas,Unemployed_2003,73995
+5000,AR,Arkansas,Unemployment_rate_2003,5.8
+5000,AR,Arkansas,Civilian_labor_force_2004,1302378
+5000,AR,Arkansas,Employed_2004,1229546
+5000,AR,Arkansas,Unemployed_2004,72832
+5000,AR,Arkansas,Unemployment_rate_2004,5.6
+5000,AR,Arkansas,Civilian_labor_force_2005,1333880
+5000,AR,Arkansas,Employed_2005,1263663
+5000,AR,Arkansas,Unemployed_2005,70217
+5000,AR,Arkansas,Unemployment_rate_2005,5.3
+5000,AR,Arkansas,Civilian_labor_force_2006,1346532
+5000,AR,Arkansas,Employed_2006,1276000
+5000,AR,Arkansas,Unemployed_2006,70532
+5000,AR,Arkansas,Unemployment_rate_2006,5.2
+5000,AR,Arkansas,Civilian_labor_force_2007,1350811
+5000,AR,Arkansas,Employed_2007,1277902
+5000,AR,Arkansas,Unemployed_2007,72909
+5000,AR,Arkansas,Unemployment_rate_2007,5.4
+5000,AR,Arkansas,Civilian_labor_force_2008,1357716
+5000,AR,Arkansas,Employed_2008,1284175
+5000,AR,Arkansas,Unemployed_2008,73541
+5000,AR,Arkansas,Unemployment_rate_2008,5.4
+5000,AR,Arkansas,Civilian_labor_force_2009,1353340
+5000,AR,Arkansas,Employed_2009,1248691
+5000,AR,Arkansas,Unemployed_2009,104649
+5000,AR,Arkansas,Unemployment_rate_2009,7.7
+5000,AR,Arkansas,Civilian_labor_force_2010,1353635
+5000,AR,Arkansas,Employed_2010,1247059
+5000,AR,Arkansas,Unemployed_2010,106576
+5000,AR,Arkansas,Unemployment_rate_2010,7.9
+5000,AR,Arkansas,Civilian_labor_force_2011,1357819
+5000,AR,Arkansas,Employed_2011,1250431
+5000,AR,Arkansas,Unemployed_2011,107388
+5000,AR,Arkansas,Unemployment_rate_2011,7.9
+5000,AR,Arkansas,Civilian_labor_force_2012,1349888
+5000,AR,Arkansas,Employed_2012,1251883
+5000,AR,Arkansas,Unemployed_2012,98005
+5000,AR,Arkansas,Unemployment_rate_2012,7.3
+5000,AR,Arkansas,Civilian_labor_force_2013,1331609
+5000,AR,Arkansas,Employed_2013,1237609
+5000,AR,Arkansas,Unemployed_2013,94000
+5000,AR,Arkansas,Unemployment_rate_2013,7.1
+5000,AR,Arkansas,Civilian_labor_force_2014,1327959
+5000,AR,Arkansas,Employed_2014,1249766
+5000,AR,Arkansas,Unemployed_2014,78193
+5000,AR,Arkansas,Unemployment_rate_2014,5.9
+5000,AR,Arkansas,Civilian_labor_force_2015,1339301
+5000,AR,Arkansas,Employed_2015,1272785
+5000,AR,Arkansas,Unemployed_2015,66516
+5000,AR,Arkansas,Unemployment_rate_2015,5
+5000,AR,Arkansas,Civilian_labor_force_2016,1343891
+5000,AR,Arkansas,Employed_2016,1290430
+5000,AR,Arkansas,Unemployed_2016,53461
+5000,AR,Arkansas,Unemployment_rate_2016,4
+5000,AR,Arkansas,Civilian_labor_force_2017,1348088
+5000,AR,Arkansas,Employed_2017,1297854
+5000,AR,Arkansas,Unemployed_2017,50234
+5000,AR,Arkansas,Unemployment_rate_2017,3.7
+5000,AR,Arkansas,Civilian_labor_force_2018,1343862
+5000,AR,Arkansas,Employed_2018,1294809
+5000,AR,Arkansas,Unemployed_2018,49053
+5000,AR,Arkansas,Unemployment_rate_2018,3.7
+5000,AR,Arkansas,Civilian_labor_force_2019,1353175
+5000,AR,Arkansas,Employed_2019,1305858
+5000,AR,Arkansas,Unemployed_2019,47317
+5000,AR,Arkansas,Unemployment_rate_2019,3.5
+5000,AR,Arkansas,Civilian_labor_force_2020,1340557
+5000,AR,Arkansas,Employed_2020,1257949
+5000,AR,Arkansas,Unemployed_2020,82608
+5000,AR,Arkansas,Unemployment_rate_2020,6.2
+5000,AR,Arkansas,Civilian_labor_force_2021,1330676
+5000,AR,Arkansas,Employed_2021,1276933
+5000,AR,Arkansas,Unemployed_2021,53743
+5000,AR,Arkansas,Unemployment_rate_2021,4
+5000,AR,Arkansas,Civilian_labor_force_2022,1359540
+5000,AR,Arkansas,Employed_2022,1315886
+5000,AR,Arkansas,Unemployed_2022,43654
+5000,AR,Arkansas,Unemployment_rate_2022,3.2
+5000,AR,Arkansas,Civilian_labor_force_2023,1377657
+5000,AR,Arkansas,Employed_2023,1332876
+5000,AR,Arkansas,Unemployed_2023,44781
+5000,AR,Arkansas,Unemployment_rate_2023,3.3
+5000,AR,Arkansas,Median_Household_Income_2022,55505
+5000,AR,Arkansas,Med_HH_Income_Percent_of_State_Total_2022,100
+5000,AR,Arkansas,Civilian_labor_force_2000,1260507
+5000,AR,Arkansas,Employed_2000,1207833
+5000,AR,Arkansas,Unemployed_2000,52674
+5000,AR,Arkansas,Unemployment_rate_2000,4.2
+5000,AR,Arkansas,Civilian_labor_force_2001,1261419
+5000,AR,Arkansas,Employed_2001,1201314
+5000,AR,Arkansas,Unemployed_2001,60105
+5000,AR,Arkansas,Unemployment_rate_2001,4.8
+5000,AR,Arkansas,Civilian_labor_force_2002,1276964
+5000,AR,Arkansas,Employed_2002,1209006
+5000,AR,Arkansas,Unemployed_2002,67958
+5000,AR,Arkansas,Unemployment_rate_2002,5.3
+5000,AR,Arkansas,Civilian_labor_force_2003,1282578
+5000,AR,Arkansas,Employed_2003,1208583
+5000,AR,Arkansas,Unemployed_2003,73995
+5000,AR,Arkansas,Unemployment_rate_2003,5.8
+5000,AR,Arkansas,Civilian_labor_force_2004,1302378
+5000,AR,Arkansas,Employed_2004,1229546
+5000,AR,Arkansas,Unemployed_2004,72832
+5000,AR,Arkansas,Unemployment_rate_2004,5.6
+5000,AR,Arkansas,Civilian_labor_force_2005,1333880
+5000,AR,Arkansas,Employed_2005,1263663
+5000,AR,Arkansas,Unemployed_2005,70217
+5000,AR,Arkansas,Unemployment_rate_2005,5.3
+5000,AR,Arkansas,Civilian_labor_force_2006,1346532
+5000,AR,Arkansas,Employed_2006,1276000
+5000,AR,Arkansas,Unemployed_2006,70532
+5000,AR,Arkansas,Unemployment_rate_2006,5.2
+5000,AR,Arkansas,Civilian_labor_force_2007,1350811
+5000,AR,Arkansas,Employed_2007,1277902
+5000,AR,Arkansas,Unemployed_2007,72909
+5000,AR,Arkansas,Unemployment_rate_2007,5.4
+5000,AR,Arkansas,Civilian_labor_force_2008,1357716
+5000,AR,Arkansas,Employed_2008,1284175
+5000,AR,Arkansas,Unemployed_2008,73541
+5000,AR,Arkansas,Unemployment_rate_2008,5.4
+5000,AR,Arkansas,Civilian_labor_force_2009,1353340
+5000,AR,Arkansas,Employed_2009,1248691
+5000,AR,Arkansas,Unemployed_2009,104649
+5000,AR,Arkansas,Unemployment_rate_2009,7.7
+5000,AR,Arkansas,Civilian_labor_force_2010,1353635
+5000,AR,Arkansas,Employed_2010,1247059
+5000,AR,Arkansas,Unemployed_2010,106576
+5000,AR,Arkansas,Unemployment_rate_2010,7.9
+5000,AR,Arkansas,Civilian_labor_force_2011,1357819
+5000,AR,Arkansas,Employed_2011,1250431
+5000,AR,Arkansas,Unemployed_2011,107388
+5000,AR,Arkansas,Unemployment_rate_2011,7.9
+5000,AR,Arkansas,Civilian_labor_force_2012,1349888
+5000,AR,Arkansas,Employed_2012,1251883
+5000,AR,Arkansas,Unemployed_2012,98005
+5000,AR,Arkansas,Unemployment_rate_2012,7.3
+5000,AR,Arkansas,Civilian_labor_force_2013,1331609
+5000,AR,Arkansas,Employed_2013,1237609
+5000,AR,Arkansas,Unemployed_2013,94000
+5000,AR,Arkansas,Unemployment_rate_2013,7.1
+5000,AR,Arkansas,Civilian_labor_force_2014,1327959
+5000,AR,Arkansas,Employed_2014,1249766
+5000,AR,Arkansas,Unemployed_2014,78193
+5000,AR,Arkansas,Unemployment_rate_2014,5.9
+5000,AR,Arkansas,Civilian_labor_force_2015,1339301
+5000,AR,Arkansas,Employed_2015,1272785
+5000,AR,Arkansas,Unemployed_2015,66516
+5000,AR,Arkansas,Unemployment_rate_2015,5
+5000,AR,Arkansas,Civilian_labor_force_2016,1343891
+5000,AR,Arkansas,Employed_2016,1290430
+5000,AR,Arkansas,Unemployed_2016,53461
+5000,AR,Arkansas,Unemployment_rate_2016,4
+5000,AR,Arkansas,Civilian_labor_force_2017,1348088
+5000,AR,Arkansas,Employed_2017,1297854
+5000,AR,Arkansas,Unemployed_2017,50234
+5000,AR,Arkansas,Unemployment_rate_2017,3.7
+5000,AR,Arkansas,Civilian_labor_force_2018,1343862
+5000,AR,Arkansas,Employed_2018,1294809
+5000,AR,Arkansas,Unemployed_2018,49053
+5000,AR,Arkansas,Unemployment_rate_2018,3.7
+5000,AR,Arkansas,Civilian_labor_force_2019,1353175
+5000,AR,Arkansas,Employed_2019,1305858
+5000,AR,Arkansas,Unemployed_2019,47317
+5000,AR,Arkansas,Unemployment_rate_2019,3.5
+5000,AR,Arkansas,Civilian_labor_force_2020,1340557
+5000,AR,Arkansas,Employed_2020,1257949
+5000,AR,Arkansas,Unemployed_2020,82608
+5000,AR,Arkansas,Unemployment_rate_2020,6.2
+5000,AR,Arkansas,Civilian_labor_force_2021,1330676
+5000,AR,Arkansas,Employed_2021,1276933
+5000,AR,Arkansas,Unemployed_2021,53743
+5000,AR,Arkansas,Unemployment_rate_2021,4
+5000,AR,Arkansas,Civilian_labor_force_2022,1359540
+5000,AR,Arkansas,Employed_2022,1315886
+5000,AR,Arkansas,Unemployed_2022,43654
+5000,AR,Arkansas,Unemployment_rate_2022,3.2
+5000,AR,Arkansas,Civilian_labor_force_2023,1377657
+5000,AR,Arkansas,Employed_2023,1332876
+5000,AR,Arkansas,Unemployed_2023,44781
+5000,AR,Arkansas,Unemployment_rate_2023,3.3
+5000,AR,Arkansas,Median_Household_Income_2022,55505
+5000,AR,Arkansas,Med_HH_Income_Percent_of_State_Total_2022,100
