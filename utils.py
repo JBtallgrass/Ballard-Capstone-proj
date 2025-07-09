@@ -72,7 +72,7 @@ def log_duplicate_attributes(df, key="unknown"):
     Logs a warning if duplicate (county, attribute) pairs are found.
     """
     if df.duplicated(subset=['county', 'attribute']).any():
-        logging.warning(f"⚠️ {key} has duplicate county-attribute pairs.")
+        logging.warning(f"{key} has duplicate county-attribute pairs.")
 
 
 # --- Function: Extract Most Common Year from Column Names ---
@@ -123,7 +123,7 @@ def extract_key_indicators(df, min_year=2022):
     Now supports flexible matching and fallback logic.
     """
     year = extract_common_year_from_columns(df, min_year=min_year)
-    logging.info(f"📅 Most common year in column names: {year}")
+    logging.info(f"Most common year in column names: {year}")
 
     # Use regex-based matching to find flexible column names
     education_cols = [
@@ -147,10 +147,10 @@ def extract_key_indicators(df, min_year=2022):
     ]
 
     # Log what was found
-    logging.info(f"📚 Education columns: {education_cols}")
-    logging.info(f"📉 Poverty columns: {poverty_cols}")
-    logging.info(f"💼 Unemployment columns: {unemployment_cols}")
-    logging.info(f"👥 Population columns: {population_cols}")
+    logging.info(f"Education columns: {education_cols}")
+    logging.info(f"Poverty columns: {poverty_cols}")
+    logging.info(f"Unemployment columns: {unemployment_cols}")
+    logging.info(f"Population columns: {population_cols}")
 
     # Assign standardized variables with fallback logic
     df['BachelorsDegreeRate'] = df.get(education_cols[0], np.nan) if education_cols else np.nan
@@ -162,7 +162,7 @@ def extract_key_indicators(df, min_year=2022):
         df['UnemploymentRate'] = df[unemployment_cols[0]]
     elif 'unemployment_rate_2022' in df.columns:
         df['UnemploymentRate'] = df['unemployment_rate_2022']
-        logging.warning("⚠️ Unemployment column not matched by regex. Using fallback 'unemployment_rate_2022'.")
+        logging.warning("Unemployment column not matched by regex. Using fallback 'unemployment_rate_2022'.")
     else:
         df['UnemploymentRate'] = np.nan
 
@@ -186,5 +186,5 @@ nca_counties = [
 
 
 # --- Confirmation Log ---
-logging.info("✅ Utility functions loaded from updated utils.py")
+logging.info("Utility functions loaded from updated utils.py")
 # --- End of utils.py ---
