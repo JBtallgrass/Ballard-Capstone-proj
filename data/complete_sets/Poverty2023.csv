@@ -1,4 +1,4 @@
-﻿FIPS_Code,Stabr,Area_Name,Attribute,Value
+﻿fips_code,state,area_name,attribute,value
 0,US,United States,POVALL_2023,40763043
 0,US,United States,CI90LBALL_2023,40485829
 0,US,United States,CI90UBALL_2023,41040257

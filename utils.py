@@ -27,6 +27,8 @@ def clean_and_extract_year(df):
     """
     Cleans 'attribute' column and extracts the most recent 4-digit year.
 
+    Handles multi-year ranges like '2019–2023' or '2019–23'.
+
     Returns:
         DataFrame with cleaned 'attribute' column and new 'attribute_year' column.
     """
@@ -35,12 +37,20 @@ def clean_and_extract_year(df):
     df['attribute'] = df['attribute'].str.replace(r'__+', '_', regex=True).str.strip('_')
 
     def extract_year(attr):
-        matches = re.findall(r'(19|20)\d{2}', attr)
-        return max(matches) if matches else None
+        # Matches 2-digit or 4-digit years in multi-year ranges like '2019–23' or '2019-2023'
+        matches = re.findall(r'(?:19|20)?\d{2}', attr)
+        expanded = []
+        for m in matches:
+            if len(m) == 2:
+                # Assume 2000s for 2-digit years unless context says otherwise
+                expanded.append(f"20{m}")
+            else:
+                expanded.append(m)
+        # Return the most recent year
+        return max(expanded) if expanded else None
 
     df['attribute_year'] = df['attribute'].apply(extract_year)
     return df
-
 
 # --- Function: Filter to County-Level Rows ---
 def filter_to_county_level(df):
