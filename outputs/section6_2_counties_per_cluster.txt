@@ -1,0 +1,19 @@
+High Poverty / Low Degree (2 counties):
+ - Izard
+ - Jackson
+
+Low Poverty / Low Education (4 counties):
+ - Baxter
+ - Cleburne
+ - Independence
+ - White
+
+Moderate Risk / Moderate Education (7 counties):
+ - Fulton
+ - Marion
+ - Searcy
+ - Sharp
+ - Stone
+ - Van Buren
+ - Woodruff
+

@@ -50,6 +50,7 @@ This capstone project explores the alignment between education and employment ne
 * [Technologies Used](#technologies-used)
 * [Techniques Used](#techniques-used)
 * [Project Structure](#project-structure)
+* [Setup and Requirements](#setup-and-requirements)
 * [Final Overview: Full Data Pipeline](#final-overview-full-data-pipeline)
 * [Submission Checklist](#submission-checklist)
 * [Links](#links)
@@ -153,6 +154,53 @@ Although extensive public data exist on poverty, educational attainment, unemplo
 
 ---
 
+## Setup and Requirements
+
+To run this project locally:
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/JBtallgrass/Ballard-Capstone-proj.git
+   cd Ballard-Capstone-proj
+   ```
+
+2. **Create and activate a virtual environment**
+
+   **On macOS/Linux:**
+
+   ```bash
+   python3 -m venv .venv
+   source venv/bin/activate
+   ```
+
+   **On Windows:**
+
+   ```bash
+   python -m venv .venv
+   venv\Scripts\activate
+   ```
+
+3. **Install required packages**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **(Optional) Capture the current environment**
+
+   ```bash
+   pip freeze > requirements.txt
+   ```
+
+5. **Launch the notebook**
+
+   ```bash
+   code . 
+   ```
+
+---
+
 ## Final Overview: Full Data Pipeline
 
 1. **Setup & Configuration**: Import libraries, configure logging, establish file paths
@@ -179,7 +227,7 @@ Although extensive public data exist on poverty, educational attainment, unemplo
 
 * 📘 [Notebook Preview](capstone_analysisvAR.ipynb)
 * 📘 [NorthCentral Arkansas Notebook Preview](capstone_analyticsNCA.ipynb)
-* 📝 [GitHub Repository](https://github.com/JBtallgrass)
+* 📜 [GitHub Repository](https://github.com/JBtallgrass)
 
 ---
 
