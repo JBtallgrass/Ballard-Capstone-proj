@@ -27,7 +27,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ### Jason Ballard
 
-#### Norfork, Arkansas (CDT)
+#### Mountain Home, Arkansas (CDT)
 
 #### July 2025
 
@@ -66,7 +66,7 @@ Rural communities often struggle to align education programs with workforce need
 
 Although extensive public data exist on poverty, educational attainment, unemployment, and population, these indicators are frequently stored in siloed systems and analyzed independently. This fragmentation limits the ability of public institutions—particularly in rural regions—to conduct integrated, county-level assessments of regional need.
 
-### Core Questions:
+### Core Questions
 
 1. **Pattern Identification**: Can we identify meaningful disparities in educational and economic conditions across counties in North Central Arkansas?
 2. **Predictive Insight**: Can machine learning models classify counties based on shared vulnerabilities or developmental potential?
