@@ -1,0 +1,24 @@
+
+Insight Summary for BachelorsDegreePct:
+  - Average across counties: 0.097
+  - Standard deviation: 0.069
+  - Highest: 0.390 (Calhoun)
+  - Lowest: 0.009 (Pulaski)
+
+Insight Summary for HighSchoolGradPct:
+  - Average across counties: 0.262
+  - Standard deviation: 0.206
+  - Highest: 0.918 (Calhoun)
+  - Lowest: 0.006 (Pulaski)
+
+Insight Summary for PovertyRate:
+  - Average across counties: 18.683
+  - Standard deviation: 5.377
+  - Highest: 38.700 (Lee)
+  - Lowest: 7.800 (Benton)
+
+Insight Summary for UnemploymentRate:
+  - Average across counties: 3.812
+  - Standard deviation: 0.809
+  - Highest: 6.500 (Phillips)
+  - Lowest: 2.300 (Washington)

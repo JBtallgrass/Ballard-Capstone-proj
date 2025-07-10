@@ -1,0 +1,4 @@
+ClusterLabel,BachelorsDegreePct,HighSchoolGradPct,PovertyRate,UnemploymentRate,EducationGap,Population,VulnerabilityScore
+0,0.07,0.16,16.8,3.57,0.09,54495.62,1.73
+1,0.21,0.64,19.46,3.59,0.43,7276.09,1.36
+2,0.12,0.36,26.13,5.06,0.24,12826.92,2.0

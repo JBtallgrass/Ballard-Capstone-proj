@@ -1,0 +1,81 @@
+High Poverty / Low Degree (52 counties):
+ - Arkansas
+ - Baxter
+ - Benton
+ - Boone
+ - Carroll
+ - Clark
+ - Clay
+ - Cleburne
+ - Columbia
+ - Conway
+ - Craighead
+ - Crawford
+ - Crittenden
+ - Cross
+ - Drew
+ - Faulkner
+ - Franklin
+ - Fulton
+ - Garland
+ - Grant
+ - Greene
+ - Hempstead
+ - Hot Spring
+ - Howard
+ - Independence
+ - Jefferson
+ - Johnson
+ - Lawrence
+ - Little River
+ - Logan
+ - Lonoke
+ - Madison
+ - Marion
+ - Miller
+ - Mississippi
+ - Ouachita
+ - Pike
+ - Poinsett
+ - Polk
+ - Pope
+ - Pulaski
+ - Randolph
+ - Saline
+ - Sebastian
+ - Sevier
+ - Sharp
+ - Stone
+ - Union
+ - Van Buren
+ - Washington
+ - White
+ - Yell
+
+Low Poverty / Low Education (12 counties):
+ - Ashley
+ - Bradley
+ - Chicot
+ - Desha
+ - Izard
+ - Jackson
+ - Lee
+ - Lincoln
+ - Montgomery
+ - Phillips
+ - Searcy
+ - St. Francis
+
+Moderate Risk / Moderate Education (11 counties):
+ - Calhoun
+ - Cleveland
+ - Dallas
+ - Lafayette
+ - Monroe
+ - Nevada
+ - Newton
+ - Perry
+ - Prairie
+ - Scott
+ - Woodruff
+
