@@ -4,7 +4,7 @@ The project supports the final requirements necessary to complete the Master of 
 
 ![Banner](images/banner.png)
 
-## 🧑‍💼 Jason A. Ballard  
+## 🧑‍💼 Jason A. Ballard
 
 ### Instructional Systems Specialist | Data Scientist | Data and AI Officer | Data Literacy Advocate | Educator in Professional Military Education
 
@@ -14,236 +14,174 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ### 🔑 Key Areas of Focus
 
-- **Data Strategy & Governance**: Developing frameworks that promote data-driven decision-making and cross-departmental data sharing.  
-- **AI & Analytics**: Leveraging data analytics and GenAI to unlock insights and drive transformational initiatives within the Army University.  
-- **Data Literacy & Education**: Equipping leaders and students with data literacy skills critical for today's complex, data-rich environments.  
+* **Data Strategy & Governance**: Developing frameworks that promote data-driven decision-making and cross-departmental data sharing.
+* **AI & Analytics**: Leveraging data analytics and GenAI to unlock insights and drive transformational initiatives within the Army University.
+* **Data Literacy & Education**: Equipping leaders and students with data literacy skills critical for today's complex, data-rich environments.
 
-📍 **LinkedIn**: [Jason A. Ballard](https://www.linkedin.com/in/jasonaballard)  
+📍 **LinkedIn**: [Jason A. Ballard](https://www.linkedin.com/in/jasonaballard)
 📍 **GitHub**: [jbtallgrass](https://github.com/JBtallgrass)
 
 ---
 
-## Applied Machine Learning Midterm Project: Classification Analysis
+## Capstone Project: Bridging the Gap in North Central Arkansas
 
 ### Jason Ballard
 
-#### Basehor, Kansas (CDT)
+#### Norfork, Arkansas (CDT)
 
-#### April 6, 2025  
+#### July 2025
 
-> 📁 Submission: GitHub Repository with Jupyter Notebook and Peer Review  
+> 📁 Submission: GitHub Repository with Jupyter Notebook and Final Project Files
 
 ---
 
 ## **TL;DR:**
 
-This project uses Decision Tree and Random Forest classifiers to predict mushroom toxicity using UCI’s Mushroom dataset. With carefully selected features (including an engineered interaction feature), the models achieved near-perfect accuracy. Full ML pipeline, visualizations, and reflections included.
+This capstone project explores the alignment between education and employment needs across North Central Arkansas counties using publicly available data. The goal is to uncover patterns of vulnerability and development potential through exploratory data analysis, feature engineering, and predictive modeling. The project supports data-informed local policy, workforce planning, and curriculum development.
 
 ---
 
 ## 📚 Table of Contents
 
-- [Project Overview](#project-overview)
-- [Dataset Used](#dataset-used)
-- [Project Findings](#project-findings)
-- [Goals](#goals)
-- [Data Source](#data-source)
-- [Technologies Used](#technologies-used)
-- [Key Features](#key-features)
-- [Setup and Requirements](#setup-and-requirements)
-- [Project Structure](#project-structure)
-- [Final Overview: The Full Data Flow](#final-overview-the-full-data-flow)
-- [Submission Checklist](#submission-checklist)
-- [Links](#links)
+* [Project Overview](#project-overview)
+* [Problem Statement](#problem-statement)
+* [Project Goals](#project-goals)
+* [Data Sources](#data-sources)
+* [Technologies Used](#technologies-used)
+* [Techniques Used](#techniques-used)
+* [Project Structure](#project-structure)
+* [Final Overview: Full Data Pipeline](#final-overview-full-data-pipeline)
+* [Submission Checklist](#submission-checklist)
+* [Links](#links)
 
 ---
 
 ## Project Overview
 
-Organizations frequently need to classify data to support decision-making.
-For example, a healthcare provider may want to predict whether a patient has a specific condition based on lab results,
-or a business may classify customer behavior to tailor marketing strategies.
-Machine learning classification models help automate these decisions by recognizing patterns in historical data.
-
-This project demonstrates the ability to apply classification modeling techniques to a real-world dataset. You will:
-
-- Load and explore a dataset.
-- Analyze feature distributions and consider feature selection.
-- Train and evaluate a classification model.
-- Compare different classification approaches.
-- Document your work in a structured Jupyter Notebook.
-- Conduct a peer review of a classmate’s project. ![Peer Review](peer_review.md)
+Rural communities often struggle to align education programs with workforce needs. This disconnect is compounded by siloed data systems that make it difficult to assess county-level trends across education, poverty, and employment. This capstone uses publicly available datasets to assess economic vulnerability and educational gaps across North Central Arkansas counties, with the aim of informing policy and curriculum development at the local level.
 
 ---
 
-## Dataset Used
+## Problem Statement
 
-**Mushroom Classification Dataset** (Predict whether a mushroom is edible or poisonous based on characteristics)  
-🔗 [UCI Mushroom Dataset](https://archive.ics.uci.edu/ml/datasets/mushroom)
+Although extensive public data exist on poverty, educational attainment, unemployment, and population, these indicators are frequently stored in siloed systems and analyzed independently. This fragmentation limits the ability of public institutions—particularly in rural regions—to conduct integrated, county-level assessments of regional need.
 
-![Class Distribution](images/class_distribution.png)
+### Core Questions:
 
-## Project Findings
-
----
-
-## ✅ **Project Summary: Mushroom Classification**
-
-This project explored the application of machine learning classification techniques using the UCI Mushroom dataset. The goal was to build and evaluate models that could accurately predict whether a mushroom is **edible** or **poisonous** based on its physical and environmental features.
+1. **Pattern Identification**: Can we identify meaningful disparities in educational and economic conditions across counties in North Central Arkansas?
+2. **Predictive Insight**: Can machine learning models classify counties based on shared vulnerabilities or developmental potential?
 
 ---
 
-### 🔍 **Key Steps & Insights**
+## Project Goals
 
-#### 📁 **Data Preparation**
-
-- The dataset consisted entirely of **categorical features**, describing mushroom traits like **odor**, **gill color**, and **habitat**.
-- A key data issue was that missing values in the `stalk-root` column were marked with `'?'`. These were manually cleaned and imputed using the mode.
-- All categorical variables were **label encoded**, which was ideal for tree-based models.
-
-#### 📊 **Exploratory Analysis**
-
-![Top 10 Important Features](images/Top_10_features.png)
-
-- Features like **odor**, **spore-print-color**, and **gill-color** showed strong class separation.
-- An engineered interaction feature, **`odor_gill`**, combining odor and gill color, was created and turned out to be the **most influential** predictor.
-- A **scatter matrix and feature importance plot** helped visualize top predictors.
-
-#### 🛠 **Feature Selection**
-
-- Six features were selected based on domain relevance and decision tree feature importance:
-  - `odor`, `gill-color`, `spore-print-color`, `habitat`, `population`, and the engineered `odor_gill`.
-
-#### 🤖 **Model Training**
-
-- The data was split using **StratifiedShuffleSplit** to maintain class balance.
-- Two classification models were trained:
-  - A **Decision Tree Classifier** (primary model)
-  - A **Random Forest Classifier** (alternative model)
-
-#### 📈 **Model Evaluation**
-
-![Decision Tree](images/decision_tree.png)
-
-- The **Decision Tree** achieved over **99%** across all metrics (accuracy, precision, recall, F1-score).
-- The **Random Forest** model achieved a perfect **100%** on all metrics.
-- Both models performed exceptionally well due to the high quality and low noise of the dataset.
-
-#### 📊 **Model Comparison**
-
-- The Random Forest slightly outperformed the Decision Tree.
-- A markdown-style **comparison table** clearly presented model performance across metrics.
-
-![Decision Tree Confusion Matrix](images/confusion_matrix.png)
-![Random Forest Confusion Matrix](images\confusion_matrix_rf.png)
+* Build a consolidated, clean, and enriched dataset for Arkansas counties
+* Conduct exploratory analysis and visualize disparities
+* Engineer features to reflect economic and educational risk
+* Apply clustering and classification models to identify county profiles
+* Produce interpretable visual and tabular outputs to support decision-making
 
 ---
 
-### 🧠 **Reflections & Learning**
+## Data Sources
 
-- The project highlighted how a small number of well-chosen features (especially engineered ones like `odor_gill`) can drive high model accuracy.
-- Tree-based models were a great fit for this fully categorical dataset, and **ensemble methods** like Random Forest proved especially powerful.
-- Hands-on work with preprocessing, feature engineering, and evaluation reinforced a deep understanding of the full ML workflow—from raw data to insights.
-
----
-
-### 🚀 **Future Work**
-
-If more time were available, future extensions could include:
-
-- Comparing with additional classifiers (e.g., SVM, MLP)
-- Testing **one-hot encoding** vs. label encoding
-- Adding **SHAP or LIME explainability tools**
-- Creating a simple dashboard or API to make the model interactive
-
-**Please refer to the detailed [Reflections.md](reflections.md) for section-based insights, observations, and reflections captured throughout the modeling process.**
-
----
-
-## Goals
-
-- Develop a robust classification pipeline
-- Evaluate model performance using multiple metrics
-- Reflect critically on decisions made throughout the process
-
----
-
-## Data Source
-
-- **Dataset**: Mushroom Classification Dataset  
-- **Link**: [UCI Repository](https://archive.ics.uci.edu/ml/datasets/mushroom)
+* **Education**: U.S. Census Bureau American Community Survey
+* **Poverty**: U.S. Census Small Area Income and Poverty Estimates (SAIPE)
+* **Unemployment**: Bureau of Labor Statistics / Local Area Unemployment Statistics
+* **Population Estimates**: U.S. Census Population Estimates Program
+* **Crosswalks**: 2010 to 2020 FIPS code transitions
 
 ---
 
 ## Technologies Used
 
-- Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
-- Jupyter Notebook
-- Git & GitHub
+* **Python** (Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib)
+* **Jupyter Notebook**
+* **Pathlib, Logging, Regex** for scripting and logging
+* **Git & GitHub** for version control and sharing
 
 ---
 
-## Key Features
+## Techniques Used
 
-- End-to-end ML workflow
-- Label encoding for categorical data
-- Stratified sampling for balanced class distribution
-- Model comparison: Decision Tree vs. Random Forest
-- Evaluation using Accuracy, Precision, Recall, F1-Score
+### 💡 Data Preparation & Preprocessing
 
----
+* Multi-source data integration (education, poverty, unemployment, population)
+* Standardization of county names and FIPS codes
+* Attribute year filtering and crosswalking
+* Data normalization using MinMaxScaler
+* Derived variables (e.g., Education Gap, % with Bachelor's degree)
 
-## Setup and Requirements
+### 🔢 Exploratory Data Analysis (EDA)
 
-1. Clone the repository
-2. Set up a virtual environment  
-3. Run `pip install -r requirements.txt`  and `pip freeze > requirements.txt`
-4. Launch the Jupyter Notebook
+* Descriptive statistics, outlier detection, and range comparisons
+* Dot plots, boxplots with annotations, correlation heatmaps, and pair plots
+* Narrative summary generation for each variable
+
+### 🔄 Feature Engineering
+
+* Creation of binary risk flags based on thresholds (e.g., High Poverty)
+* Construction of composite vulnerability scores
+* Normalization of all indicator variables
+
+### 🧬 Clustering & Classification
+
+* **K-Means Clustering** to identify 3 distinct county profiles
+* **Random Forest Classifier** to predict cluster membership
+* **Decision Tree** to visualize prediction logic
+* Model evaluation using silhouette scores, accuracy, and confusion matrices
+
+### 🔧 Project Structure & Automation
+
+* Section-based Jupyter Notebook layout
+* Modular utility functions (`utils.py`)
+* Logging system to track processing and outputs
+* Auto-generated visualizations and CSV outputs
 
 ---
 
 ## Project Structure
 
 ```plaintext
-├── data/                           # Dataset folder
-├── images/                         # Banner and visualizations
-├── ml-04-midterm-jballard.ipynb    # Main notebook
-├── README.md                       # Project overview and summary
-├── Reflections.md                  # All reflections (linked in README)
-├── peer_review.md                  # Your review of a peer project
+├── data/                          # Source datasets
+├── images/                        # Banner and plots
+├── ar_outputs/                    # Output data and logs
+├── utils.py                       # Custom utility functions
+├── capstone-analysis.ipynb        # Main notebook
+├── README.md                      # This file
 ```
 
 ---
 
-## Final Overview: The Full Data Flow
+## Final Overview: Full Data Pipeline
 
-### Assignment Requirements
-
-1. Introduction
-2. Data Loading & Inspection
-3. Data Cleaning & Preparation
-4. Feature Selection & Engineering
-5. Model Training & Evaluation
-6. Model Comparison
-7. Reflections
-8. Peer Review
+1. **Setup & Configuration**: Import libraries, configure logging, establish file paths
+2. **Load Data**: Read and standardize multiple datasets
+3. **Merge & Clean**: Combine county-level data and filter for Arkansas
+4. **EDA**: Explore and visualize distributions, outliers, and correlations
+5. **Feature Engineering**: Create derived fields, binary risk flags, and vulnerability scores
+6. **Clustering**: Use K-Means to define county groupings
+7. **Classification**: Train Random Forest and Decision Tree to predict clusters
+8. **Interpretation**: Summarize results, visualize groupings, and export tables
 
 ---
 
 ## Submission Checklist
 
-- [x] Jupyter Notebook: `ml-04-midterm-jballard.ipynb`
-- [x] Reflections: `reflections.md`
-- [x] README: This file
-- [x] Peer Review: `peer_review.md`
+* [x] Capstone Jupyter Notebook: `capstone-analysis.ipynb`
+* [x] Final README: `README.md`
+* [x] Supporting files and data exports
+* [x] Visuals, feature importances, and model evaluations
 
 ---
 
 ## Links
 
-- 📘 [Notebook Preview](ml-04-midterm-jballard.ipynb)  
-- ✍️ [Reflections (Markdown)](reflections.md)  
-- 🧑‍🤝‍🧑 [Peer Review](peer_review.md)
+* 📘 [Notebook Preview](capstone_analysisvAR.ipynb)
+* 📘 [NorthCentral Arkansas Notebook Preview](capstone_analyticsNCA.ipynb)
+* 📝 [GitHub Repository](https://github.com/JBtallgrass)
 
-⭐ Document completed by Jason Ballard
-⭐ A GenAI assistant platform was used to proof, edit, and generate icons used in this document.
+---
+
+🌟 Document completed by Jason A. Ballard
+🌟 A GenAI assistant platform was used to structure and edit this document.
