@@ -57,6 +57,14 @@ This capstone project explores the alignment between education and employment ne
 
 ---
 
+🛠️ Developer Note: From NCA Regional to Statewide Scope
+
+During preliminary modeling and exploratory data analysis (EDA), it became clear that the original focus on the 13 counties in North Central Arkansas (NCA) would not yield the robust results needed to support meaningful pattern detection and clustering. The variance across key indicators such as educational attainment and poverty rates was too narrow to generate distinct groupings or predictive insights.[capstone_analyticsvNCA.ipynb](capstone_analyticsvNCA.ipynb)
+
+This discovery, while initially a constraint, became a powerful learning opportunity. It emphasized the importance of data variability and sample size when applying machine learning methods in regional research. As a result, I created a second notebook [capstone_analyticsvAR.ipynb](capstone_analyticsvAR.ipynb) that expanded the scope to include all 75 counties in Arkansas. This allowed for broader comparisons, improved model performance, and more generalizable insights. The NCA-specific notebook is still retained to enable regional comparison and transparency in methodology.
+
+---
+
 ## Project Overview
 
 Rural communities often struggle to align education programs with workforce needs. This disconnect is compounded by siloed data systems that make it difficult to assess county-level trends across education, poverty, and employment. This capstone uses publicly available datasets to assess economic vulnerability and educational gaps across North Central Arkansas counties, with the aim of informing policy and curriculum development at the local level.
