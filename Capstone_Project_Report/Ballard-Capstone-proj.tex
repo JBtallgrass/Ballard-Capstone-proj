@@ -1,26 +1,65 @@
 \documentclass[12pt]{llncs}
-\usepackage[margin=1in]{geometry}
-\usepackage{hyperref}
+
+% ==================== GEOMETRY AND MARGIN FIXES ====================
+% Add geometry package to control margins - LLNCS has very conservative margins by default
+\usepackage[
+    top=2.5cm,          % Top margin
+    bottom=2.5cm,       % Bottom margin  
+    left=2.5cm,         % Left margin
+    right=2.5cm,        % Right margin
+    includeheadfoot     % Include headers/footers in margin calculation
+]{geometry}
+
+% ==================== PACKAGE ORGANIZATION ====================
+\usepackage{float}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{booktabs}
-\linespread{1.25}  % ~0.5em spacing assuming default single spacing
-%\usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{biblatex}
 \usepackage[most]{tcolorbox}
-\usepackage{hyperref} % for clickable notebook links
+\usepackage{placeins}      % For \FloatBarrier to control figure placement
+\usepackage{subcaption}    % For subfigures if needed
+\usepackage{array}         % For better table formatting
+\usepackage{longtable}     % For tables spanning multiple pages
 
+% Remove duplicate hyperref and put it last (best practice)
+\usepackage{hyperref}      % Keep only one instance, place at end
+
+% ==================== SPACING AND LINE SETTINGS ====================
+\linespread{1.15}          % Reduced from 1.25 for better space usage
+\setlength{\parindent}{0.5cm}    % Standard paragraph indent
+\setlength{\parskip}{0.3em}      % Small space between paragraphs
+
+% ==================== SECTION FORMATTING ====================
+% Reduce space around section headings
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0.8\baselineskip}{0.4\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.6\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.4\baselineskip}{0.2\baselineskip}
+
+% ==================== BIBLIOGRAPHY SETUP ====================
 \addbibresource{references.bib}
 
+% ==================== HYPERREF SETUP ====================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black,
+    pdfborderstyle={/S/U/W 1}  % Underline links
+}
+
+% ==================== DOCUMENT INFORMATION ====================
 \title{Bridging the Gap: A Data-Driven Analysis of Education and Employment Alignment in North Central Arkansas}
-\author{Jason A. Ballard} \date{August 8, 2025}
+\author{Jason A. Ballard} 
+\date{August 8, 2025}
 \authorrunning{J. Ballard}
 \institute{Northwest Missouri State University, Maryville MO 64468, USA \\
-\email{s574020@nwmissouri.edu}, {ballardjasona@gmail.com}}
-
+\email{s574020@nwmissouri.edu, ballardjasona@gmail.com}}
 
 \begin{document}
 
@@ -141,7 +180,7 @@ According to U.S. Census data, Baxter County reports that over 30\% of its popul
 
 \subsection{Education and Workforce Policy Context}
 
-\subsubsection\textbf{State-Level Initiatives and Funding.}
+\subsubsection{\textbf{State-Level Initiatives and Funding.}}
 Arkansas has implemented several strategic programs to strengthen its education-to-employment pipeline. The Arkansas Future Grant (ArFuture) provides last-dollar scholarships for students pursuing high-demand fields such as healthcare, information technology, and skilled trades \cite{adhe_futuregrant_2017}. The Workforce Challenge Grant and HIRED initiatives offer support for short-term credentialing programs aligned with employer needs, especially for nontraditional learners \cite{adce_careercoach_2016,ozarka_news_2025}. Career Coach Programs deliver personalized college and career planning services in rural schools, while WIOA funding (Workforce Innovation and Opportunity Act) supports adult education, re-skilling, and workforce training across the state. Despite these programs, their impact in rural areas remains uneven. Fragmented implementation, staff shortages, and limited data coordination make it difficult to align regional workforce needs with available educational programs, especially in under-resourced counties \cite{arkansas_dws_2024}.
 
 \subsubsection{\textbf{Role of Community Colleges and Workforce Boards}}
@@ -178,29 +217,37 @@ The final step of the methodology involves communicating the results in formats 
 \section{Data Sources and Processing}
 This project utilizes four structured datasets that contain county-level data on educational attainment, population, poverty, and unemployment across Arkansas. Each dataset was acquired in .csv format from publicly available sources, including Data.gov, the U.S. Census Bureau’s American Community Survey (ACS), and the Bureau of Labor Statistics (BLS). The datasets are uniformly structured in tabular form, with consistent row and column formats that support efficient loading, merging, and analysis.
 To ensure the quality and usability of the data, each file was evaluated using a seven-metric rubric that assesses core attributes relevant to analysis. These attributes include structure, record and field counts, data types, missing values, identifier quality, and the presence of any corrupted characters or special symbols. The results are summarized in the table titled \textbf{Dataset Evaluation Rubric.}
-\begin{table}[h!]
+
+\begin{table}[!ht]
 \centering
 \caption{Dataset Evaluation Rubric}
 \label{tab:rubric}
-\begin{tabular}{|l|l|c|c|l|l|l|l|l|}
-\hline
-\textbf{Dataset} & \textbf{Structure} & \textbf{Records} & \textbf{Fields} & \textbf{Types} & \textbf{Missing} & \textbf{ID Quality} & \textbf{Issues} \\ \midrule
+\small  % Make font smaller to fit better
+\begin{tabular}{@{}p{2cm}p{1.8cm}p{1.3cm}p{1.2cm}p{1.2cm}p{1.3cm}p{1.8cm}p{1.2cm}@{}}
+\toprule
+\textbf{Dataset} & \textbf{Structure} & \textbf{Records} & \textbf{Fields} & \textbf{Types} & \textbf{Missing} & \textbf{ID Quality} & \textbf{Issues} \\ 
+\midrule
 Education & Structured & 3,948 & 5 & Mixed & None & Medium & None\\
-Poverty & Structured & 7,673 & 5 & Mixed & None& Medium & None \\
+Poverty & Structured & 7,673 & 5 & Mixed & None & Medium & None \\
 Unemployment & Structured & 7,673 & 5 & Mixed & None & Medium & None\\
-Population & Structured & 208,000+ & 5 & Mixed & None & Low (Inconsistent)  & None \\
-\hline
+Population & Structured & 208,000+ & 5 & Mixed & None & Low & None \\
+\bottomrule
 \end{tabular}
 \end{table}
+
 Each dataset contains five fields, typically including identifiers (e.g., year, state, region), numeric values (such as percentages or totals), and categorical descriptions (such as educational categories or geographic groupings). Two of the five fields in each dataset are numeric, and three are categorical, providing a balanced structure suitable for both descriptive and predictive analysis. The education dataset contains 3,948 records, the poverty and unemployment datasets each contain 7,673 records, and the population file is notably larger, with over 208,000 records, likely due to its inclusion of sub-county or census block-level data. This population dataset may require additional aggregation depending on the analysis focus.
 All files were found to be free from missing values and corrupted characters, and no encoding issues were detected in the cleaned versions used in this project. However, it is worth noting that some files did not contain a consistent “County” or “FIPS” identifier field in a standardized format, which limited the ability to immediately align them across sources. Resolving these discrepancies required additional pre-processing steps to harmonize naming conventions and remove duplicate or non-county entries.
 Data preparation involved standard cleaning procedures such as renaming columns, filtering irrelevant records, checking for null values, and verifying the consistency of categorical fields. Numeric fields were converted and standardized where necessary, and derived metrics were created to support analysis. These included education-to-poverty ratios and population dependency rates, which provided greater analytical flexibility during modeling and visualization stages.
-\begin{figure}[htbp]
+
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.85\textwidth]{ar_outputs/images/ar_sec_4_5_correlation_heatmap.png}
 \caption{Correlation Heatmap of Key Socioeconomic Indicators in Arkansas Counties. This figure highlights relationships among educational attainment, poverty, unemployment, and population—helping guide feature selection for downstream modeling.}
 \label{fig:correlation_heatmap}
 \end{figure}
+
+% Add FloatBarrier to prevent figures from floating too far
+\FloatBarrier
 
 Overall, the datasets used in this project are well-formed, complete, and appropriate for structured analysis. Their organization and integrity allow for confident exploratory data analysis, statistical modeling, and geospatial visualization. The evaluation rubric confirms that each dataset meets the foundational requirements of clean, structured data essential to reliable analytics.
 
@@ -314,8 +361,9 @@ The exploratory phase concluded by laying the groundwork for the modeling and cl
 To complement the unsupervised K-Means clustering, a supervised Random Forest classifier was trained to predict each county’s cluster assignment using six normalized features: educational attainment (high school and bachelor’s levels), poverty rate, unemployment rate, education gap, and population size. The model achieved strong classification performance, indicating that the clusters were learnable based on the selected socioeconomic indicators. As shown in Figure~\ref{fig:kmeans_clusters_scatter}, counties form distinct clusters based on their poverty and bachelor's degree rates, with substantial overlap among mid-range counties and clear outliers at the extremes.
 
 \begin{figure}[H]
+
     \centering
-    \includegraphics[width=0.7\textwidth]{ar_outputs/images/ar_sec_6_3_confusion_matrix.png}
+    \includegraphics[width=0.85\textwidth]{ar_outputs/images/ar_sec_6_3_confusion_matrix.png}
     \caption{Confusion matrix showing the Random Forest classifier’s ability to correctly predict cluster membership. Diagonal cells represent correct predictions; off-diagonal values indicate misclassifications between clusters.}
     \label{fig:rf-confusion-matrix}
 \end{figure}
