@@ -14,6 +14,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\graphicspath{{ar_outputs/images/}}
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{booktabs}
@@ -241,8 +242,7 @@ Data preparation involved standard cleaning procedures such as renaming columns,
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.85\textwidth]{ar_outputs/images/ar_sec_4_5_correlation_heatmap.png}
-\caption{Correlation Heatmap of Key Socioeconomic Indicators in Arkansas Counties. This figure highlights relationships among educational attainment, poverty, unemployment, and population—helping guide feature selection for downstream modeling.}
+\includegraphics[width=0.85\textwidth]{"ar_outputs\images\ar_sec_4_5_correlation_heatmap.png"}\caption{Correlation Heatmap of Key Socioeconomic Indicators in Arkansas Counties. This figure highlights relationships among educational attainment, poverty, unemployment, and population—helping guide feature selection for downstream modeling.}
 \label{fig:correlation_heatmap}
 \end{figure}
 
@@ -270,7 +270,7 @@ Exploration of educational attainment revealed considerable variability in the p
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{ar_outputs/images/ar_sec_4_3_dotplot_bachelorsdegreepct.png}
+\includegraphics[width=0.8\textwidth]{ar_sec_4_3_dotplot_bachelorsdegreepct.png}
 \caption{County-Level Distribution of Bachelor's Degree Attainment in Arkansas}
 \label{fig:dotplot_bachelors}
 \end{figure}
@@ -279,7 +279,7 @@ Several counties had \texttt{BachelorsDegreePct} values under 15\%, activating a
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{ar_outputs/images/ar_sec_4_3_dotplot_highschoolgradpct.png}
+\includegraphics[width=0.8\textwidth]{ar_sec_4_3_dotplot_highschoolgradpct.png}
 \caption{County-Level Distribution of High School Graduation Rates in Arkansas}
 \label{fig:dotplot_highschool}
 \end{figure}
