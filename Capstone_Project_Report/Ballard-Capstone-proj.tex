@@ -140,7 +140,7 @@ North Central Arkansas, comprising counties such as Baxter, Fulton, Izard, and M
 According to U.S. Census data, Baxter County reports that over 30\% of its population is aged 65 or older, while youth populations continue to decline across the region. Median ages in Fulton and Izard counties exceed 48 years, suggesting long-term demographic shifts toward an older, more economically dependent population. Poverty rates remain elevated, with several counties exceeding 16–24\%. Educational attainment lags behind national averages, with fewer than 20\% of adults in many counties holding a bachelor's degree or higher. Economically, the region depends heavily on healthcare, light manufacturing, and service industries—sectors that often offer limited upward mobility without additional training. Access to such training is further constrained by limited institutional resources, transportation challenges, and inconsistent broadband access. The combination of economic concentration and educational barriers leaves many counties vulnerable to labor shortages, low-wage employment cycles, and population decline.
 
 \subsection{Education and Workforce Policy Context}
-\subsubsection \textbf{State-Level Initiatives and Funding.} 
+\subsubsection \textbf{State-Level Initiatives and Funding.}
 Arkansas has implemented several strategic programs to strengthen its education-to-employment pipeline. The Arkansas Future Grant (ArFuture) provides last-dollar scholarships for students pursuing high-demand fields such as healthcare, information technology, and skilled trades \cite{adhe_futuregrant_2017}. The Workforce Challenge Grant and HIRED initiatives offer support for short-term credentialing programs aligned with employer needs, especially for nontraditional learners \cite{adce_careercoach_2016,ozarka_news_2025}. Career Coach Programs deliver personalized college and career planning services in rural schools, while WIOA funding (Workforce Innovation and Opportunity Act) supports adult education, re-skilling, and workforce training across the state. Despite these programs, their impact in rural areas remains uneven. Fragmented implementation, staff shortages, and limited data coordination make it difficult to align regional workforce needs with available educational programs, especially in under-resourced counties \cite{arkansas_dws_2024}.
 
 \subsubsection{\textbf{Role of Community Colleges and Workforce Boards}}
@@ -200,7 +200,7 @@ Overall, the datasets used in this project are well-formed, complete, and approp
 
 This section describes the exploratory data analysis (EDA) process used to examine education, labor, and socio-economic indicators across Arkansas counties. The EDA aimed to uncover patterns in the education-to-employment pipeline and identify vulnerability signals that could guide regional development, curriculum design, or workforce planning.
 
-\subsection*{EDA Application Process}
+\subsection{EDA Application Process}
 
 The project began with the creation of a data pipeline focused exclusively on the thirteen counties identified as part of North Central Arkansas (NCA). These counties were selected based on regional proximity and relevance to rural economic and workforce development priorities. Data was ingested from multiple public sources—including U.S. Census (ACS, SAIPE), BLS, and state-level education data—and processed through a series of custom utility functions to standardize column names, FIPS codes, and time references. Each dataset was filtered to the county level, harmonized on key attributes, and joined using a common `county` index.
 
@@ -230,6 +230,22 @@ Visuals such as the correlation heatmap and annotated boxplots provided not only
 
 
 \section{Predictive Modeling and Results}
+\subsection{Cluster Prediction and Key Influences}
+
+To complement the unsupervised K-Means clustering, a supervised Random Forest classifier was trained to predict each county’s cluster assignment using six normalized features: educational attainment (high school and bachelor’s levels), poverty rate, unemployment rate, education gap, and population size. The model achieved strong classification performance, indicating that the clusters were learnable based on the selected socioeconomic indicators. As shown in Figure~\ref{fig:kmeans_clusters_scatter}, counties form distinct clusters based on their poverty and bachelor's degree rates, with substantial overlap among mid-range counties and clear outliers at the extremes.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/ar_section6_1_kmeans_clusters.png}
+\caption{Clustered Counties by Poverty Rate and Bachelor's Degree Attainment}
+\label{fig:kmeans_clusters_scatter}
+\end{figure}
+
+
+Feature importance scores from the Random Forest model revealed that \textbf{unemployment rate} was the most influential predictor of cluster membership, followed by \textbf{high school graduation rate} and the derived \textbf{education gap} between high school and bachelor's attainment. Together, these three features accounted for nearly 70\% of the model’s decision-making power. Interestingly, \textbf{poverty rate} and \textbf{bachelor’s degree attainment} played a relatively smaller role, suggesting that broader educational coverage and workforce participation rates were more decisive in shaping regional profiles than degree completion alone.
+
+These findings emphasize the multifaceted nature of county vulnerability and development. Rather than relying on a single indicator, the predictive model highlights the interaction of population structure, educational breadth, and labor force participation in defining regional disparities. This insight can guide institutional efforts to target high-impact levers—such as reducing unemployment or expanding high school-to-career pathways—when designing programs or pursuing funding.
+
 \subsection{Enrollment and Workforce Forecasting}
 
 \subsection{Mismatch Analysis}
