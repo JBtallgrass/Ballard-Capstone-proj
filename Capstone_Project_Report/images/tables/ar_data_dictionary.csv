@@ -1,0 +1,6 @@
+Variable,Description
+BachelorsDegreePct,Percent of population with a bachelor's degree (calculated from rate and population)
+HighSchoolGradPct,Percent of population with a high school diploma or equivalent (calculated)
+PovertyRate,Estimated percentage of residents living below the poverty line (2023)
+UnemploymentRate,Estimated unemployment rate of labor force (2023)
+Population,Estimated total population of the county (2023)

@@ -1,0 +1,5 @@
+,,BachelorsDegreePct,BachelorsDegreePct,BachelorsDegreePct,BachelorsDegreePct,PovertyRate,PovertyRate,PovertyRate,PovertyRate,UnemploymentRate,UnemploymentRate,UnemploymentRate,UnemploymentRate,VulnerabilityScore,VulnerabilityScore,VulnerabilityScore,VulnerabilityScore,IsNCA,IsNCA,Population,Population,Population,Population
+,,mean,std,min,max,mean,std,min,max,mean,std,min,max,mean,std,min,max,sum,count,mean,std,min,max
+ClusterLabel,ClusterName,,,,,,,,,,,,,,,,,,,,,,
+0,Moderate Risk - Mixed Characteristics,0.07,0.04,0.01,0.19,17.64,4.72,7.8,34.3,3.74,0.8,2.3,6.5,1.77,0.66,1,3,11,57,51228.93,73185.58,10208.0,400009.0
+1,High Risk - Low Education/High Poverty,0.18,0.07,0.08,0.39,21.99,6.1,14.1,38.7,4.05,0.81,2.9,5.8,1.56,0.51,1,2,2,18,8204.61,2038.8,4641.0,12898.0

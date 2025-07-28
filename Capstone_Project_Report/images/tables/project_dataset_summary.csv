@@ -1,0 +1,6 @@
+,Description
+Raw Data,Original county-level datasets
+Cleaned Data,ar_final.csv - Main analysis dataset
+Enhanced Features,ar_enhanced_features.csv - ML-ready features
+Clustering Results,clustering_and_prediction_results.csv - Model outputs
+Visualization Data,Various CSV files for plots and tables

@@ -1,0 +1,27 @@
+# --- ENVIRONMENTS ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- JUPYTER NOTEBOOKS ---
+*.ipynb_checkpoints/
+
+# --- RAW DATA & LARGE FILES ---
+data/complete_sets/
+data/*.csv
+data/*.shp
+data/*.dbf
+data/*.shx
+data/*.zip
+
+# --- OUTPUTS ---
+ar_outputs/
+!ar_outputs/ar_final.csv
+!ar_outputs/ar_enhanced_features.csv
+
+# --- SYSTEM FILES ---
+.DS_Store
+Thumbs.db
+
+# --- VS CODE ---
+.vscode/

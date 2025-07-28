@@ -1,0 +1,4 @@
+Model,CV_Mean_Accuracy,CV_Std_Accuracy,Test_Accuracy
+Random Forest,0.9733,0.0533,1.0
+Decision Tree,1.0,0.0,1.0
+K-Nearest Neighbors,0.9867,0.0267,1.0

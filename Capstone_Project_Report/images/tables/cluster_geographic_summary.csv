@@ -1,0 +1,5 @@
+,County,IsNCA,VulnerabilityScore,VulnerabilityScore,BachelorsDegreePct,BachelorsDegreePct,PovertyRate,PovertyRate
+,count,sum,mean,std,mean,std,mean,std
+ClusterLabel,,,,,,,,
+0,57,11,1.772,0.655,0.07,0.041,17.637,4.718
+1,18,2,1.556,0.511,0.182,0.072,21.994,6.103

@@ -1,0 +1,76 @@
+county,ClusterLabel,ClusterName,PredictedCluster,PredictedClusterName,PredictionAccuracy
+Arkansas,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Ashley,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Baxter,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Benton,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Boone,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Bradley,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Calhoun,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Carroll,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Chicot,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Clark,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Clay,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Cleburne,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Cleveland,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Columbia,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Conway,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Craighead,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Crawford,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Crittenden,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Cross,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Dallas,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Desha,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Drew,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Faulkner,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Franklin,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Fulton,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Garland,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Grant,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Greene,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Hempstead,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Hot Spring,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Howard,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Independence,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Izard,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Jackson,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Jefferson,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Johnson,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Lafayette,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Lawrence,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Lee,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Lincoln,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Little River,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Logan,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Lonoke,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Madison,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Marion,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Miller,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Mississippi,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Monroe,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Montgomery,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Nevada,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Newton,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Ouachita,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Perry,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Phillips,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Pike,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Poinsett,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Polk,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Pope,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Prairie,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Pulaski,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Randolph,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Saline,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Scott,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Searcy,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Sebastian,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Sevier,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Sharp,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+St. Francis,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Stone,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Union,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Van Buren,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Washington,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+White,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
+Woodruff,1,High Risk - Low Education/High Poverty,1,High Risk - Low Education/High Poverty,1
+Yell,0,Moderate Risk - Mixed Characteristics,0,Moderate Risk - Mixed Characteristics,1
