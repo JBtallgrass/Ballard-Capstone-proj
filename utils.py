@@ -5,9 +5,6 @@ import re
 from collections import Counter
 import pandas as pd
 import numpy as np
-import shutil
-import os
-from pathlib import Path    
 
 
 # --- Function: Standardize Column Names ---
@@ -294,8 +291,6 @@ def load_arkansas_population_from_estimates(pop_file):
     Returns:
         DataFrame with ['GEOID', 'Population'] for Arkansas counties only
     """
-    import pandas as pd
-
     df = pd.read_csv(pop_file, encoding='cp1252', low_memory=False)
     df.columns = df.columns.str.strip()
 
@@ -318,6 +313,7 @@ def load_arkansas_population_from_estimates(pop_file):
     # Keep Arkansas counties only (GEOID starts with '05')
     df = df[df['GEOID'].str.startswith('05')].copy()
 
+    return df
 
 # --- Confirmation Log ---
 logging.info("Utility functions loaded from updated utils.py")
