@@ -931,7 +931,7 @@ To further validate classification performance, the confusion matrix for the Ran
 \label{fig:confusion_matrix_rf}
 \end{figure}
 
-In summary, all three classifiers—Decision Tree, Random Forest, and K-Nearest Neighbors—demonstrated strong performance in classifying Arkansas counties based on their socioeconomic profiles. However, the Decision Tree was ultimately selected as the preferred model due to its interpretability, transparent structure, and alignment with stakeholder-facing decision support tools. Its ability to surface intuitive threshold-based rules makes it ideal for deployment in environments where human understanding, policy justification, and localized intervention are key priorities.
+All three classifiers—Decision Tree, Random Forest, and K-Nearest Neighbors—demonstrated strong performance in classifying Arkansas counties based on their socioeconomic profiles. However, the Decision Tree was ultimately selected as the preferred model due to its interpretability, transparent structure, and alignment with stakeholder-facing decision support tools. Its ability to surface intuitive threshold-based rules makes it ideal for deployment in environments where human understanding, policy justification, and localized intervention are key priorities.
 
 These findings affirm that engineered features—particularly educational attainment, poverty, and the education gap—offer reliable signals for predicting regional risk. The classification framework developed in this section lays the groundwork for scalable decision-support systems that can proactively identify vulnerable counties and guide strategic investment across Arkansas and beyond.
 
@@ -1050,18 +1050,49 @@ Expanding the digital reach of community colleges into structurally underserved 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{}
+\includegraphics[width=0.9\textwidth]{Capstone_Project_Report/images/maps/educational_access_gap_map.png}
 \caption{This map highlights Arkansas counties that fall outside a 30-mile radius of any public college or university (shaded red). Several of these underserved counties—shown in dark red—also have moderate-to-high population levels, including Jefferson, Mississippi, and St. Francis. These areas are strong candidates for Career and Technical Education (CTE) expansion through satellite campuses, mobile training units, or hybrid delivery.}
 \label{fig:educational_access_gap}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{}
-\caption{This map overlays institutional access zones (30-mile radius), population density (log-scaled), and county-level vulnerability scores across Arkansas. Counties shown in crimson represent high-priority targets for educational outreach—each is outside existing postsecondary buffers, has a population exceeding ~32,000, and ranks above the vulnerability threshold. These areas may benefit most from targeted Career and Technical Education (CTE) expansion.}
+\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/educational_access_with_overlay.png}
+\caption{This map overlays institutional access zones (30-mile radius), population density (log-scaled), and county-level vulnerability scores across Arkansas. Counties shown in crimson represent high-priority targets for educational outreach—each is outside existing post-secondary buffers, has a population exceeding ~32,000, and ranks above the vulnerability threshold. These areas may benefit most from targeted Career and Technical Education (CTE) expansion.}
 \label{fig:access_vulnerability_map}
 \end{figure}
 
+\subsection{Expand Institutional Reach via Virtual CTE Initiatives}
+
+The maps in Figures~\ref{fig:educational_access_gap} and~\ref{fig:access_vulnerability_map} present a culminating view of educational access gaps and structural vulnerability across Arkansas. Figure~\ref{fig:educational_access_gap} highlights counties that fall outside a 30-mile radius of any public college or university, shaded in red. Several of these underserved counties—such as Jefferson, Mississippi, and St. Francis—also show moderate-to-high population levels, signaling unmet demand for accessible postsecondary education. 
+
+Figure~\ref{fig:access_vulnerability_map} builds on this foundation, overlaying institutional access zones (blue 30-mile buffers), population density (log-scaled), and county-level vulnerability scores (shaded red). Crimson-shaded counties represent areas that are both outside institutional coverage and have high socioeconomic vulnerability—defined by elevated poverty, unemployment, and educational attainment gaps.
+
+Together, these maps reveal a stark intersection: counties in the Delta and southern Arkansas face both geographic and structural barriers to education access. These dual constraints compound opportunity gaps and limit regional resilience.
+
+To address this, the state should pursue a \textbf{Distance-Based Career and Technical Education (CTE) Initiative}, leveraging virtual learning platforms, regional hubs, and mobile training units. These efforts could be jointly coordinated by ASUMH, Ozarka College, and other community college consortia, focusing on:
+
+\begin{itemize}
+  \item Providing virtual and hybrid CTE programming in healthcare, logistics, skilled trades, and digital literacy.
+  \item Partnering with local libraries, school districts, and workforce boards to serve as delivery nodes.
+  \item Targeting counties outside of institutional coverage zones with branded campaigns focused on skill-building, job access, and digital empowerment.
+\end{itemize}
+
+Expanding the digital reach of community colleges into structurally underserved regions is essential to reducing geographic inequity and fulfilling the human capital promise of rural Arkansas. Not all underserved counties are equally vulnerable, and not all high-risk counties lack institutional proximity. The intersection of both conditions marks the most urgent zones for CTE expansion and rural education investment.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/maps/educational_access_gap_map.png}
+\caption{This map highlights Arkansas counties that fall outside a 30-mile radius of any public college or university (shaded red). Several of these underserved counties—shown in dark red—also have moderate-to-high population levels, including Jefferson, Mississippi, and St. Francis. These areas are strong candidates for Career and Technical Education (CTE) expansion through satellite campuses, mobile training units, or hybrid delivery.}
+\label{fig:educational_access_gap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{images/maps/advanced_access_vulnerability_overlay_map.png}
+\caption{Arkansas Counties: Postsecondary Access Gaps and Socioeconomic Vulnerability. The map overlays institutional access zones (30-mile buffers), population density, and county-level vulnerability scores. Crimson-shaded counties are outside institutional coverage and exhibit high composite vulnerability.}
+\label{fig:access_vulnerability_map}
+\end{figure}
 
 
 
