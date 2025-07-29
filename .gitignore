@@ -25,3 +25,4 @@ Thumbs.db
 
 # --- VS CODE ---
 .vscode/
+.env # Ignore environment variables file
