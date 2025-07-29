@@ -751,7 +751,7 @@ These insights provide a foundation for predictive modeling in the following sec
 
 This section explores supervised machine learning approaches to predict county vulnerability based on the clusters derived in Section~\ref{sec:clustering}. The objective was to classify counties into either a high-risk or moderate-risk group using education and economic indicators engineered in Section~\ref{sec:feature_engineering}. Accurate classification enables proactive identification of at-risk regions, even when complete information is unavailable.
 
-\subsection{8.1 Classification Goals and Methodology}
+\subsection{Classification Goals and Methodology}
 A classification pipeline was developed to predict the binary cluster label (\texttt{High Risk} vs. \texttt{Moderate Risk}) using key features:
 \begin{itemize}
     \item \textbf{Features used:} Bachelor's Degree \%, High School Grad \%, Poverty Rate, Unemployment Rate, Education Gap, and Population
@@ -767,7 +767,7 @@ The following models were trained and compared:
     \item \textbf{K-Nearest Neighbors (KNN)}
 \end{itemize}
 
-\subsection{8.2 Model Training and Evaluation Results}
+\subsection{Model Training and Evaluation Results}
 All models demonstrated excellent accuracy, with the Decision Tree slightly outperforming others in both cross-validation and test accuracy.
 
 \begin{table}[H]
@@ -786,7 +786,7 @@ K-Nearest Neighbors & 0.987 ± 0.053 & 1.000 \\
 \end{table}
 \vspace{-1em}
 
-\subsection{8.3 Confusion Matrix and Performance Summary}
+\subsection{Confusion Matrix and Performance Summary}
 The Decision Tree achieved perfect classification performance on both training and testing data. The confusion matrix below shows all 23 test counties were classified correctly.
 
 \begin{figure}[H]
@@ -796,17 +796,17 @@ The Decision Tree achieved perfect classification performance on both training a
 \label{fig:confusion_matrix}
 \end{figure}
 
-\subsection{8.4 Feature Importance (Random Forest)}
+\subsection{Feature Importance (Random Forest)}
 The Random Forest model was used to estimate the relative importance of each input feature. Educational attainment variables, especially bachelor’s degree rate, emerged as the strongest predictors of vulnerability.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/feature_importance_rf.png}
+\includegraphics[width=0.85\textwidth]{}
 \caption{Random Forest Feature Importance: A more balanced distribution reveals that multiple features—including Education Gap, Poverty Rate, and Bachelor's Degree percentage—contribute meaningfully to classification.}
 \label{fig:feature_rf}
 \end{figure}
 
-\subsection{8.5 Visualizing the Decision Tree (Optional)}
+\subsection{Visualizing the Decision Tree (Optional)}
 A simplified version of the trained Decision Tree was also rendered to enhance interpretability. The structure confirms key splitting decisions were based on education and poverty thresholds. \\
 
 \begin{figure}[H]
@@ -819,6 +819,12 @@ A simplified version of the trained Decision Tree was also rendered to enhance i
 The strong performance of even simple models underscores the explanatory strength of the engineered features. This predictive capability is essential for building real-time dashboards, screening counties for program eligibility, or flagging emerging areas of need.
 The confusion matrix for the best-performing model, Random Forest, indicates strong overall predictive accuracy, with most counties correctly classified into their respective socioeconomic clusters. Misclassifications were limited and tended to occur between clusters with similar education or poverty profiles.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Capstone_Project_Report/images/final_confusion_matrix.png}
+\caption{Confusion Matrix – Best Classifier (Random Forest): Most cluster assignments are correctly predicted, as shown by strong diagonal alignment. Off-diagonal values indicate limited confusion between adjacent clusters.}
+\label{fig:confusion_matrix_rf}
+\end{figure}
 
 
 
