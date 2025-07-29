@@ -27,3 +27,52 @@
 2025-07-29 12:15:33,105 [INFO] POP → AR rows: 1275
 2025-07-29 12:15:33,174 [INFO] AR final dataset saved: ar_dataset_cleaned_2023.csv
 2025-07-29 12:15:33,186 [INFO] AR Final dataset saved: ar_final.csv
+2025-07-29 12:15:35,651 [INFO] Data dictionary saved to: ar_data_dictionary.csv
+2025-07-29 12:15:36,122 [INFO] Insight summaries saved to ar_outputs\figures\ar_insight_summaries.txt
+2025-07-29 12:15:36,159 [INFO] Saved profile: cleburne_profile.csv
+2025-07-29 12:15:36,160 [INFO] Saved profile: sharp_profile.csv
+2025-07-29 12:15:36,161 [INFO] Saved profile: van_buren_profile.csv
+2025-07-29 12:15:36,162 [INFO] Saved profile: fulton_profile.csv
+2025-07-29 12:15:36,163 [INFO] Saved profile: woodruff_profile.csv
+2025-07-29 12:15:36,165 [INFO] Saved profile: washington_profile.csv
+2025-07-29 12:15:36,166 [INFO] Saved profile: searcy_profile.csv
+2025-07-29 12:15:36,167 [INFO] Saved profile: baxter_profile.csv
+2025-07-29 12:15:36,168 [INFO] Saved profile: jackson_profile.csv
+2025-07-29 12:15:36,169 [INFO] Saved profile: benton_profile.csv
+2025-07-29 12:15:36,170 [INFO] Saved profile: izard_profile.csv
+2025-07-29 12:15:36,172 [INFO] Saved profile: white_profile.csv
+2025-07-29 12:15:36,173 [INFO] Saved profile: lee_profile.csv
+2025-07-29 12:15:36,174 [INFO] Saved profile: phillips_profile.csv
+2025-07-29 12:15:36,175 [INFO] Saved profile: calhoun_profile.csv
+2025-07-29 12:15:36,176 [INFO] Saved profile: stone_profile.csv
+2025-07-29 12:15:36,178 [INFO] Saved profile: pulaski_profile.csv
+2025-07-29 12:15:36,178 [INFO] Saved profile: independence_profile.csv
+2025-07-29 12:15:36,180 [INFO] Saved profile: marion_profile.csv
+2025-07-29 12:15:36,198 [INFO] Saved data table: ar_bachelorsdegreepct_by_county.csv
+2025-07-29 12:15:36,834 [INFO] Saved choropleth map: ar_bachelorsdegreepct_choropleth_map.png
+2025-07-29 12:15:36,836 [INFO] Saved data table: ar_highschoolgradpct_by_county.csv
+2025-07-29 12:15:37,507 [INFO] Saved choropleth map: ar_highschoolgradpct_choropleth_map.png
+2025-07-29 12:15:37,510 [INFO] Saved data table: ar_povertyrate_by_county.csv
+2025-07-29 12:15:38,144 [INFO] Saved choropleth map: ar_povertyrate_choropleth_map.png
+2025-07-29 12:15:38,146 [INFO] Saved data table: ar_unemploymentrate_by_county.csv
+2025-07-29 12:15:38,793 [INFO] Saved choropleth map: ar_unemploymentrate_choropleth_map.png
+2025-07-29 12:15:38,820 [INFO] Saved visualization data preview.
+2025-07-29 12:15:39,155 [INFO] Saved distribution plot: distribution_bachelorsdegreepct.png
+2025-07-29 12:15:39,409 [INFO] Saved distribution plot: distribution_highschoolgradpct.png
+2025-07-29 12:15:39,655 [INFO] Saved distribution plot: distribution_povertyrate.png
+2025-07-29 12:15:39,903 [INFO] Saved distribution plot: distribution_unemploymentrate.png
+2025-07-29 12:15:41,207 [INFO] Saved NCA comparison: nca_comparison_bachelorsdegreepct.png
+2025-07-29 12:15:42,946 [INFO] Saved NCA comparison: nca_comparison_highschoolgradpct.png
+2025-07-29 12:15:44,417 [INFO] Saved NCA comparison: nca_comparison_povertyrate.png
+2025-07-29 12:15:45,885 [INFO] Saved NCA comparison: nca_comparison_unemploymentrate.png
+2025-07-29 12:15:46,487 [INFO] Saved correlation heatmap: correlation_heatmap.png
+2025-07-29 12:15:46,724 [INFO] Saved outlier analysis: outliers_bachelorsdegreepct.png
+2025-07-29 12:15:46,899 [INFO] Saved outlier analysis: outliers_highschoolgradpct.png
+2025-07-29 12:15:47,067 [INFO] Saved outlier analysis: outliers_povertyrate.png
+2025-07-29 12:15:47,254 [INFO] Saved outlier analysis: outliers_unemploymentrate.png
+2025-07-29 12:15:47,318 [INFO] Saved summary statistics table.
+2025-07-29 12:15:47,331 [INFO] Working copy of final dataset saved.
+2025-07-29 12:15:47,429 [INFO] Section 5 enhanced feature engineering completed successfully.
+2025-07-29 12:15:51,404 [INFO] Section 6 advanced modeling completed successfully
+2025-07-29 12:16:01,252 [INFO] Created 75 records
+2025-07-29 12:16:01,259 [INFO] Section 7 advanced visualizations completed successfully
