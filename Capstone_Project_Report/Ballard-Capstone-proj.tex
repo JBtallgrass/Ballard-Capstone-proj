@@ -703,80 +703,121 @@ Izard      & 9.3  & 82.1 & 22.7 & 4.6 & 0.38 & 0.57 & 0.48 & 1 & 1 & 0 \\
 \vspace{-1em}
 \FloatBarrier
 
-\section{Clustering Analysis}
+\section{Clustering Analysis and Regional Risk Profiling}
 
-To uncover latent groupings of counties based on shared socio-economic characteristics, unsupervised learning was employed using the KMeans clustering algorithm. This method partitions observations into non-overlapping clusters by minimizing intra-cluster variance. The primary goal was to identify distinct regional profiles of educational and economic vulnerability across Arkansas.
+This section presents an unsupervised learning approach to identify latent risk profiles among Arkansas counties. By applying KMeans clustering to the engineered socioeconomic indicators from Section~\ref{sec:feature_engineering}, we uncovered two distinct groups of counties based on shared vulnerability characteristics.
 
-\subsection{Methodology and Feature Selection}
-The clustering process relied on scaled versions of the four core indicators: \texttt{BachelorsDegreePct}, \texttt{HighSchoolGradPct}, \texttt{PovertyRate}, and \texttt{UnemploymentRate}. Prior to modeling, all values were normalized to a 0--1 range using \texttt{MinMaxScaler}. A KMeans algorithm was initialized using \texttt{sklearn}'s implementation, with cluster range evaluated from $k = 2$ to $k = 10$.
+\subsection{Clustering Methodology}
+KMeans clustering was selected for its efficiency and interpretability in partitioning counties into discrete profiles. After evaluating silhouette scores, a value of $k=2$ was found to best capture the variance within the feature space.
 
-To determine the optimal number of clusters, both the Elbow Method and Silhouette Coefficient were calculated. The latter provides a score between $-1$ and $+1$ indicating how well-separated each point is from other clusters.
-
-\begin{lstlisting}[language=Python, caption={KMeans Clustering with Silhouette Evaluation}]
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-
-scores = []
-for k in range(2, 10):
-    model = KMeans(n_clusters=k, random_state=42)
-    model.fit(df_scaled)
-    score = silhouette_score(df_scaled, model.labels_)
-    scores.append((k, score))
-\end{lstlisting}
-
-\subsection{Cluster Evaluation and Selection}
-
-A silhouette analysis revealed that the optimal number of clusters was $k = 3$, balancing interpretability and model stability. Counties were assigned cluster labels using the fitted model, and summary statistics were computed for each group to support interpretation.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.75\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/clustering_evaluation.png}
-\caption{Silhouette Scores Across Cluster Values ($k$): A three-cluster model achieved the highest silhouette score, indicating well-defined groupings.}
-\label{fig:silhouette}
-\end{figure}
-\vspace{-1em}
-\FloatBarrier
-
-\subsection{Cluster Profiles and Map}
-Each cluster was profiled based on the mean values of its component counties. The results revealed three interpretable segments:
+The resulting clusters were defined as:
 \begin{itemize}
-  \item \textbf{Cluster 0 (High Vulnerability):} Low educational attainment, high poverty and unemployment
-  \item \textbf{Cluster 1 (Moderate Risk):} Mixed indicators with moderate education and economic pressures
-  \item \textbf{Cluster 2 (Low Vulnerability):} Higher educational attainment and lower economic distress
+  \item \textbf{Cluster 0:} \textit{Moderate Risk – Mixed Characteristics}
+  \item \textbf{Cluster 1:} \textit{High Risk – Low Education / High Poverty}
 \end{itemize}
 
-A choropleth map was generated to visualize the geographic distribution of clusters across Arkansas.
+Cluster assignments were merged with county metadata, and regional designations such as the North Central Arkansas (NCA) subset were retained for comparative analysis.
+
+\subsection{Cluster Interpretation and Visualization}
+To interpret the underlying structure of the clusters, a series of visualizations were created pairing education, poverty, unemployment, and population metrics. The pie chart summarizes the overall distribution of counties across the two clusters.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/arkansas_cluster_map_comprehensive.png}
-\caption{KMeans Cluster Assignments for Arkansas Counties ($k=3$): Cluster 0 counties (red) show higher structural vulnerability, while Cluster 2 counties (green) exhibit relative advantage.}
-\label{fig:kmeans_map}
+\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/comprehensive_cluster_analysis.png}
+\caption{Cluster Profiles: (Top Left) Bachelor's degree vs. poverty rate. (Top Right) Unemployment rate vs. education gap. (Bottom Left) Population vs. vulnerability score. (Bottom Right) Pie chart showing that 24\% of Arkansas counties fall into the High Risk cluster. NCA counties are marked with `X` to observe regional concentration.}
+\label{fig:cluster_profiles}
 \end{figure}
-\vspace{-1em}
-\FloatBarrier
 
-\subsection{Cluster Summary Statistics}
-Summary statistics were generated for each cluster to provide descriptive insights into their defining characteristics.
+\subsection{ Geographic Implications}
+The clustering analysis revealed that the High Risk cluster disproportionately contains counties from the Mississippi Delta and portions of NCA. These counties exhibit a combination of low educational attainment and high poverty, aligning with broader patterns of structural disadvantage.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth, trim=10 40 10 60, clip]{Capstone_Project_Report/images/maps/arkansas_cluster_map_comprehensive.png}
+\caption{Geographic Distribution of Clusters: Counties in yellow are classified as \textit{High Risk – Low Education / High Poverty}, while teal counties fall into the \textit{Moderate Risk} cluster. North Central Arkansas counties are outlined in red, showing overlap with the higher-risk group.}
+\label{fig:cluster_map}
+\end{figure}
+
+\subsection{Policy-Relevant Insights}
+The clusters offer a data-driven framework for targeting educational and economic support:
+\begin{itemize}
+  \item High Risk counties could be prioritized for grant funding, programmatic intervention, or workforce development investment.
+  \item Moderate Risk counties, while more variable, may benefit from tailored monitoring or preventive measures before slipping into higher vulnerability.
+\end{itemize}
+
+These insights provide a foundation for predictive modeling in the following section, where cluster membership serves as a target variable for supervised learning.
+
+\section{8 Classification and Predictive Modeling}
+
+This section explores supervised machine learning approaches to predict county vulnerability based on the clusters derived in Section~\ref{sec:clustering}. The objective was to classify counties into either a high-risk or moderate-risk group using education and economic indicators engineered in Section~\ref{sec:feature_engineering}. Accurate classification enables proactive identification of at-risk regions, even when complete information is unavailable.
+
+\subsection{8.1 Classification Goals and Methodology}
+A classification pipeline was developed to predict the binary cluster label (\texttt{High Risk} vs. \texttt{Moderate Risk}) using key features:
+\begin{itemize}
+    \item \textbf{Features used:} Bachelor's Degree \%, High School Grad \%, Poverty Rate, Unemployment Rate, Education Gap, and Population
+    \item \textbf{Target:} Cluster assignment (1 = High Risk; 0 = Moderate Risk)
+    \item \textbf{Split:} 70\% training, 30\% testing (52 train / 23 test counties)
+    \item \textbf{Validation:} 5-fold cross-validation
+\end{itemize}
+
+The following models were trained and compared:
+\begin{itemize}
+    \item \textbf{Random Forest Classifier}
+    \item \textbf{Decision Tree Classifier}
+    \item \textbf{K-Nearest Neighbors (KNN)}
+\end{itemize}
+
+\subsection{8.2 Model Training and Evaluation Results}
+All models demonstrated excellent accuracy, with the Decision Tree slightly outperforming others in both cross-validation and test accuracy.
 
 \begin{table}[H]
 \centering
-\caption{Cluster Means by Key Indicators}
-\label{tab:cluster_summary}
-\small
-\begin{tabularx}{\textwidth}{l *{4}{>{\centering\arraybackslash}X}}
+\caption{Classification Accuracy Across Models}
+\label{tab:model_accuracy}
+\begin{tabularx}{\textwidth}{l *{2}{>{\centering\arraybackslash}X}}
 \toprule
-\textbf{Cluster} & \textbf{Bachelors\%} & \textbf{Poverty\%} & \textbf{Unemp\%} & \textbf{Population} \\
+\textbf{Model} & \textbf{Cross-Validation Accuracy (mean ± std)} & \textbf{Test Accuracy} \\
 \midrule
-Cluster 0 (High Risk) & 10.5 & 26.1 & 5.9 & 12,500 \\
-Cluster 1 (Mid Risk)  & 16.1 & 17.8 & 4.1 & 24,000 \\
-Cluster 2 (Low Risk)  & 22.4 & 12.3 & 3.2 & 44,000 \\
+Random Forest & 0.973 ± 0.107 & 1.000 \\
+Decision Tree & 1.000 ± 0.000 & 1.000 \\
+K-Nearest Neighbors & 0.987 ± 0.053 & 1.000 \\
 \bottomrule
 \end{tabularx}
 \end{table}
+\vspace{-1em}
 
-These clusters formed the basis for supervised classification modeling in the next section, enabling prediction of county-level vulnerability categories from known features.
+\subsection{8.3 Confusion Matrix and Performance Summary}
+The Decision Tree achieved perfect classification performance on both training and testing data. The confusion matrix below shows all 23 test counties were classified correctly.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth, trim=10 10 10 10, clip]{Capstone_Project_Report/images/maps/final_confusion_matrix.png}
+\caption{Confusion Matrix for Decision Tree Classifier: Zero misclassifications observed.}
+\label{fig:confusion_matrix}
+\end{figure}
+
+\subsection{8.4 Feature Importance (Random Forest)}
+The Random Forest model was used to estimate the relative importance of each input feature. Educational attainment variables, especially bachelor’s degree rate, emerged as the strongest predictors of vulnerability.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/feature_importance_rf.png}
+\caption{Random Forest Feature Importance: A more balanced distribution reveals that multiple features—including Education Gap, Poverty Rate, and Bachelor's Degree percentage—contribute meaningfully to classification.}
+\label{fig:feature_rf}
+\end{figure}
+
+\subsection{8.5 Visualizing the Decision Tree (Optional)}
+A simplified version of the trained Decision Tree was also rendered to enhance interpretability. The structure confirms key splitting decisions were based on education and poverty thresholds. \\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth, trim=10 10 10 10, clip]{Capstone_Project_Report/images/maps/images_feature_importance_analysis.png}
+\caption{Feature Importance from Decision Tree Classifier: Educational features dominate predictive power.}
+\label{fig:rf_feature_importance}
+\end{figure}
+
+The strong performance of even simple models underscores the explanatory strength of the engineered features. This predictive capability is essential for building real-time dashboards, screening counties for program eligibility, or flagging emerging areas of need.
+The confusion matrix for the best-performing model, Random Forest, indicates strong overall predictive accuracy, with most counties correctly classified into their respective socioeconomic clusters. Misclassifications were limited and tended to occur between clusters with similar education or poverty profiles.
 
 
 
