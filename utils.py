@@ -284,6 +284,40 @@ def export_to_latex_assets(src_folder, dst_root="Capstone_Project_Report/images"
         'destination': dst_root
     }
 
+def load_arkansas_population_from_estimates(pop_file):
+    """
+    Load and return Arkansas county-level population data from a national Census CSV.
+
+    Parameters:
+        pop_file (Path or str): Path to the national PopulationEstimates.csv file
+
+    Returns:
+        DataFrame with ['GEOID', 'Population'] for Arkansas counties only
+    """
+    import pandas as pd
+
+    df = pd.read_csv(pop_file, encoding='cp1252', low_memory=False)
+    df.columns = df.columns.str.strip()
+
+    print("✅ Cleaned population file columns:", list(df.columns))
+    print("🧪 Unique 'Attribute' values:", df['Attribute'].unique())
+
+    # Try to select POP_ESTIMATE_2023, or fallback to any available estimate
+    if 'POP_ESTIMATE_2023' in df['Attribute'].str.upper().unique():
+        df = df[df['Attribute'].str.upper() == 'POP_ESTIMATE_2023'].copy()
+    else:
+        fallback_attr = df['Attribute'].iloc[0]
+        print(f"⚠️ Falling back to first available attribute: {fallback_attr}")
+        df = df[df['Attribute'] == fallback_attr].copy()
+
+    # Rename and clean
+    df = df.rename(columns={'FIPStxt': 'GEOID', 'Value': 'Population'})
+    df['GEOID'] = df['GEOID'].astype(str).str.zfill(5)
+    df['Population'] = pd.to_numeric(df['Population'], errors='coerce')
+
+    # Keep Arkansas counties only (GEOID starts with '05')
+    df = df[df['GEOID'].str.startswith('05')].copy()
+
 
 # --- Confirmation Log ---
 logging.info("Utility functions loaded from updated utils.py")
