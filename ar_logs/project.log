@@ -1,23 +1,22 @@
-2025-07-29 17:39:41,364 [INFO] Utility functions loaded from updated utils.py
-2025-07-29 17:39:41,483 [INFO]  edu columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:41,990 [WARNING] edu has duplicate county-attribute pairs.
-2025-07-29 17:39:41,990 [INFO] Loaded Education2023.csv: 169245 rows
-2025-07-29 17:39:42,116 [INFO]  pop columns after cleaning: ['fipstxt', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:42,602 [WARNING] pop has duplicate county-attribute pairs.
-2025-07-29 17:39:42,603 [INFO] Loaded PopulationEstimates.csv: 205108 rows
-2025-07-29 17:39:42,641 [INFO]  poverty columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:42,808 [WARNING] poverty has duplicate county-attribute pairs.
-2025-07-29 17:39:42,809 [INFO] Loaded Poverty2023.csv: 79961 rows
-2025-07-29 17:39:43,009 [INFO]  unemp columns after cleaning: ['fips_code', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:43,709 [INFO] Loaded Unemployment2023.csv: 324636 rows
-2025-07-29 17:39:43,710 [INFO] Utility functions from utils.py loaded successfully.
-2025-07-29 17:39:43,866 [INFO] edu columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:44,317 [WARNING] edu has duplicate county-attribute pairs.
-2025-07-29 17:39:44,317 [INFO] Loaded and processed Education2023.csv with year filter: N/A
-2025-07-29 17:39:44,445 [INFO] pop columns after cleaning: ['fipstxt', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:44,852 [WARNING] pop has duplicate county-attribute pairs.
-2025-07-29 17:39:44,853 [INFO] Loaded and processed PopulationEstimates.csv with year filter: 2023
-2025-07-29 17:39:44,897 [INFO] poverty columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
-2025-07-29 17:39:45,045 [WARNING] poverty has duplicate county-attribute pairs.
-2025-07-29 17:39:45,046 [INFO] Loaded and processed Poverty2023.csv with year filter: 2023
-2025-07-29 17:39:45,167 [INFO] unemp columns after cleaning: ['fips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:44,967 [INFO]  edu columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:45,397 [WARNING] edu has duplicate county-attribute pairs.
+2025-07-29 17:51:45,397 [INFO] Loaded Education2023.csv: 169245 rows
+2025-07-29 17:51:45,486 [INFO]  pop columns after cleaning: ['fipstxt', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:45,837 [WARNING] pop has duplicate county-attribute pairs.
+2025-07-29 17:51:45,838 [INFO] Loaded PopulationEstimates.csv: 205108 rows
+2025-07-29 17:51:45,869 [INFO]  poverty columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:45,996 [WARNING] poverty has duplicate county-attribute pairs.
+2025-07-29 17:51:45,997 [INFO] Loaded Poverty2023.csv: 79961 rows
+2025-07-29 17:51:46,132 [INFO]  unemp columns after cleaning: ['fips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:46,747 [INFO] Loaded Unemployment2023.csv: 324636 rows
+2025-07-29 17:51:46,748 [INFO] Utility functions from utils.py loaded successfully.
+2025-07-29 17:51:46,912 [INFO] edu columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:47,316 [WARNING] edu has duplicate county-attribute pairs.
+2025-07-29 17:51:47,317 [INFO] Loaded and processed Education2023.csv with year filter: N/A
+2025-07-29 17:51:47,434 [INFO] pop columns after cleaning: ['fipstxt', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:47,859 [WARNING] pop has duplicate county-attribute pairs.
+2025-07-29 17:51:47,860 [INFO] Loaded and processed PopulationEstimates.csv with year filter: 2023
+2025-07-29 17:51:47,902 [INFO] poverty columns after cleaning: ['ïfips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:48,037 [WARNING] poverty has duplicate county-attribute pairs.
+2025-07-29 17:51:48,038 [INFO] Loaded and processed Poverty2023.csv with year filter: 2023
+2025-07-29 17:51:48,179 [INFO] unemp columns after cleaning: ['fips_code', 'state', 'area_name', 'attribute', 'value']
