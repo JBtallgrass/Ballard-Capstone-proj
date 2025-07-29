@@ -20,3 +20,60 @@
 2025-07-29 17:51:48,037 [WARNING] poverty has duplicate county-attribute pairs.
 2025-07-29 17:51:48,038 [INFO] Loaded and processed Poverty2023.csv with year filter: 2023
 2025-07-29 17:51:48,179 [INFO] unemp columns after cleaning: ['fips_code', 'state', 'area_name', 'attribute', 'value']
+2025-07-29 17:51:48,856 [INFO] Loaded and processed Unemployment2023.csv with year filter: 2023
+2025-07-29 17:51:48,915 [INFO] EDU → AR rows: 3948
+2025-07-29 17:51:48,920 [INFO] POVERTY → AR rows: 457
+2025-07-29 17:51:48,926 [INFO] UNEMP → AR rows: 450
+2025-07-29 17:51:49,012 [INFO] POP → AR rows: 1275
+2025-07-29 17:51:49,034 [INFO] AR final dataset saved: ar_dataset_cleaned_2023.csv
+2025-07-29 17:51:49,043 [INFO] AR Final dataset saved: ar_final.csv
+2025-07-29 17:51:51,558 [INFO] Data dictionary saved to: ar_data_dictionary.csv
+2025-07-29 17:51:51,928 [INFO] Insight summaries saved to ar_outputs\figures\ar_insight_summaries.txt
+2025-07-29 17:51:51,939 [INFO] Saved profile: izard_profile.csv
+2025-07-29 17:51:51,940 [INFO] Saved profile: stone_profile.csv
+2025-07-29 17:51:51,941 [INFO] Saved profile: independence_profile.csv
+2025-07-29 17:51:51,943 [INFO] Saved profile: jackson_profile.csv
+2025-07-29 17:51:51,944 [INFO] Saved profile: white_profile.csv
+2025-07-29 17:51:51,945 [INFO] Saved profile: baxter_profile.csv
+2025-07-29 17:51:51,946 [INFO] Saved profile: phillips_profile.csv
+2025-07-29 17:51:51,948 [INFO] Saved profile: calhoun_profile.csv
+2025-07-29 17:51:51,950 [INFO] Saved profile: woodruff_profile.csv
+2025-07-29 17:51:51,951 [INFO] Saved profile: pulaski_profile.csv
+2025-07-29 17:51:51,957 [INFO] Saved profile: van_buren_profile.csv
+2025-07-29 17:51:51,958 [INFO] Saved profile: fulton_profile.csv
+2025-07-29 17:51:51,959 [INFO] Saved profile: sharp_profile.csv
+2025-07-29 17:51:51,960 [INFO] Saved profile: washington_profile.csv
+2025-07-29 17:51:51,961 [INFO] Saved profile: cleburne_profile.csv
+2025-07-29 17:51:51,963 [INFO] Saved profile: marion_profile.csv
+2025-07-29 17:51:51,964 [INFO] Saved profile: lee_profile.csv
+2025-07-29 17:51:51,965 [INFO] Saved profile: searcy_profile.csv
+2025-07-29 17:51:51,967 [INFO] Saved profile: benton_profile.csv
+2025-07-29 17:51:51,987 [INFO] Saved data table: ar_bachelorsdegreepct_by_county.csv
+2025-07-29 17:51:52,648 [INFO] Saved choropleth map: ar_bachelorsdegreepct_choropleth_map.png
+2025-07-29 17:51:52,651 [INFO] Saved data table: ar_highschoolgradpct_by_county.csv
+2025-07-29 17:51:53,244 [INFO] Saved choropleth map: ar_highschoolgradpct_choropleth_map.png
+2025-07-29 17:51:53,245 [INFO] Saved data table: ar_povertyrate_by_county.csv
+2025-07-29 17:51:53,869 [INFO] Saved choropleth map: ar_povertyrate_choropleth_map.png
+2025-07-29 17:51:53,871 [INFO] Saved data table: ar_unemploymentrate_by_county.csv
+2025-07-29 17:51:54,487 [INFO] Saved choropleth map: ar_unemploymentrate_choropleth_map.png
+2025-07-29 17:51:54,502 [INFO] Saved visualization data preview.
+2025-07-29 17:51:54,761 [INFO] Saved distribution plot: distribution_bachelorsdegreepct.png
+2025-07-29 17:51:55,034 [INFO] Saved distribution plot: distribution_highschoolgradpct.png
+2025-07-29 17:51:55,278 [INFO] Saved distribution plot: distribution_povertyrate.png
+2025-07-29 17:51:55,521 [INFO] Saved distribution plot: distribution_unemploymentrate.png
+2025-07-29 17:51:56,767 [INFO] Saved NCA comparison: nca_comparison_bachelorsdegreepct.png
+2025-07-29 17:51:58,767 [INFO] Saved NCA comparison: nca_comparison_highschoolgradpct.png
+2025-07-29 17:52:00,117 [INFO] Saved NCA comparison: nca_comparison_povertyrate.png
+2025-07-29 17:52:01,500 [INFO] Saved NCA comparison: nca_comparison_unemploymentrate.png
+2025-07-29 17:52:02,173 [INFO] Saved correlation heatmap: correlation_heatmap.png
+2025-07-29 17:52:02,464 [INFO] Saved outlier analysis: outliers_bachelorsdegreepct.png
+2025-07-29 17:52:02,635 [INFO] Saved outlier analysis: outliers_highschoolgradpct.png
+2025-07-29 17:52:02,812 [INFO] Saved outlier analysis: outliers_povertyrate.png
+2025-07-29 17:52:02,998 [INFO] Saved outlier analysis: outliers_unemploymentrate.png
+2025-07-29 17:52:03,070 [INFO] Saved summary statistics table.
+2025-07-29 17:52:03,088 [INFO] Working copy of final dataset saved.
+2025-07-29 17:52:03,227 [INFO] Section 5 enhanced feature engineering completed successfully.
+2025-07-29 17:52:06,959 [INFO] Section 6 advanced modeling completed successfully
+2025-07-29 17:52:17,107 [INFO] Created 75 records
+2025-07-29 17:52:17,120 [INFO] Section 7 advanced visualizations completed successfully
+2025-07-29 17:52:20,560 [INFO] Full project analysis pipeline completed successfully
