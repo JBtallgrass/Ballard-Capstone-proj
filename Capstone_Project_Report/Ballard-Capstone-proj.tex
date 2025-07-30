@@ -1,5 +1,6 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass{llncs}
+\usepackage{pdflscape}
 \DeclareUnicodeCharacter{05F3}{}
 \usepackage{tcolorbox}
 % ==================== GEOMETRY AND SPACING FIXES ====================
@@ -85,6 +86,7 @@
 \captionsetup{compatibility=false}
 \usepackage{caption}
 \captionsetup{compatibility=false}
+\usepackage[compatibility=false]{caption}
 \begin{document}
 
 \maketitle
@@ -524,14 +526,14 @@ To complement the univariate distribution analysis, this section explores region
 \centering
 \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
+    \includegraphics[width=\linewidth]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
     \caption{Bivariate Comparison of Bachelor's Degree Attainment: NCA counties (in blue) generally fall below the state average in four-year degree attainment, reinforcing the regional gap in higher education credentials.}
     \label{fig:nca_biv_bachelors}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_highschoolgradpct.png}
+    \includegraphics[width=\linewidth]{Capstone_Project_Report/images/maps/nca_comparison_highschoolgradpct.png}
     \caption{Bivariate Comparison of High School Graduation Rates: Graduation percentages in NCA counties (in green) are mixed, with most falling slightly below the statewide norm.}
     \label{fig:nca_biv_highschoolgrad}
 \end{minipage}
@@ -541,14 +543,14 @@ To complement the univariate distribution analysis, this section explores region
 \centering
 \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
+    \includegraphics[width=\linewidth]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
     \caption{Bivariate Comparison of Poverty Rates: NCA counties (in red) consistently appear above the state trendline, suggesting elevated economic burden relative to comparable rural regions.}
     \label{fig:nca_biv_poverty}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_unemploymentrate.png}
+    \includegraphics[width=\linewidth]{Capstone_Project_Report/images/maps/nca_comparison_unemploymentrate.png}
     \caption{Bivariate Comparison of Unemployment Rates: NCA counties (in orange) largely align with statewide averages, though a few outliers indicate localized labor challenges.}
     \label{fig:nca_biv_unemployment}
 \end{minipage}
@@ -557,22 +559,25 @@ To complement the univariate distribution analysis, this section explores region
 \vspace{-1em}
 \FloatBarrier
 
-\subsubsection{5.2.6 Correlation Analysis}
+\subsubsection{5.2.5 Correlation Analysis}
 
 To explore interdependencies among the core socioeconomic indicators, a Pearson correlation matrix was constructed. This analysis provides insight into the direction and strength of linear relationships between variables, which is particularly useful for identifying multicollinearity risks and informing feature selection for predictive modeling.
 
 The matrix reveals a strong negative correlation between educational attainment and poverty rate, suggesting that counties with higher levels of education tend to experience lower poverty. Additionally, a moderate inverse relationship was observed between educational attainment and unemployment rate, while poverty and unemployment were positively correlated—indicating that economically distressed counties often experience overlapping challenges.
 
+\vspace{-1em}
+\FloatBarrier
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth, trim=20 30 20 60, clip]{Capstone_Project_Report/images/maps/images_correlation_heatmap.png}
+\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/images_correlation_heatmap.png}
 \caption{Correlation Matrix of Core Variables: Higher levels of education are strongly associated with lower poverty, and moderately with lower unemployment. Poverty and unemployment are positively correlated.}
 \label{fig:correlation}
 \end{figure}
-\vspace{-2em}
+\vspace{-1em}
 \FloatBarrier
 
-\subsubsection{5.2.8 Summary of Exploratory Findings and Regional Comparison}
+
+\subsubsection{5.2.6 Summary of Exploratory Findings and Regional Comparison}
 
 The exploratory analysis revealed substantial variation in educational attainment, poverty, and unemployment rates across Arkansas counties. Most counties reported relatively high high school graduation rates, though a small number—such as Calhoun and Woodruff counties—emerged as strong positive outliers with exceptionally high attainment levels (Figure~\ref{fig:outliers_highschoolgrad}). These counties appear to have invested significantly in secondary education or benefited from localized educational resources.
 
@@ -586,34 +591,34 @@ However, the relatively small size of the NCA subgroup may limit statistical pow
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/images_outliers_highschoolgradpct.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/images_outliers_highschoolgradpct.png}
 \caption{Outlier Analysis: High School Graduation Rate. Calhoun and Woodruff counties exhibit exceptionally high values compared to statewide distribution.}
 \label{fig:outliers_highschoolgrad}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/images_outliers_bachelorsdegreepct.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/images_outliers_bachelorsdegreepct.png}
 \caption{Outlier Analysis: Bachelor's Degree Attainment. Calhoun and Woodruff again stand out, indicating unusually strong postsecondary education outcomes.}
 \label{fig:outliers_bachelors}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/images_outliers_povertyrate.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/images_outliers_povertyrate.png}
 \caption{Outlier Analysis: Poverty Rate. Chicot, St. Francis, and Lee counties exhibit extreme poverty rates, flagging deep economic distress.}
 \label{fig:outliers_poverty}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/images_outliers_unemploymentrate.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/images_outliers_unemploymentrate.png}
 \caption{Outlier Analysis: Unemployment Rate. Chicot, Ashley, and Phillips counties are significant outliers, suggesting ongoing labor market challenges.}
 \label{fig:outliers_unemployment}
 \end{figure}
 
 
-\subsubsection{5.2.8 Summary of Exploratory Findings and Regional Comparison}
+\subsubsection{5.2.7 Summary of Exploratory Findings and Regional Comparison}
 
 The exploratory analysis revealed substantial variation in educational attainment, poverty, and unemployment rates across Arkansas counties. While most counties demonstrated low levels of bachelor’s degree attainment, high school graduation rates were generally higher and more tightly distributed. Poverty and unemployment rates were moderately right-skewed, with several counties exceeding nationally recognized thresholds for economic distress.
 
@@ -721,7 +726,7 @@ Visualizing the Vulnerability-index as a choropleth map (Figure~\ref{fig:vulnera
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/maps_arkansas_vulnerability_heatmap.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/maps_arkansas_vulnerability_heatmap.png}
 \caption{Composite Vulnerability Heatmap: Counties with high scores represent overlapping economic and educational need, signaling priority targets for intervention.}
 \label{fig:vulnerability_heatmap}
 \end{figure}
@@ -754,7 +759,7 @@ The model's feature importance output revealed that educational attainment—par
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/feature_importance_rf.png}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/feature_importance_rf.png}
 \caption{Feature Importance from Random Forest Classifier: Educational indicators outperform other variables in predicting vulnerable counties.}
 \label{fig:feature_importance_rf}
 \end{figure}
@@ -919,7 +924,7 @@ In the following section, we explore whether these cluster assignments can be re
 
 \section{Classification and Predictive Modeling} \label{sec:classification}
 
-Building on the unsupervised clustering results from Section~\ref{sec:clustering}, this section applies supervised machine learning techniques to predict county-level vulnerability. The goal is to train models that can accurately classify counties into either a High Risk or Moderate Risk group using the socioeconomic indicators engineered in Section~\ref{sec:feature_engineering}. These models allow for proactive identification of at-risk regions—even when complete data or prior cluster labels are unavailable—offering valuable tools for screening, resource planning, and policy targeting.
+Building on the unsupervised clustering results from Section~\ref{sec:modeling}, this section applies supervised machine learning techniques to predict county-level vulnerability. The goal is to train models that can accurately classify counties into either a High Risk or Moderate Risk group using the socioeconomic indicators engineered in Section~\ref{sec:feature_engineering}. These models allow for proactive identification of at-risk regions—even when complete data or prior cluster labels are unavailable—offering valuable tools for screening, resource planning, and policy targeting.
 
 By framing the cluster assignments as ground-truth labels, the classification task becomes a binary prediction problem. This enables the use of well-established supervised learning methods, such as decision trees, random forests, and k-nearest neighbors, to evaluate the predictive power of educational attainment, poverty, unemployment, and demographic indicators. The analysis focuses not only on model accuracy, but also on interpretability and generalizability, ensuring that the resulting classifiers are suitable for practical use in regional decision-making contexts.
 
@@ -995,7 +1000,7 @@ The Decision Tree classifier achieved perfect classification on both the trainin
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth, trim=10 10 10 10, clip]{Capstone_Project_Report/images/maps/final_confusion_matrix.png}
+\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/final_confusion_matrix.png}
 \caption{Confusion Matrix for Decision Tree Classifier: Zero misclassifications observed.}
 \label{fig:confusion_matrix}
 \end{figure}
@@ -1010,7 +1015,7 @@ The next subsection further investigates model behavior by analyzing feature imp
 
 To enhance interpretability and support practical deployment, both a simplified Decision Tree and a feature importance analysis from the Random Forest model were generated. These visualizations offer insight into how classification decisions are made and which variables drive those decisions.
 
-Figure~\ref{fig:tree_structure} presents a simplified visualization of the trained Decision Tree classifier. The diagram confirms that key splitting decisions are based on education and poverty thresholds—most notably the percentage of adults with a bachelor's degree and the poverty rate. This structure mirrors the exploratory insights from earlier sections, demonstrating that counties with low educational attainment and high poverty are consistently flagged as high risk. The tree’s transparency and rule-based logic make it particularly well suited for policy-facing applications where decision-making rationale must be clearly communicated to stakeholders.
+Figure~\ref{fig:decisiontreediagram} presents a simplified visualization of the trained Decision Tree classifier. The diagram confirms that key splitting decisions are based on education and poverty thresholds—most notably the percentage of adults with a bachelor's degree and the poverty rate. This structure mirrors the exploratory insights from earlier sections, demonstrating that counties with low educational attainment and high poverty are consistently flagged as high risk. The tree’s transparency and rule-based logic make it particularly well suited for policy-facing applications where decision-making rationale must be clearly communicated to stakeholders.
 
 Complementing the Decision Tree, Figure~\ref{fig:rf_feature_importance} displays the feature importance rankings derived from the Random Forest classifier. Although ensemble models are less interpretable, they often produce more stable importance estimates. The Random Forest results confirm the dominant role of educational attainment variables, with bachelor’s degree percentage emerging as the most influential predictor, followed by education gap and poverty rate. This broader distribution of contributing features suggests that the classification task benefits from multiple, reinforcing signals of vulnerability.
 
@@ -1261,7 +1266,7 @@ The Cross-Industry Standard Process for Data Mining (CRISP-DM) is a robust, doma
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/workflow_pipeline_diagram.png}
+%\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/workflow_pipeline_diagram.png}
 \caption{Workflow Diagram: End-to-end analytic pipeline used in this project, following the CRISP-DM framework.}
 \label{fig:workflow_diagram}
 \end{figure}
@@ -1288,35 +1293,34 @@ Cleburne & 14.1 & 17.6 & 3.8 & 24,711 \\
 \bottomrule
 \end{longtable}
 
-\appendix
 \section{Full-Scale Bivariate Visualizations}
 
 This appendix presents full-scale versions of the four bivariate visualizations discussed in Section~\ref{subsec:regional_highlights}. These graphics compare county-level metrics across Arkansas, with particular attention to counties in North Central Arkansas (NCA), which are visually highlighted for regional comparison.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
 \caption{Bivariate Comparison of Educational Attainment: This figure highlights bachelor’s degree attainment across all Arkansas counties, with NCA counties marked distinctly. The visual emphasizes the persistent educational attainment gap faced by rural regions such as North Central Arkansas, where the proportion of residents with bachelor’s degrees tends to fall well below the state average.}
 \label{fig:appendix_bachelors}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_vulnerabilityscore.png}
-\caption{Bivariate Comparison of Composite Vulnerability Scores: This visualization displays the modeled structural vulnerability score across counties. North Central Arkansas counties appear in the mid-to-high range, reflecting cumulative disadvantage across multiple dimensions including education, poverty, and labor market engagement.}
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/maps/images_nca_comparison_highschoolgradpct.png}
+\caption{Bivariate Comparison of High School Graduation Rates: Graduation percentages in NCA counties (in green) are mixed, with most falling slightly below the statewide norm..}
 \label{fig:appendix_vulnerability}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
 \caption{Bivariate Comparison of Poverty Rates: Several counties in North Central Arkansas appear above the trendline for poverty, suggesting elevated economic burden relative to similarly structured counties. This visualization reinforces the relationship between limited educational access and persistent poverty within the region.}
 \label{fig:appendix_poverty}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_unemploymentrate.png}
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/maps/nca_comparison_unemploymentrate.png}
 \caption{Bivariate Comparison of Unemployment Rates: While the majority of NCA counties align with the state average in unemployment, a few exhibit elevated levels that may signal localized labor market challenges. This figure supports the case for further investigation into county-specific employment dynamics.}
 \label{fig:appendix_unemployment}
 \end{figure}
@@ -1324,8 +1328,19 @@ This appendix presents full-scale versions of the four bivariate visualizations 
 
 
 
+\section*{Appendix F: Arkansas County Profiles}
+\addcontentsline{toc}{section}{Appendix F: Arkansas County Profiles}
+\label{appendix:county_indicators}
 
-\bibliographystyle{plainnat}
-\bibliography{references}
+\begin{landscape}
+\input{Capstone_Project_Report/images/tables/ar_county_indicators_table.tex}
+\end{landscape}
+
+
+
+
+
+
+
 
 \end{document}
