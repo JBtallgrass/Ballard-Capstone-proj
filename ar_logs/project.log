@@ -28,3 +28,53 @@
 2025-07-30 15:30:37,442 [INFO] POP → AR rows: 1275
 2025-07-30 15:30:37,459 [INFO] AR final dataset saved: ar_dataset_cleaned_2023.csv
 2025-07-30 15:30:37,476 [INFO] AR Final dataset saved: ar_final.csv
+2025-07-30 15:30:40,411 [INFO] Data dictionary saved to: ar_data_dictionary.csv
+2025-07-30 15:30:40,784 [INFO] Insight summaries saved to ar_outputs\figures\ar_insight_summaries.txt
+2025-07-30 15:30:40,822 [INFO] Saved profile: searcy_profile.csv
+2025-07-30 15:30:40,824 [INFO] Saved profile: calhoun_profile.csv
+2025-07-30 15:30:40,826 [INFO] Saved profile: woodruff_profile.csv
+2025-07-30 15:30:40,827 [INFO] Saved profile: cleburne_profile.csv
+2025-07-30 15:30:40,829 [INFO] Saved profile: lee_profile.csv
+2025-07-30 15:30:40,830 [INFO] Saved profile: white_profile.csv
+2025-07-30 15:30:40,831 [INFO] Saved profile: stone_profile.csv
+2025-07-30 15:30:40,832 [INFO] Saved profile: jackson_profile.csv
+2025-07-30 15:30:40,834 [INFO] Saved profile: baxter_profile.csv
+2025-07-30 15:30:40,835 [INFO] Saved profile: van_buren_profile.csv
+2025-07-30 15:30:40,836 [INFO] Saved profile: pulaski_profile.csv
+2025-07-30 15:30:40,838 [INFO] Saved profile: benton_profile.csv
+2025-07-30 15:30:40,839 [INFO] Saved profile: marion_profile.csv
+2025-07-30 15:30:40,840 [INFO] Saved profile: izard_profile.csv
+2025-07-30 15:30:40,841 [INFO] Saved profile: independence_profile.csv
+2025-07-30 15:30:40,842 [INFO] Saved profile: sharp_profile.csv
+2025-07-30 15:30:40,843 [INFO] Saved profile: phillips_profile.csv
+2025-07-30 15:30:40,844 [INFO] Saved profile: washington_profile.csv
+2025-07-30 15:30:40,846 [INFO] Saved profile: fulton_profile.csv
+2025-07-30 15:30:40,856 [INFO] Saved data table: ar_bachelorsdegreepct_by_county.csv
+2025-07-30 15:30:41,493 [INFO] Saved choropleth map: ar_bachelorsdegreepct_choropleth_map.png
+2025-07-30 15:30:41,499 [INFO] Saved data table: ar_highschoolgradpct_by_county.csv
+2025-07-30 15:30:42,083 [INFO] Saved choropleth map: ar_highschoolgradpct_choropleth_map.png
+2025-07-30 15:30:42,085 [INFO] Saved data table: ar_povertyrate_by_county.csv
+2025-07-30 15:30:42,732 [INFO] Saved choropleth map: ar_povertyrate_choropleth_map.png
+2025-07-30 15:30:42,735 [INFO] Saved data table: ar_unemploymentrate_by_county.csv
+2025-07-30 15:30:43,543 [INFO] Saved choropleth map: ar_unemploymentrate_choropleth_map.png
+2025-07-30 15:30:43,558 [INFO] Saved visualization data preview.
+2025-07-30 15:30:43,823 [INFO] Saved distribution plot: distribution_bachelorsdegreepct.png
+2025-07-30 15:30:44,065 [INFO] Saved distribution plot: distribution_highschoolgradpct.png
+2025-07-30 15:30:44,309 [INFO] Saved distribution plot: distribution_povertyrate.png
+2025-07-30 15:30:44,549 [INFO] Saved distribution plot: distribution_unemploymentrate.png
+2025-07-30 15:30:45,848 [INFO] Saved NCA comparison: nca_comparison_bachelorsdegreepct.png
+2025-07-30 15:30:47,476 [INFO] Saved NCA comparison: nca_comparison_highschoolgradpct.png
+2025-07-30 15:30:49,190 [INFO] Saved NCA comparison: nca_comparison_povertyrate.png
+2025-07-30 15:30:50,622 [INFO] Saved NCA comparison: nca_comparison_unemploymentrate.png
+2025-07-30 15:30:51,435 [INFO] Saved correlation heatmap: correlation_heatmap.png
+2025-07-30 15:30:51,652 [INFO] Saved outlier analysis: outliers_bachelorsdegreepct.png
+2025-07-30 15:30:51,816 [INFO] Saved outlier analysis: outliers_highschoolgradpct.png
+2025-07-30 15:30:51,995 [INFO] Saved outlier analysis: outliers_povertyrate.png
+2025-07-30 15:30:52,175 [INFO] Saved outlier analysis: outliers_unemploymentrate.png
+2025-07-30 15:30:52,228 [INFO] Saved summary statistics table.
+2025-07-30 15:30:52,252 [INFO] Working copy of final dataset saved.
+2025-07-30 15:30:52,356 [INFO] Section 5 enhanced feature engineering completed successfully.
+2025-07-30 15:30:58,175 [INFO] Section 6 advanced modeling completed successfully
+2025-07-30 15:31:08,310 [INFO] Created 75 records
+2025-07-30 15:31:08,320 [INFO] Section 7 advanced visualizations completed successfully
+2025-07-30 15:31:11,641 [INFO] Full project analysis pipeline completed successfully
