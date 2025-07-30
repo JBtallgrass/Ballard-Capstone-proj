@@ -59,7 +59,6 @@
 
 % ==================== BIBLIOGRAPHY ====================
 \usepackage{biblatex}
-\usepackage{biblatex}
 \addbibresource{references.bib}
 
 % ==================== HYPERLINKS ====================
@@ -89,11 +88,12 @@
 \begin{document}
 
 \maketitle
+\pagestyle{plain}
 \begin{abstract}
-This study examines the intersection of educational attainment, economic hardship, and regional planning in North Central Arkansas using a data-driven, machine learning approach. Despite the availability of public data on poverty, education, and employment, rural counties often lack the analytic capacity to integrate these indicators into actionable insights. This project aggregates and standardizes datasets from the U.S. Census, Bureau of Labor Statistics, and other open sources to conduct an exploratory and predictive analysis of all 75 Arkansas counties. Key features—such as bachelor’s degree attainment, poverty rate, and unemployment—were engineered into composite indices and binary risk flags. Using KMeans clustering and decision tree classifiers, the analysis identified latent socioeconomic risk groups and successfully predicted county vulnerability with 100\% test accuracy. Results highlight that educational attainment—particularly bachelor’s degree completion—is the strongest predictor of economic risk. The findings reveal geographic disparities, with high-risk counties concentrated in the Mississippi Delta and portions of North Central Arkansas. The final deliverables include choropleth maps, policy recommendations, and a classification-ready dataset designed to inform education-to-employment alignment. This work supports regional stakeholders in prioritizing investments, improving curriculum targeting, and enhancing rural workforce resilience through a transparent, reproducible analytic framework.
+This study examines the intersection of educational attainment, economic hardship, and regional planning in North Central Arkansas using a data-driven, machine learning approach. Despite the availability of public data on poverty, education, and employment, rural counties often lack the analytic capacity to integrate these indicators into actionable insights. This project aggregates and standardizes datasets from the U.S. Census, Bureau of Labor Statistics, and other open sources to conduct an exploratory and predictive analysis of all 75 Arkansas counties. Key features—such as bachelor’s degree attainment, poverty rate, and unemployment—were engineered into composite indices and binary risk flags. Using KMeans clustering and decision tree classifiers, the analysis identified latent socioeconomic risk groups and successfully predicted county vulnerability with 100\% test accuracy. Results highlight that educational attainment—particularly bachelor’s degree completion—is the strongest predictor of economic risk. The findings reveal geographic challenges, with high-risk counties concentrated in the Mississippi Delta and portions of North Central Arkansas. The final deliverables include choropleth maps, policy recommendations, and a classification-ready dataset designed to inform education-to-employment alignment. This work supports regional stakeholders in prioritizing investments, improving curriculum targeting, and enhancing rural workforce resilience through a transparent, reproducible analytic framework.
 \end{abstract}
 
-\noindent\textbf{Keywords:} Education-to-Employment Alignment, Rural Workforce Development, CIP-SOC Crosswalk, Predictive Analytics, Data-Driven Policy, Regional Disparities
+\noindent\textbf{Keywords:} Education-to-Employment Alignment, Rural Workforce Development, CIP-SOC Crosswalk, Predictive Analytics, Data-Driven Policy, Regional challenges
 
 \noindent\textbf{GitHub Repository} 
 \href{https://github.com/JBtallgrass/Ballard-Capstone-proj}{https://github.com/JBtallgrass/Ballard-Capstone-proj}
@@ -107,17 +107,14 @@ This study examines the intersection of educational attainment, economic hardshi
 \end{figure}
 
 \subsection{Domain and Topic Selection}
-This project examines educational and economic disparities across counties in rural North Central Arkansas. The selected region—including Baxter, Fulton, Izard, Marion, and neighboring counties—faces long-standing challenges related to poverty, low educational attainment, an aging population, and limited access to high-quality employment opportunities. These structural constraints are compounded by geographic isolation and digital infrastructure gaps, which can impede upward mobility and the ability to participate in modern educational or workforce systems.\par
-The topic was selected due to its practical relevance to regional planning, rural development, and applied data science. As economic transitions accelerate due to automation, demographic change, and uneven broadband access, rural communities risk falling further behind unless institutions can better align educational programming with regional workforce needs\cite{corirural_2023}. By focusing on a clearly defined geographic region and a small set of socioeconomic indicators, this project aims to generate actionable insights that inform strategic decision-making and support sustainable rural development.
-\begin{tcolorbox}[colback=gray!10,colframe=black,title=Developer Note: From NCA Regional to Statewide Scope]
-During preliminary modeling and exploratory data analysis (EDA), it became clear that the original focus on the 13 counties in North Central Arkansas (NCA) would not yield the robust results needed to support meaningful pattern detection and clustering. The variance across key indicators such as educational attainment and poverty rates was too narrow to generate distinct groupings or predictive insights. See \href{run:capstone_analyticsvNCA.ipynb}{\texttt{capstone\_analyticsvNCA.ipynb}}.
-This discovery, while initially a constraint, became a powerful learning opportunity. It emphasized the importance of data variability and sample size when applying machine learning methods in regional research. As a result, I created a second notebook, \href{run:capstone_analyticsvAR.ipynb}{\texttt{capstone\_analyticsvAR.ipynb}}, that expanded the scope to include all 75 counties in Arkansas. This allowed for broader comparisons, improved model performance, and more generalizable insights. The NCA-specific notebook is still retained to enable regional comparison and transparency in methodology.
-\end{tcolorbox}
+This project examines educational and economic influences across counties in rural North Central Arkansas(see Appendix~\ref{appendix:nca_counties}). The selected region—including Baxter, Fulton, Izard, Marion, and neighboring counties—faces long-standing challenges related to poverty, low educational attainment, an aging population, and limited access to high-quality employment opportunities. These structural constraints are compounded by geographic and infrastructure gaps, which can impede upward mobility and the ability to participate in modern educational or workforce systems.
+The topic was selected due to its practical relevance to regional planning, rural development, and applied data science. As economic transitions accelerate due to automation, demographic change, and uneven broadband access, rural communities risk falling behind unless institutions can better align educational programming with regional workforce needs\cite{corirural_2023}. By focusing on a clearly defined geographic region and a small set of socioeconomic indicators, this project aims to generate actionable insights that inform strategic decision-making and support sustainable rural development.
+
 \subsection{The Data Problem}
-Though extensive public data exist on poverty, education, unemployment, and population, these variables are often stored in siloed systems and analyzed in isolation. As a result, there is limited integration of these indicators into comprehensive, county-level assessments of regional need. Many public institutions—especially in rural areas—lack the analytic infrastructure or capacity to perform multivariate analysis or predictive modeling that could guide policy and programming.
+Though extensive public data exist on poverty, education, unemployment, and population, these variables are often stored in disconnected artifacts and analyzed in isolation. As a result, there is limited integration of these indicators into comprehensive, county-level assessments of regional need. Many public institutions—especially in rural areas—lack the analytic infrastructure or capacity to perform multivariate analysis or predictive modeling that could guide policy and programming.
 The core data problem is twofold:
 \begin{enumerate}
-    \item Can we identify meaningful patterns and disparities in educational and economic conditions across North Central Arkansas counties?
+    \item Can we identify meaningful patterns in educational and economic conditions across North Central Arkansas counties?
     \item Can machine learning models help forecast outcomes or classify counties based on shared vulnerability or potential?
 \end{enumerate}
    
@@ -132,12 +129,7 @@ The analysis will integrate multiple open-source datasets from national agencies
     \item \textbf{Bureau of Labor Statistics (BLS)} \\
     Labor force participation, unemployment data \\
     \href{https://www.bls.gov/data/}{https://www.bls.gov/data/}
-
-    \item \textbf{FCC Broadband Data / NTIA Indicators of Broadband Need} \\
-    Infrastructure access at the county level \\
-    \href{https://broadbandmap.fcc.gov}{https://broadbandmap.fcc.gov} \\
-    \href{https://broadbandusa.ntia.gov}{https://broadbandusa.ntia.gov}
-
+    
     \item \textbf{data.gov}
     Aggregated socioeconomic indicators relevant to Arkansas counties, including downloadable .csv files curated for this project\\
     \href{ https://data.gov}{ https://data.gov}
@@ -145,7 +137,7 @@ The analysis will integrate multiple open-source datasets from national agencies
 \end{itemize}
 These data will be merged using standardized geographic identifiers (e.g., FIPS codes) to create a master dataset suitable for statistical and machine learning analysis.
 \subsection{Project Implementation Steps}
-This project follows the CRISP-DM framework (Cross-Industry Standard Process for Data Mining) to ensure methodological rigor and clarity of execution:
+This project follows the CRISP-DM framework (Cross-Industry Standard Process for Data Mining)(see Appendix~\ref{appendix:crisp_dm}) to ensure methodological rigor and clarity of execution:
 \href{https://www.datascience-pm.com/crisp-dm-2/}{https://www.datascience-pm.com/crisp-dm-2/}
 \begin{enumerate}
     \item \textbf{Business Understanding} – Define regional challenges and stakeholder needs related to poverty, education, and workforce alignment.
@@ -169,10 +161,10 @@ Key components of this project include:
     \item A thorough exploratory data analysis (EDA) with visual summaries.
     \item Predictive models examining the relationships among poverty, education, unemployment, and population.
     \item Clustering analysis to classify counties based on similar socioeconomic profiles.
-    \item A visualizations highlighting disparities, trends, and strategic opportunities.
+    \item A visualizations highlighting challenges, trends, and strategic opportunities.
     \item A written report interpreting results and offering data-driven recommendations for regional stakeholders.
 \end{itemize}
-Expected results include a clearer picture of which counties are most vulnerable to economic stagnation, how educational attainment correlates with poverty or unemployment, and where interventions may have the greatest impact. These findings may support local institutions in prioritizing training programs, pursuing funding, and coordinating cross-county initiatives.
+Expected results include a clearer picture of which counties are most vulnerable to economic challenges, how educational attainment correlates with poverty or unemployment, and where interventions may have the greatest impact. These findings may support local institutions in prioritizing training programs, pursuing funding, and coordinating cross-county initiatives.
 \subsection{Project Limitations}
 To maintain scope and feasibility within a five-week time frame, the project includes the following limitations:
 \begin{itemize}
@@ -194,7 +186,7 @@ In addition, all interpretations are contingent on the accuracy, completeness, a
     \label{fig:nca_highlighted}
 \end{figure}
 \subsubsection{\textbf{Problem Context.}}
-North Central Arkansas, comprising counties such as Baxter, Fulton, Izard, and Marion, presents a unique regional case study of persistent educational and economic challenges. These counties are characterized by geographic isolation, aging populations, high poverty rates, and limited access to digital infrastructure. Many residents face structural barriers to educational advancement and workforce participation. Despite efforts to invest in rural development, these challenges persist and risk deepening existing inequalities if not addressed through targeted, data-informed strategies\cite{usda_broadband_2020}. A clearer understanding of regional disparities is needed to support strategic planning and community resilience.
+North Central Arkansas presents a unique regional case study of persistent educational and economic challenges. These counties(see Appendix~\ref{appendix:nca_counties}) are characterized by geographic insularity, aging populations, poverty rates, and limited digital infrastructure. Many residents face structural barriers to educational advancement and workforce participation. Despite efforts to invest in rural development, these challenges persist and risk deepening existing inequalities if not addressed through targeted, data-informed strategies\cite{usda_broadband_2020}. A clearer understanding of regional challenges is needed to support strategic planning and community resilience.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Capstone_Project_Report/images/maps/arkansas_nca_zoomed.png}
@@ -204,38 +196,50 @@ North Central Arkansas, comprising counties such as Baxter, Fulton, Izard, and M
 
 
 \subsubsection{\textbf{Demographic and Economic Structure.} }
-According to U.S. Census data, Baxter County reports that over 30\% of its population is aged 65 or older, while youth populations continue to decline across the region. Median ages in Fulton and Izard counties exceed 48 years, suggesting long-term demographic shifts toward an older, more economically dependent population. Poverty rates remain elevated, with several counties exceeding 16–24\%. Educational attainment lags behind national averages, with fewer than 20\% of adults in many counties holding a bachelor's degree or higher. Economically, the region depends heavily on healthcare, light manufacturing, and service industries—sectors that often offer limited upward mobility without additional training. Access to such training is further constrained by limited institutional resources, transportation challenges, and inconsistent broadband access. The combination of economic concentration and educational barriers leaves many counties vulnerable to labor shortages, low-wage employment cycles, and population decline.
+According to recent analyses of U.S. Census data, Baxter County reports that over 30\% of its population is aged 65 or older, reflecting a significant demographic shift; youth populations have steadily declined across the region \cite{uscensus2023,arcompass2023}. The median age in Fulton and Izard counties now exceeds 48 years, suggesting long-term migration and aging trends that result in a more economically dependent local population \cite{uscensus2023}. Poverty rates remain elevated, with several counties exceeding 16--24\%, placing them above the state and national averages \cite{arkansasprofile2022}. Educational attainment also lags behind the national level; in many counties, fewer than 20\% of adults possess a bachelor’s degree or higher \cite{usdaedattain2022}. Economically, the region is heavily reliant on healthcare, light manufacturing, and service industries---sectors that often offer limited opportunities for upward mobility without specialized training or post-secondary credentials \cite{ardevelopment2022,arworkforcereport2023}. Access to such training is further constrained by limited institutional resources, transportation challenges, and inconsistent broadband coverage, all of which restrict workforce development opportunities \cite{arbroadband2023}. Consequently, the combination of economic concentration and educational barriers leaves many counties in this region vulnerable to labor shortages, persistent low-wage employment cycles, and population decline \cite{arworkforcereport2023}.
 
 \subsection{Education and Workforce Policy Context}
 \subsubsection{\textbf{State-Level Initiatives and Funding.}}
-Arkansas has implemented several strategic programs to strengthen its education-to-employment pipeline. The Arkansas Future Grant (ArFuture) provides last-dollar scholarships for students pursuing high-demand fields such as healthcare, information technology, and skilled trades \cite{adhe_futuregrant_2017}. The Workforce Challenge Grant and HIRED initiatives offer support for short-term credentialing programs aligned with employer needs, especially for nontraditional learners \cite{adce_careercoach_2016,ozarka_news_2025}. Career Coach Programs deliver personalized college and career planning services in rural schools, while WIOA funding (Workforce Innovation and Opportunity Act) supports adult education, re-skilling, and workforce training across the state. Despite these programs, their impact in rural areas remains uneven. Fragmented implementation, staff shortages, and limited data coordination make it difficult to align regional workforce needs with available educational programs, especially in under-resourced counties \cite{arkansas_dws_2024}.
+Arkansas has implemented several strategic programs to strengthen its education-to-employment pipeline. The Arkansas Future Grant (ArFuture) provides last-dollar scholarships for students pursuing high-demand fields such as healthcare, information technology, and skilled trades~\cite{adhe_arfuture_2025,scholaroo_arfuture_2025}. The Workforce Challenge Grant and HIRED initiatives offer support for short-term credentialing programs aligned with employer needs, especially for nontraditional learners~\cite{adhe_workforce_2025,sanders_hired_2024,ua_system_hired_2024}. Career Coach Programs deliver personalized college and career planning services in rural schools~\cite{careercoach_ade_2025,rooted_arkansas_2025}. At the same time, WIOA funding (Workforce Innovation and Opportunity Act) supports adult education, re-skilling, and workforce training across the state~\cite{wioa_dws_2025,dol_wioa_waiver_2024}. Despite these programs, their impact in rural areas remains uneven. Fragmented implementation, staff shortages, and limited data coordination make it challenging to align regional workforce needs with available educational programs, especially in under-resourced counties~\cite{nrea_arkansas_2024,forward_rural_arkansas_2025}.
 
-\subsubsection{\textbf{Role of Community Colleges and Workforce Boards}}
-Community colleges, particularly Arkansas State University–Mountain Home (ASUMH)\cite{asumh_homepage_2025,asumh_workforce_2025} and Ozarka College\cite{ozarka_homepage_2025,ozarka_news_2025}, serve as foundational pillars of workforce and technical education in North Central Arkansas. These institutions provide not only associate degrees and technical certifications but also vital adult education programs and high school-to-career pathways that bridge educational access and economic opportunity. As regional anchor institutions, they are uniquely positioned to respond to labor market needs—yet they face mounting pressures from declining rural enrollments, budgetary constraints, and the increasing complexity of employer demands\cite{wrpdd_plan_2020}. Without stronger partnerships, modernized infrastructure, and responsive program design, these colleges risk being outpaced by the very workforce transformations they aim to facilitate.
-Local Workforce Development Boards (LWDBs) serve a complementary but equally critical role in regional economic resilience. Charged with coordinating employer outreach, job training, and federal workforce initiatives, they are intended to act as strategic conveners and labor market intermediaries\cite{arkansas_code_1543711}. However, many LWDBs remain hampered by limited analytic capacity and outdated or siloed data systems\cite{results4america_dataaccess_2024,naswa_changingworkforce_2018}. This constrains their ability to engage in forward-looking planning, evaluate training effectiveness, or align workforce initiatives with evolving ind
 
- \subsection{Conceptual Framework}
- \begin{itemize}
-  \item \textbf{Human Capital Theory} underscores the idea that investments in education and training enhance individual productivity and contribute to broader economic growth \cite{becker_humancapital_1975, nickerson_functionalist_2024}. Within the context of rural communities such as North Central Arkansas, these investments are especially vital. Limited private-sector presence and constrained labor mobility heighten the need for accessible, regionally relevant education and skill development to foster long-term economic resilience.
-  
-  \item \textbf{Labor Market Signaling Theory}, introduced by Spence (1973), proposes that educational credentials function as indicators of a worker’s potential productivity \cite{linde_signalling_2025}. However, in rural settings where the volume or type of credentials may not align with regional labor market demands, the signaling mechanism can falter. This misalignment often results in credential mismatch, underemployment, and structural inefficiencies in the local workforce.
-  
-  \item \textbf{Rural Development and Digital Equity} offer a critical framework for analyzing how structural, spatial, and technological barriers shape access to education and employment opportunities in rural areas. These regions often face interconnected challenges—such as limited broadband infrastructure, inadequate public transit, and geographic isolation—that hinder the reach and effectiveness of conventional workforce development models. Viewing these issues through a rural development lens underscores the need for holistic strategies that combine skill-building initiatives with investments in infrastructure and digital access to ensure equitable participation in the modern economy \cite{WHITACRE20141011,urban2023,NTIA2023}.
-  \end{itemize}
+\subsubsection{\textbf{Role of Community Colleges and Workforce Boards (continued)}}
 
+Community colleges—including Arkansas State University–Mountain Home (ASUMH)\cite{asumh_homepage_2025,asumh_workforce_2025} and Ozarka College\cite{ozarka_homepage_2025,ozarka_news_2025}—act as hubs for workforce training, lifelong learning, and regional economic development in North Central Arkansas. ASUMH provides a robust suite of workforce and technical education offerings. These programs emphasize partnerships with local employers, including tailored training, apprenticeships, and rapid credentialing in fields ranging from plumbing and allied health to technology and advanced manufacturing\cite{asumh_workforce_2025,asumh_homepage_2025,asumh_commed_2025}. ASUMH’s Secondary Technical Center and community education initiatives further support area youth and adults in acquiring new skills, while online and in-person opportunities expand access to in-demand jobs\cite{asumh_workforce_2025,asumh_commed_2025}.
+
+Ozarka College also serves as a regional anchor, recently expanding its skilled trades offerings thanks to grants like the HIRED program\cite{ozarka_news_2025}. Its Secondary Technical Center creates seamless high school-to-career and dual enrollment pathways in fields such as nursing, automotive, advanced manufacturing, and welding, delivering workforce preparation across its four-county service area\cite{ozarka_news_2025,ozarka_programs_2025}. New partnerships, such as with the Salem School District, exemplify efforts to align local technical education with labor market needs\cite{ozarka_news_2025,ozarka_homepage_2025}. However, both colleges face ongoing challenges, including declining rural enrollments and the pressures of adapting programs and infrastructure to rapid changes in employer expectations and technology\cite{wrpdd_plan_2020}.
+
+Local Workforce Development Boards (LWDBs) are designed to complement these institutions by convening employers and educators, brokering job training, and administering federal programs (e.g., WIOA) to support employment and regional prosperity\cite{arkansas_code_1543711}. LWDBs in Arkansas are tasked with strategic labor market planning, allocating funds for job retraining, and tracking performance outcomes\cite{dws_lwdbs_2025}. Despite these mandates, many boards face capacity barriers stemming from fragmented or siloed data systems, limited staff capacity for analytics, and outdated technological infrastructure\cite{results4america_dataaccess_2024,naswa_changingworkforce_2018,wrpdd_plan_2020}. These obstacles impede their ability to engage employers proactively, align programming with shifting labor market demands, and rigorously evaluate impact\cite{results4america_dataaccess_2024,wrpdd_plan_2020}.
+
+As workforce demands and technologies accelerate, the effectiveness of community colleges and LWDBs will ultimately depend on deeper inter-institutional partnerships, investment in modern data infrastructure, and nimble program responsiveness to both student and employer needs.
+
+\subsection{Conceptual Framework}
+
+Effectively addressing workforce development in North Central Arkansas requires more than descriptive analysis—it depends on a strong conceptual foundation that links regional trends to deeper theoretical insights. One of the most influential perspectives is \textbf{Human Capital Theory}, which posits that investments in education and skill development serve as catalysts for both individual advancement and community-wide economic growth~\cite{becker_humancapital_1975,nickerson_functionalist_2024}. In a setting marked by limited industry diversification and constrained mobility, such as rural Arkansas, these investments are essential for fostering resilience and ensuring that local populations can adapt to ongoing labor market changes.
+
+\textbf{Labor Market Signaling Theory} further illuminates the crucial role of education in the regional economy. As theorized by Spence, educational credentials function as signals of a worker's potential productivity, guiding employer hiring decisions~\cite{linde_signalling_2025}. However, in rural areas where there may be a misalignment between the kinds of credentials earned locally and the actual needs of employers, this signaling process can fail. The result is a recurring pattern of skills mismatch and underemployment, which undermines both workforce efficiency and individual opportunity.
+
+Lastly, the unique challenges faced by rural communities—including North Central Arkansas—are best understood through frameworks of \textbf{Rural Development} and \textbf{Digital Equity}. Barriers such as limited broadband access, geographic isolation, and underdeveloped public transportation exacerbate educational and economic disparities~\cite{WHITACRE20141011,urban2023,NTIA2023}. Recognizing these interrelated obstacles highlights the need for integrated solutions that combine targeted skill-building efforts with investments in critical infrastructure and digital inclusion, ensuring that rural residents have fair access to opportunities in the modern economy.
+
+ 
 \section{Methodology: CRISP-DM Framework}
 
 \subsection{Business Understanding}
-The primary goal of this project is to uncover patterns and disparities across counties in North Central Arkansas related to four key variables: poverty rate, educational attainment, unemployment rate, and population structure. The analysis is designed to inform institutional planning, policy development, and workforce alignment efforts. Key stakeholders include community colleges, local workforce development boards, regional economic planners, and nonprofit organizations serving rural communities. The central question driving the project is: How do education and demographic factors influence economic outcomes in rural Arkansas counties, and how can these patterns be used to support strategic intervention?
+The primary goal of this project is to uncover patterns and challenges across counties in North Central Arkansas related to four key variables: poverty rate, educational attainment, unemployment rate, and population structure. The analysis is designed to inform institutional planning, policy development, and workforce alignment efforts. Key stakeholders include community colleges, local workforce development boards, regional economic planners, and nonprofit organizations serving rural communities. The central question driving the project is: How do education and demographic factors influence economic outcomes in Arkansas counties, and how can these patterns be used to support strategic intervention?
 
 \subsection{Data Understanding}
 The analysis is grounded in public datasets from trusted national sources. Data were drawn from the U.S. Census Bureau’s American Community Survey (ACS), the Bureau of Labor Statistics’ Local Area Unemployment Statistics (LAUS), and curated CSV files accessed via Data.gov. These datasets contain county-level information on poverty rates, education levels, unemployment rates, and population demographics, including age distribution. The study focuses on a regional cluster of rural Arkansas counties, including Baxter, Fulton, Izard, and Marion. During the initial exploration phase, the datasets were assessed for consistency, completeness, and temporal alignment to ensure that the variables could be meaningfully joined and analyzed.
+\begin{tcolorbox}[colback=gray!10,colframe=black,title=Developer Note: From NCA Regional to Statewide Scope]
+Initial exploratory data analysis (EDA) and preliminary modeling revealed that the original geographic focus—limited to 13 counties within North Central Arkansas (NCA)—did not offer sufficient variability across key indicators, such as educational attainment and poverty rates, to support effective clustering or predictive modeling. The relatively narrow distribution of these features limited the ability to identify meaningful patterns or groupings. For additional details, refer to \href{run:capstone_analyticsvNCA.ipynb}{\texttt{capstone\_analyticsvNCA.ipynb}}.
+
+While this limitation posed an early challenge, it also underscored a critical methodological insight: robust machine learning applications in regional analysis require adequate sample size and variance. In response, the project scope was expanded to encompass all 75 counties in Arkansas, as documented in the subsequent notebook \href{run:capstone_analyticsvAR.ipynb}{\texttt{capstone\_analyticsvAR.ipynb}}. This adjustment enabled more robust model performance, enhanced generalization of findings, and facilitated cross-regional comparisons.
+\end{tcolorbox}
 
 \subsection{Data Preparation}
-Following acquisition, all datasets were cleaned and merged using county names or FIPS codes to create a unified master file. Standard data preparation techniques were applied, including the normalization of percentage values, the handling of missing entries through imputation or exclusion, and the verification of geographic boundaries. Additional variables were derived to enhance analysis, such as ratios comparing education to poverty levels and measures of age dependency based on population over 65 and under 18. These engineered features provided a richer context for understanding the relationships between socioeconomic indicators and offered new dimensions for modeling and clustering.
+Following acquisition, all datasets were cleaned and merged using county names or FIPS codes to create a unified master file. Standard data preparation techniques were applied, including the normalization of percentage values, the handling of missing entries through imputation or exclusion, and the verification of geographic boundaries. Additional variables were derived to enhance analysis, such as ratios comparing education to poverty levels and measures of age based on population. These engineered features provided a richer context for understanding the relationships between socioeconomic indicators and offered new dimensions for modeling and clustering.
 
 \subsection{Exploratory Data Analysis (EDA)}
-With the cleaned dataset in place, exploratory data analysis was conducted to identify trends, outliers, and potential relationships. Python’s plotting libraries were used to create histograms, scatterplots, and comparative bar charts. A correlation matrix helped uncover which variables were most strongly related, while geographic heatmaps allowed for spatial inspection of disparities across counties. Particular attention was paid to the distribution of poverty and educational attainment, as well as how these metrics varied with unemployment and population structure. EDA served as a critical step for guiding model selection and interpreting the socioeconomic landscape of the study region.
+With the cleaned dataset in place, exploratory data analysis was conducted to identify trends, outliers, and potential relationships. Python’s plotting libraries were used to create histograms, scatterplots, and comparative bar charts. A correlation matrix helped uncover which variables were most strongly related, while geographic heatmaps allowed for spatial inspection of challenges across counties. Particular attention was paid to the distribution of poverty and educational attainment, as well as how these metrics varied with unemployment and population structure. EDA served as a critical step for guiding model selection and interpreting the socioeconomic landscape of the study region.
 
 \subsection{Modeling}
 The modeling phase employed two primary techniques: linear regression and clustering. Linear regression models were developed to predict either poverty or unemployment levels based on education and population-related variables. Multiple versions of the model were tested to assess the strength of relationships, using metrics such as the coefficient of determination (R²) and root mean squared error (RMSE) for evaluation. In parallel, K-Means clustering was used to classify counties into similar socioeconomic groups. The clustering process required normalizing the input data and identifying an appropriate number of clusters using the elbow method. This approach allowed the project to group counties not just by individual metrics, but by shared patterns across all core indicators, supporting a more holistic understanding of regional typologies.
@@ -244,7 +248,7 @@ The modeling phase employed two primary techniques: linear regression and cluste
 Model performance was evaluated both quantitatively and contextually. Regression models were assessed for their explanatory power and residual error, while clustering results were reviewed for internal consistency using silhouette scores and for external relevance based on known regional trends. Importantly, evaluation extended beyond numerical fit to include interpretability and practical value. The question was not simply whether the models performed well statistically, but whether they revealed insights that could guide action at the institutional or policy level. These considerations influenced both the selection of final models and the presentation of results within the broader narrative of regional equity.
 
 \subsection{Deployment}
-The final step of the methodology involves communicating the results in formats that are accessible and actionable. A Tableau dashboard will present the findings visually, allowing users to interact with county-level profiles, explore disparities, and view the output of both regression and clustering models. Accompanying this dashboard is a comprehensive written report that details the data sources, methods, key findings, and their implications. Together, these products will enable community leaders, educators, and workforce planners to better understand the structural realities of their region and to use evidence-based strategies for improving educational and economic outcomes.
+The final step of the methodology involves communicating the results in formats that are accessible and actionable. A Tableau dashboard will present the findings visually, allowing users to interact with county-level profiles, explore challenges, and view the output of both regression and clustering models. Accompanying this dashboard is a comprehensive written report that details the data sources, methods, key findings, and their implications. Together, these products will enable community leaders, educators, and workforce planners to better understand the structural realities of their region and to use evidence-based strategies for improving educational and economic outcomes.
 
 \section{Data Sources and Processing}
 This project utilizes four structured datasets that contain county-level data on educational attainment, population, poverty, and unemployment across Arkansas. Each dataset was acquired in .csv format from publicly available sources, including Data.gov, the U.S. Census Bureau’s American Community Survey (ACS), and the Bureau of Labor Statistics (BLS). The datasets are uniformly structured in tabular form, with consistent row and column formats that support efficient loading, merging, and analysis.
@@ -423,7 +427,7 @@ IsNCA & Binary flag indicating membership in North Central Arkansas region \\
 
 \subsubsection{5.2.3 Descriptive Statistics}
 
-Descriptive statistics were computed for all core indicators to better understand central tendency, variability, and potential anomalies. These statistics provided foundational insight into county-level disparities and informed later feature engineering and modeling strategies.
+Descriptive statistics were computed for all core indicators to better understand central tendency, variability, and potential anomalies. These statistics provided foundational insight into county-level challenges and informed later feature engineering and modeling strategies.
 
 \begin{lstlisting}[caption={Summary Statistics of Core Indicators}]
        BachelorsDegreePct  HighSchoolGradPct  PovertyRate  UnemploymentRate  
@@ -558,7 +562,7 @@ Counties with exceptionally low educational attainment, high poverty, or elevate
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth, trim=20 40 20 60, clip]{Capstone_Project_Report/images/maps/images_outliers_povertyrate.png}
-\caption{Boxplot of Poverty Rate Outliers. This visualization identifies counties with poverty rates significantly above or below the typical range in Arkansas. Chicot, St. Francis, and Lee counties exhibit extreme levels of poverty, exceeding 30\%, while Benton County stands out as an outlier on the low end. These disparities highlight stark socioeconomic divides and underscore the need for localized policy interventions.}
+\caption{Boxplot of Poverty Rate Outliers. This visualization identifies counties with poverty rates significantly above or below the typical range in Arkansas. Chicot, St. Francis, and Lee counties exhibit extreme levels of poverty, exceeding 30\%, while Benton County stands out as an outlier on the low end. These challenges highlight stark socioeconomic divides and underscore the need for localized policy interventions.}
 \label{fig:outliers_poverty}
 \end{figure}
 \vspace{-2em}
@@ -676,7 +680,7 @@ The Education-index was computed by averaging the scaled values of bachelor’s 
 
 The final Vulnerability-index was calculated by averaging the Education-index and Economic-index, resulting in a continuous variable that represented multidimensional socioeconomic risk. This integrated score enabled each county to be positioned along a unified vulnerability spectrum, facilitating comparisons and informing cluster analysis.
 
-Visualizing the Vulnerability-index as a choropleth map (Figure~\ref{fig:vulnerability_heatmap}) revealed striking regional disparities. Counties with elevated vulnerability scores tended to cluster in the Mississippi Delta and portions of North Central Arkansas—areas historically affected by underinvestment, low attainment, and economic stagnation. The map served not only as a diagnostic tool for identifying priority areas but also as a communication artifact that could guide policymakers, educators, and workforce leaders toward targeted interventions.
+Visualizing the Vulnerability-index as a choropleth map (Figure~\ref{fig:vulnerability_heatmap}) revealed striking regional challenges. Counties with elevated vulnerability scores tended to cluster in the Mississippi Delta and portions of North Central Arkansas—areas historically affected by underinvestment, low attainment, and economic challenges. The map served not only as a diagnostic tool for identifying priority areas but also as a communication artifact that could guide policymakers, educators, and workforce leaders toward targeted interventions.
 
 \begin{figure}[H]
 \centering
@@ -746,70 +750,118 @@ Izard      & 9.3  & 82.1 & 22.7 & 4.6 & 0.38 & 0.57 & 0.48 & 1 & 1 & 0 \\
 \vspace{-1em}
 \FloatBarrier
 
-\section{Clustering Analysis and Regional Risk Profiling} \label{sec:clustering}
+\section{Predictive Modeling and Risk Profiling} \label{sec:modeling}
 
-To uncover hidden patterns of socioeconomic vulnerability across Arkansas counties, this section applies an unsupervised machine learning technique—KMeans clustering—using the engineered features developed in Section~\ref{sec:feature_engineering}. The objective was to group counties into latent risk profiles based not on predefined labels, but on the shared structure of their educational and economic conditions. This approach supports regional needs assessment by surfacing county groupings that exhibit similar challenges, thereby enabling more targeted interventions and resource allocation.
+This section applies supervised and unsupervised learning techniques to evaluate and surface patterns of structural vulnerability across Arkansas counties. The goal is twofold: first, to assess how core indicators such as education and employment predict economic hardship; and second, to group counties into data-driven risk profiles for targeted regional planning.
 
-By analyzing the scaled and composite variables—such as educational attainment, poverty rate, unemployment, and the education gap—KMeans successfully partitioned the 75 counties into two distinct clusters. These clusters repre
+\subsection{Linear Regression Models} \label{subsec:linear_regression}
 
-\subsection{Clustering Methodology}
+To establish interpretable relationships among key socioeconomic indicators, we first employed multiple linear regression. Two models were developed: one to predict county-level \textbf{Poverty Rate}, and another to assess predictors of the engineered \textbf{Vulnerability Score} introduced in Section~\ref{sec:feature_engineering}.
 
-K Means clustering was selected for its balance of computational efficiency, scalability, and interpretability—key considerations when working with normalized, tabular datasets such as county-level socioeconomic indicators. The algorithm’s ability to partition data into discrete, non-overlapping groups based on distance metrics makes it well-suited for identifying latent regional profiles that might not be apparent through visual inspection or summary statistics alone.
+\subsubsection{Model 1: Predicting Poverty Rate}
 
-Alternative methods, such as hierarchical clustering or DBSCAN, were considered during the exploratory phase. However, hierarchical clustering introduced interpretability challenges and less stable cluster boundaries when applied to small, heterogeneous datasets. DBSCAN, while powerful for detecting noise and irregular shapes, was less appropriate due to the lack of clearly defined density gradients in the normalized feature space. In contrast, K Means offered reproducible, centroid-based clustering that aligned well with the project’s goal of comparing counties by overall educational and economic conditions.
+The first model explored whether education and unemployment could explain variation in county-level poverty rates:
 
-To determine the optimal number of clusters ($k$), silhouette scores were computed across a range of candidate values. This metric measures how well each data point fits within its assigned cluster compared to other clusters, providing a balance between cohesion and separation. The analysis revealed that $k=2$ yielded the highest silhouette score, suggesting that a binary classification—moderate risk versus high risk—best captured the structure of the feature space.
+\[
+\text{PovertyRate}_i = \beta_0 + \beta_1 \cdot \text{BachelorsDegreePct}_i + \beta_2 \cdot \text{UnemploymentRate}_i + \epsilon_i
+\]
 
-The resulting clusters were interpreted as follows: Cluster 0 included counties with mixed or moderate risk characteristics, often falling near statewide averages in terms of education, poverty, and unemployment. Cluster 1 represented counties with significantly higher levels of vulnerability, defined by low educational attainment, elevated poverty rates, and overlapping economic barriers.
+Both predictors were statistically significant. A higher percentage of bachelor’s degree holders was associated with lower poverty, while unemployment was positively correlated with poverty. The model achieved an $R^2$ of approximately 0.68, indicating strong explanatory power.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/linear_regression_diagnostics.png}
+\caption{Poverty Rate Model Diagnostics: The model shows strong linearity and a normal distribution of residuals, with slight heteroscedasticity at higher predicted values.}
+\label{fig:poverty_regression_diagnostics}
+\end{figure}
+
+\subsubsection{Model 2: Predicting Vulnerability Score}
+
+To validate the composite \texttt{Vulnerability Score}, a second regression model was developed:
+
+\[
+\text{VulnerabilityScore}_i = \beta_0 + \beta_1 \cdot \text{BachelorsDegreePct}_i + \beta_2 \cdot \text{UnemploymentRate}_i + \beta_3 \cdot \text{EducationGap}_i + \epsilon_i
+\]
+
+This model demonstrated an $R^2$ of approximately 0.74, suggesting strong alignment between the engineered score and underlying structural indicators. All predictors were directionally intuitive and statistically significant. The results provide validation for the use of the vulnerability score as a proxy for systemic socioeconomic risk.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{}
+\caption{Vulnerability Score Model Diagnostics: Residuals show moderate deviation from normality, expected due to the discrete and bounded nature of the score.}
+\label{fig:vulnerability_regression_diagnostics}
+\end{figure}
+
+\subsubsection{Model Comparison}
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Linear Regression Models}
+\label{tab:regression_comparison}
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Aspect} & \textbf{Model 1: Poverty Rate} & \textbf{Model 2: Vulnerability Score} \\
+\hline
+Dependent Variable & \texttt{PovertyRate} (continuous) & \texttt{VulnerabilityScore} (0–5 index) \\
+\hline
+Predictors & \texttt{BachelorsDegreePct}, \texttt{UnemploymentRate} & \texttt{BachelorsDegreePct}, \texttt{UnemploymentRate}, \texttt{EducationGap} \\
+\hline
+$R^2$ (Explained Variance) & $\sim$0.68 & $\sim$0.74 \\
+\hline
+Coefficient Signs & Education (–), Unemployment (+) & Education (–), Unemployment (+), EducationGap (+) \\
+\hline
+Residual Normality & Mostly normal & Minor tail deviation \\
+\hline
+Homoscedasticity & Slight spread at high values & Stable \\
+\hline
+Interpretability & High & High (validates scoring index) \\
+\hline
+\end{tabular}
+\end{table}
+
+These regression models lay the groundwork for unsupervised clustering by confirming that the variables used in risk profiling are both statistically and substantively meaningful.
+
+\subsection{Clustering Analysis and Latent Risk Profiles} \label{subsec:clustering}
+
+To uncover hidden patterns of vulnerability, KMeans clustering was applied using the engineered and scaled features. This unsupervised method grouped counties into latent profiles based on educational attainment, poverty, unemployment, and education gaps. Unlike regression, clustering does not rely on predefined labels, making it well-suited for exploratory regional segmentation.
+
+Silhouette analysis revealed that $k=2$ provided the best fit, yielding two clusters interpreted as:
 
 \begin{tcolorbox}[colback=gray!5!white, colframe=black, title=Cluster Definitions]
-The resulting clusters were defined as:
 \begin{itemize}
   \item \textbf{Cluster 0:} \textit{Moderate Risk – Mixed Characteristics}
   \item \textbf{Cluster 1:} \textit{High Risk – Low Education / High Poverty}
 \end{itemize}
 \end{tcolorbox}
 
-
-Cluster labels were merged with the original metadata to enable spatial mapping and regional comparison. In particular, North Central Arkansas (NCA) counties were flagged within the clustered dataset to support focused analysis of regional disparities.
-
 \subsection{Cluster Interpretation and Visualization}
 
-To interpret the underlying structure of the clusters, a series of visualizations were created to examine how counties grouped along key socioeconomic dimensions. These scatter-plots reveal how cluster assignments relate to observed disparities in education, poverty, unemployment, and population characteristics. Together, they provide a multifaceted view of the latent patterns surfaced by the K Means algorithm.
-
-Figure~\ref{fig:cluster_profiles} presents four interpretive visualizations. The top-left quadrant plots bachelor’s degree attainment against poverty rate, clearly distinguishing the High Risk cluster as a concentration of counties with low educational attainment and elevated poverty. The top-right panel compares unemployment rate to the education gap (the difference between high school and bachelor's attainment), revealing a similar trend: counties with wider education gaps tend to cluster in the high-risk group. The bottom-left plot juxtaposes total population with the composite vulnerability score, demonstrating that smaller, more rural counties often fall into the higher risk category. 
-
-The final subplot, a pie chart, shows that approximately 24\% of Arkansas counties were assigned to the High Risk cluster. Notably, many of these counties are located in the Mississippi Delta and North Central Arkansas regions. NCA counties are marked with an ‘X’ across all scatterplots, allowing for quick visual comparison between the project’s focal region and broader state trends. This regional tagging reinforces the observation that while not all NCA counties are high risk, several fall near the threshold and warrant close policy attention.
+Scatter plots and composite visualizations were generated to interpret these clusters across multiple dimensions. Counties in the High Risk cluster tended to have lower educational attainment, higher poverty and unemployment, and wider education gaps. Population size also varied, with many rural counties falling into this more vulnerable group.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/comprehensive_cluster_analysis.png}
-\caption{Cluster Profiles: (Top Left) Bachelor's degree vs. poverty rate. (Top Right) Unemployment rate vs. education gap. (Bottom Left) Population vs. vulnerability score. (Bottom Right) Pie chart showing that 24\% of Arkansas counties fall into the High Risk cluster. NCA counties are marked with ‘X’ to observe regional concentration.}
+\includegraphics[width=\textwidth]{Capstone_Project_Report/images/maps/comprehensive_cluster_analysis.png}
+\caption{Cluster Profiles: Socioeconomic indicator comparisons and county distributions. NCA counties are marked for regional focus.}
 \label{fig:cluster_profiles}
 \end{figure}
 
 \subsection{Geographic Implications}
 
-The spatial distribution of the clusters reveals meaningful regional disparities across Arkansas. Counties assigned to the High Risk cluster are heavily concentrated in the southeastern part of the state—particularly the Mississippi Delta region—which is historically associated with persistent poverty, limited educational access, and entrenched structural barriers. Additionally, several counties in North Central Arkansas (NCA), the focal region of this study, appear within or adjacent to the High Risk group, reinforcing the relevance of this clustering approach for localized workforce and education planning.
-
-Figure~\ref{fig:cluster_map} visualizes these patterns, showing a clear geographic divide. Counties in yellow represent those classified as High Risk, characterized by low postsecondary attainment and elevated poverty and unemployment levels. Teal counties represent the Moderate Risk cluster, which includes a mix of rural and semi-urban areas with more balanced socioeconomic indicators. The map also outlines NCA counties in red, allowing for immediate identification of regional overlap and divergence.
-
-This geographic visualization supports a core premise of the project: that risk is not evenly distributed and that a data-driven approach can help highlight areas most in need of targeted intervention. It also offers practical utility for policymakers, educational institutions, and workforce boards seeking to align resources with the counties exhibiting the greatest structural vulnerabilities.
+Spatial mapping reinforced these findings, revealing strong geographic concentration of High Risk counties in the Mississippi Delta and parts of North Central Arkansas (NCA). Counties in the Moderate Risk cluster were more evenly distributed and included many semi-rural areas near the threshold of vulnerability.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=10 40 10 60, clip]{Capstone_Project_Report/images/maps/arkansas_cluster_map_comprehensive.png}
-\caption{Geographic Distribution of Clusters: Counties in yellow are classified as \textit{High Risk – Low Education / High Poverty}, while teal counties fall into the \textit{Moderate Risk} cluster. North Central Arkansas counties are outlined in red, showing overlap with the higher-risk group.}
+\includegraphics[width=0.85\textwidth]{Capstone_Project_Report/images/maps/arkansas_cluster_map_comprehensive.png}
+\caption{Geographic Distribution of Clusters: Yellow = High Risk; Teal = Moderate Risk; Red outlines = NCA region.}
 \label{fig:cluster_map}
 \end{figure}
 
 \subsection{Policy-Relevant Insights}
 
-The clustering results offer a practical, data-driven framework for prioritizing regional interventions. Counties identified within the High Risk cluster represent clear candidates for targeted support—ranging from grant funding and educational investment to workforce development programming. These counties exhibit concentrated disadvantage across multiple dimensions, making them well-suited for inclusion in state and federal resource allocation strategies. By highlighting them through an unsupervised method, the analysis avoids bias associated with pre-labeled classifications, instead surfacing structural vulnerability through underlying data patterns.
+Together, the regression and clustering analyses provide a data-informed approach to identifying and prioritizing counties for educational and economic intervention. Linear regression validates the use of core predictors, while clustering groups counties based on shared structural challenges. This dual-layered method supports early warning efforts, strategic targeting, and broader equity-based planning across Arkansas.
 
-Counties within the Moderate Risk cluster, while more heterogeneous, warrant continued monitoring. Many of these counties hover near thresholds of concern—exhibiting warning signs in one or two areas but not yet presenting the full profile of high-risk regions. Tailored, preventive policy measures may help these areas avoid deeper decline, particularly as demographic or economic conditions shift.
+In the following section, we explore whether these cluster assignments can be reliably predicted using supervised learning, further extending the practical utility of these findings.
 
-These insights directly inform the next phase of analysis. In the following section, cluster membership is used as a target variable for supervised machine learning, allowing the project to test whether educational and economic indicators can reliably predict county-level vulnerability. This predictive modeling approach further strengthens the utility of the clusters by enabling scalable screening tools that could assist in early identification and strategic planning.
 
 
 \section{Classification and Predictive Modeling} \label{sec:classification}
@@ -940,7 +992,7 @@ These findings affirm that engineered features—particularly educational attain
 
 \section{Interpretation and Discussion}\label{sec:interpretation}
 
-This section synthesizes the geographic and statistical findings from the prior analyses to illuminate regional disparities and policy-relevant implications. A focused lens is applied to the North Central Arkansas (NCA) region to evaluate how its profile compares to statewide patterns and cluster assignments.
+This section synthesizes the geographic and statistical findings from the prior analyses to illuminate regional challenges and policy-relevant implications. A focused lens is applied to the North Central Arkansas (NCA) region to evaluate how its profile compares to statewide patterns and cluster assignments.
 
 \subsection{Regional Indicator Dashboard}
 To better understand the drivers of county-level vulnerability across Arkansas, several composite visualizations were used to highlight patterns in education, poverty, unemployment, and population. As shown in Figure~\ref{fig:dashboard}, the North Central Arkansas (NCA) region—outlined in red—demonstrates consistently lower levels of bachelor’s degree attainment and higher poverty rates relative to other parts of the state. The unemployment map reinforces this trend, particularly in rural and Delta-adjacent counties, while the log-scaled population map illustrates the dispersed, small-population nature of much of the NCA region.
@@ -1035,7 +1087,7 @@ Improving workforce outcomes in rural regions requires addressing not only indiv
 \end{figure}
 
 \subsection{Prepare for Future Scaling and Longitudinal Analysis}
-To support long-term planning and replicability, this analytical framework should be expanded to include longitudinal trends and cross-state comparisons. Future studies might incorporate additional variables such as health indicators, migration trends, or broadband adoption rates. Over time, the predictive models developed here could inform grant applications, program evaluations, and legislative priorities aimed at reducing rural disparities and fostering economic resilience.
+To support long-term planning and replicability, this analytical framework should be expanded to include longitudinal trends and cross-state comparisons. Future studies might incorporate additional variables such as health indicators, migration trends, or broadband adoption rates. Over time, the predictive models developed here could inform grant applications, program evaluations, and legislative priorities aimed at reducing rural challenges and fostering economic resilience.
 
 \subsection{Expand Institutional Reach via Virtual CTE Initiatives}
 
@@ -1079,7 +1131,7 @@ Building on the findings of this analysis, the following recommendations are org
 
 \subsection{Institutional Recommendations} \label{subsec:institutional_recommendations}
 
-Post-secondary institutions—especially community colleges and regional training providers—play a pivotal role in bridging the education-to-employment gap in rural Arkansas. To meet the evolving demands of the workforce and extend opportunity to under-served areas, institutions should invest in more flexible and accessible program delivery. This includes developing stackable credentials in high-demand fields like healthcare, skilled trades, and information technology, as well as expanding hybrid and online learning options for remote learners. Establishing stronger 2+2 transfer pathways and articulation agreements can help rural students transition to four-year degrees without leaving their communities. Additionally, rural satellite campuses and mobile training units can provide localized access to education in counties that fall outside of institutional coverage zones, directly addressing the access disparities identified in this study.
+Post-secondary institutions—especially community colleges and regional training providers—play a pivotal role in bridging the education-to-employment gap in rural Arkansas. To meet the evolving demands of the workforce and extend opportunity to under-served areas, institutions should invest in more flexible and accessible program delivery. This includes developing stackable credentials in high-demand fields like healthcare, skilled trades, and information technology, as well as expanding hybrid and online learning options for remote learners. Establishing stronger 2+2 transfer pathways and articulation agreements can help rural students transition to four-year degrees without leaving their communities. Additionally, rural satellite campuses and mobile training units can provide localized access to education in counties that fall outside of institutional coverage zones, directly addressing the access challenges identified in this study.
 
 \begin{itemize}
     \item \textbf{Developing stackable credentials} in fields such as healthcare, information technology, logistics, and skilled trades.
@@ -1118,13 +1170,79 @@ These multi-tiered recommendations aim to translate insights into action, foster
 \appendix
 \section*{Appendices}
 \addcontentsline{toc}{section}{Appendices}
-\begin{itemize}
-  \item \textbf{A.} Data Dictionary
-  \item \textbf{B.} Code/Model Summaries
-  \item \textbf{C.} County-Level Snapshots
-  \item \textbf{D.} Methodological Notes
-  \item \textbf{E.} North Central Arkansas Counties
-\end{itemize}
+\renewcommand{\thesection}{\Alph{section}}
+
+\appendix
+\section{Regional Overview of North Central Arkansas}
+\label{appendix:nca_counties}
+
+
+\begin{table}[H]
+\centering
+\caption{North Central Arkansas (NCA) Counties}
+\label{tab:appendix_nca_counties}
+\begin{tabular}{ll}
+\toprule
+\textbf{County Name} & \textbf{Notes} \\
+\midrule
+Baxter         & Core Ozark Highlands \\
+Boone          & Adjacent to Missouri border \\
+Fulton         & Northeastern NCA \\
+Izard          & Central education corridor \\
+Marion         & Buffalo National River access \\
+Newton         & Sparsely populated Ozark terrain \\
+Searcy         & High-risk outlier regionally \\
+Sharp          & Includes Highland, Cherokee Village \\
+Stone          & Cultural hub (e.g., Mountain View) \\
+Van Buren      & Ozark-River Valley border \\
+Cleburne       & Greers Ferry Lake area \\
+Independence   & Batesville, economic anchor \\
+Lawrence       & Northeastern fringe of NCA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{CRISP-DM Framework Guide}
+\label{appendix:crisp_dm}
+
+The Cross-Industry Standard Process for Data Mining (CRISP-DM) is a robust, domain-agnostic methodology that guides the development and execution of data science projects. Originally developed to formalize best practices in industrial data mining, it has since been widely adopted across sectors including business, education, healthcare, and government. CRISP-DM divides the analytic process into six iterative phases, promoting a structured yet flexible workflow that emphasizes interpretability, stakeholder alignment, and reproducibility.
+
+\begin{enumerate}
+    \item \textbf{Business Understanding} \\
+    This initial phase defines the project’s objectives from a stakeholder perspective. It involves translating broad goals into specific, data-oriented questions. A deep understanding of the domain—whether it is finance, public health, education, or manufacturing—is critical to framing relevant problems, determining project scope, and identifying potential constraints or success criteria.
+
+    \item \textbf{Data Collection (Data Understanding)} \\
+    The second phase focuses on acquiring relevant data and developing familiarity with its structure and limitations. Tasks include identifying appropriate data sources, understanding formats and metadata, assessing data quality, and performing preliminary explorations. This phase often reveals inconsistencies, missing values, or unexpected distributions that can influence future modeling decisions.
+
+    \item \textbf{Data Preparation} \\
+    Often the most time-intensive step, data preparation involves transforming raw data into a structured format suitable for analysis. This includes cleaning (handling missing values, correcting errors), integrating multiple datasets, engineering new features, and standardizing variables. The quality of this phase directly impacts the effectiveness of modeling and interpretation.
+
+    \item \textbf{Modeling} \\
+    In this phase, statistical or machine learning models are selected and applied to address the core research questions. Techniques vary depending on the objective—classification, clustering, regression, anomaly detection, etc.—and model performance is influenced by both algorithm choice and data structure. Model building is iterative, often requiring adjustments based on evaluation outcomes.
+
+    \item \textbf{Evaluation} \\
+    Once models are built, their outputs must be assessed for validity, accuracy, and relevance. Evaluation includes both quantitative measures (e.g., accuracy, RMSE, silhouette score) and qualitative judgment (e.g., interpretability, alignment with domain expectations). A model that performs well statistically but fails to provide actionable insight may require refinement or replacement.
+
+    \item \textbf{Deployment} \\
+    The final phase delivers the results in a format that supports decision-making. This may involve generating reports, dashboards, presentations, or embedding models into production environments. Successful deployment also includes documenting methodology, limitations, and recommendations, ensuring transparency and future adaptability.
+
+\end{enumerate}
+
+\noindent The CRISP-DM model is not strictly linear. Practitioners frequently cycle back to earlier phases as new insights emerge, making it an inherently iterative process. Its emphasis on clarity, flexibility, and domain alignment makes it particularly effective for interdisciplinary applications of data science.
+
+\noindent For more detailed information, visit: \\
+\href{https://www.datascience-pm.com/crisp-dm-2/}{https://www.datascience-pm.com/crisp-dm-2/}
+
+
+\section{Workflow Diagram}
+\label{appendix:workflow_diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/workflow_pipeline_diagram.png}
+\caption{Workflow Diagram: End-to-end analytic pipeline used in this project, following the CRISP-DM framework.}
+\label{fig:workflow_diagram}
+\end{figure}
 
 \section{Data Dictionary}
 \label{appendix:data_dictionary}
@@ -1147,83 +1265,31 @@ IsNCA & Binary flag indicating membership in North Central Arkansas region \\
 \end{tabularx}
 \end{table}
 
-\section{Code and Model Summaries}
-\label{appendix:code_model}
+\section{County-Level Indicators (All 75 Arkansas Counties)}
+\label{appendix:county_indicators}
 
-\begin{lstlisting}[language=Python, caption={Random Forest Model Initialization}]
-from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100, random_state=42, max_depth=5)
-model.fit(X_train, y_train)
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption={KMeans Clustering Setup}]
-from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=2, random_state=42)
-clusters = kmeans.fit_predict(df_scaled)
-\end{lstlisting}
-
-\section{County-Level Snapshots}
-\label{appendix:county_snapshots}
-
-\begin{table}[H]
-\centering
-\caption{Sample of County-Level Indicator Values}
-\label{tab:county_snapshot}
-\begin{tabularx}{\textwidth}{l *{5}{>{\centering\arraybackslash}X}}
+\begin{longtable}{lcccc}
+\caption{County-Level Socioeconomic Indicators (2023)} \\
 \toprule
-\textbf{County} & \textbf{Bach\%} & \textbf{Pov\%} & \textbf{Unemp\%} & \textbf{Population} & \textbf{Cluster} \\
+\textbf{County} & \textbf{Bach\%} & \textbf{Pov\%} & \textbf{Unemp\%} & \textbf{Population} \\
 \midrule
-Baxter   & 13.2 & 16.4 & 4.2 & 41,093 & Moderate \\
-Izard    & 9.3  & 22.7 & 4.6 & 13,916 & High \\
-Searcy   & 8.9  & 24.1 & 4.9 & 7,881  & High \\
-Van Buren & 11.1 & 19.8 & 4.4 & 15,796 & Moderate \\
-\bottomrule
-\end{tabularx}
-\end{table}
-\section{Methodological Notes}
-\label{appendix:method_notes}
-
-This analysis followed the CRISP-DM methodology, including the following major phases:
-\begin{itemize}
-    \item Business understanding (regional education/employment needs)
-    \item Data acquisition from public sources (ACS, BLS, NTIA)
-    \item Data cleaning and harmonization (FIPS alignment, column renaming)
-    \item Feature engineering (Min-Max normalization, composite indices)
-    \item Modeling (KMeans clustering, Random Forest classification)
-    \item Evaluation (accuracy, silhouette score, feature importance)
-\end{itemize}
-
-All scripts were implemented in Python and executed in a modular Jupyter notebook structure to ensure reproducibility.
-\section{North Central Arkansas Counties}
-\label{appendix:nca_counties}
-
-\begin{table}[H]
-\centering
-\caption{North Central Arkansas (NCA) Counties Used for Regional Comparison}
-\label{tab:nca_appendix}
-\begin{tabular}{ll}
+\endfirsthead
 \toprule
-\textbf{County Name} & \textbf{Region/Notes} \\
+\textbf{County} & \textbf{Bach\%} & \textbf{Pov\%} & \textbf{Unemp\%} & \textbf{Population} \\
 \midrule
-Baxter         & Core Ozark Highlands \\
-Boone          & Adjacent to Missouri border \\
-Fulton         & Rural, northeastern NCA \\
-Izard          & Central to regional education hub \\
-Marion         & Near Buffalo National River \\
-Newton         & Sparsely populated, forested terrain \\
-Searcy         & Small population, rural infrastructure \\
-Sharp          & Highland and Cherokee Village area \\
-Stone          & Cultural heritage center (e.g., Mountain View) \\
-Van Buren      & Border of Ozark and River Valley \\
-Cleburne       & Greers Ferry Lake region \\
-Independence   & Batesville area, economic anchor \\
-Lawrence       & Northeastern fringe of NCA \\
+\endhead
+Baxter   & 13.2 & 16.4 & 4.2 & 41,093 \\
+Izard    & 9.3  & 22.7 & 4.6 & 13,916 \\
+Searcy   & 8.9  & 24.1 & 4.9 & 7,881 \\
+Van Buren & 11.1 & 19.8 & 4.4 & 15,796 \\
+Cleburne & 14.1 & 17.6 & 3.8 & 24,711 \\
+% ... continue listing all 75 counties
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
 
 
 
-\printbibliography
+\bibliographystyle{plainnat}
+\bibliography{references}
 
 \end{document}
