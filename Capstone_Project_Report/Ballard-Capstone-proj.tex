@@ -625,7 +625,7 @@ Outlier detection yielded several notable county-level anomalies. \textbf{Calhou
 
 To better contextualize these findings, Table~\ref{tab:nca_summary} presents descriptive statistics and regional comparisons between North Central Arkansas (NCA) counties and the rest of the state. Although NCA counties report slightly higher educational attainment and unemployment rates on average, none of the observed differences were statistically significant at conventional thresholds. All t-test p-values exceeded 0.25, indicating that apparent gaps may be due to chance rather than underlying structural divergence.
 
-Nonetheless, the relatively small sample size of the NCA group may limit the power of these tests. Visualizations presented earlier (Sections~\ref{sec:eda_stripplots}–\ref{sec:eda_outliers}) show that several NCA counties exhibit distinct patterns—particularly on metrics of postsecondary attainment and economic distress. These findings directly informed the construction of composite vulnerability scores and binary classification flags described in Section~\ref{sec:feature_engineering}.
+Nonetheless, the relatively small sample size of the NCA group may limit the power of these tests. Visualizations presented earlier show that several NCA counties exhibit distinct patterns—particularly on metrics of post-secondary attainment and economic distress. These findings directly informed the construction of composite vulnerability scores and binary classification flags described in Section~\ref{sec:feature_engineering}.
 
 \begin{table}[H]
 \centering
@@ -707,7 +707,7 @@ df_scaled['EconomicIndex'] = (
     df_scaled['PovertyRate'] + df_scaled['UnemploymentRate']
 ) / 2
 
-# Combine to form final VulnerabilityIndex
+# Combine to form final VulnerabilityScore
 df_scaled['VulnerabilityIndex'] = (
     df_scaled['EducationIndex'] + df_scaled['EconomicIndex']
 ) / 2
@@ -754,7 +754,7 @@ The model's feature importance output revealed that educational attainment—par
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/images_feature_importance_analysis.png}
+\includegraphics[width=0.85\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/feature_importance_rf.png}
 \caption{Feature Importance from Random Forest Classifier: Educational indicators outperform other variables in predicting vulnerable counties.}
 \label{fig:feature_importance_rf}
 \end{figure}
@@ -1000,9 +1000,9 @@ The Decision Tree classifier achieved perfect classification on both the trainin
 \label{fig:confusion_matrix}
 \end{figure}
 
-While the Decision Tree’s results were flawless in this instance, similar confusion matrix outputs were observed for both the Random Forest and K-Nearest Neighbors classifiers. All models achieved 100\% accuracy on the test data, providing convergent evidence that the selected features—particularly those capturing educational attainment and economic stress—are strong predictors of county vulnerability. 
+While the Decision Tree’s results were accurate in this instance, similar confusion matrix outputs were observed for both the Random Forest and K-Nearest Neighbors classifiers. All models achieved 100\% accuracy on the test data, providing convergent evidence that the selected features—particularly those capturing educational attainment and economic stress—are strong predictors of county vulnerability. 
 
-However, it is important to interpret these results with caution, especially given the small size of the test set. Although the absence of misclassifications is encouraging, model generalization-ability should be evaluated on larger or out-of-sample datasets in future work to ensure long-term robustness.
+However, it is important to interpret these results with caution, especially given the small size of the test set. Although the absence of misclassifications is encouraging, model generalization ability should be evaluated on larger or out-of-sample datasets in future work to ensure long-term robustness.
 
 The next subsection further investigates model behavior by analyzing feature importance from the Random Forest classifier, shedding light on which variables were most influential in driving classification outcomes.
 
@@ -1012,20 +1012,13 @@ To enhance interpretability and support practical deployment, both a simplified 
 
 Figure~\ref{fig:tree_structure} presents a simplified visualization of the trained Decision Tree classifier. The diagram confirms that key splitting decisions are based on education and poverty thresholds—most notably the percentage of adults with a bachelor's degree and the poverty rate. This structure mirrors the exploratory insights from earlier sections, demonstrating that counties with low educational attainment and high poverty are consistently flagged as high risk. The tree’s transparency and rule-based logic make it particularly well suited for policy-facing applications where decision-making rationale must be clearly communicated to stakeholders.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth, trim=10 10 10 10, clip]{Capstone_Project_Report/images/maps/decision_tree_diagram.png}
-\caption{Simplified Decision Tree Classifier: Educational and economic thresholds determine cluster assignment.}
-\label{fig:tree_structure}
-\end{figure}
-
-Complementing the Decision Tree, Figure~\ref{fig:feature_rf} displays the feature importance rankings derived from the Random Forest classifier. Although ensemble models are less interpretable, they often produce more stable importance estimates. The Random Forest results confirm the dominant role of educational attainment variables, with bachelor’s degree percentage emerging as the most influential predictor, followed by education gap and poverty rate. This broader distribution of contributing features suggests that the classification task benefits from multiple, reinforcing signals of vulnerability.
+Complementing the Decision Tree, Figure~\ref{fig:rf_feature_importance} displays the feature importance rankings derived from the Random Forest classifier. Although ensemble models are less interpretable, they often produce more stable importance estimates. The Random Forest results confirm the dominant role of educational attainment variables, with bachelor’s degree percentage emerging as the most influential predictor, followed by education gap and poverty rate. This broader distribution of contributing features suggests that the classification task benefits from multiple, reinforcing signals of vulnerability.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth, trim=10 10 10 10, clip]{Capstone_Project_Report/images/maps/images_clustering_evaluation.png}
-\caption{Random Forest Feature Importance: A balanced distribution reveals that multiple features—including Education Gap, Poverty Rate, and Bachelor's Degree percentage—contribute meaningfully to classification.}
-\label{fig:feature_rf}
+\includegraphics[width=0.9\textwidth]{Capstone_Project_Report/images/maps/feature_importance_rf.png}
+\caption{Feature Importance from Random Forest Classification. The EducationGap and HighSchoolGradPct variables emerged as the most influential predictors in the Random Forest model, followed closely by Population and BachelorsDegreePct. In contrast, economic indicators—particularly PovertyRate and UnemploymentRate—contributed relatively little to the model, suggesting that structural educational disparities are more critical in determining cluster membership.}
+\label{fig:rf_feature_importance}
 \end{figure}
 
 While both models achieved perfect accuracy on the test set, the Decision Tree was selected as the preferred model due to its interpretability and alignment with policy communication needs. The visual logic of the tree enables non-technical stakeholders to understand and trust classification decisions, which is critical for use in real-time dashboards, grant screening systems, or workforce program eligibility filters. The Random Forest model remains valuable for confirming the robustness of feature selection and providing ensemble-based validation of the classification framework.
@@ -1035,7 +1028,7 @@ To further validate classification performance, the confusion matrix for the Ran
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/final_confusion_matrix.png}
-\caption{Confusion Matrix – Best Classifier (Random Forest): Most cluster assignments are correctly predicted, as shown by strong diagonal alignment. Off-diagonal values indicate limited confusion between adjacent clusters.}
+\caption{Confusion Matrix – Best Classifier (Decision Tree): Most cluster assignments are correctly predicted, as shown by strong diagonal alignment. Off-diagonal values indicate limited confusion between adjacent clusters.}
 \label{fig:confusion_matrix_rf}
 \end{figure}
 
@@ -1048,7 +1041,7 @@ These findings affirm that engineered features—particularly educational attain
 This section synthesizes the geographic and statistical findings from the prior analyses to illuminate regional challenges and policy-relevant implications. A focused lens is applied to the North Central Arkansas (NCA) region to evaluate how its profile compares to statewide patterns and cluster assignments.
 
 \subsection{Regional Indicator Dashboard}
-To better understand the drivers of county-level vulnerability across Arkansas, several composite visualizations were used to highlight patterns in education, poverty, unemployment, and population. As shown in Figure~\ref{fig:dashboard}, the North Central Arkansas (NCA) region—outlined in red—demonstrates consistently lower levels of bachelor’s degree attainment and higher poverty rates relative to other parts of the state. The unemployment map reinforces this trend, particularly in rural and Delta-adjacent counties, while the log-scaled population map illustrates the dispersed, small-population nature of much of the NCA region.
+To better understand the drivers of county-level vulnerability across Arkansas, several composite visualizations were used to highlight patterns in education, poverty, unemployment, and population. As shown in Figure~\ref{fig:dashboard}, the North Central Arkansas (NCA) region—outlined in red—demonstrates consistently lower levels of bachelor’s degree attainment and higher poverty rates relative to other parts of the state. The unemployment map reinforces this trend, particularly in rural and Delta-adjacent counties.
 
 \begin{figure}[H]
 \centering
@@ -1109,35 +1102,14 @@ Counties identified in the \textit{High Risk} cluster—particularly in the Miss
 \subsection{Expand Educational Access and Alignment}
 The correlation and classification analyses confirm that bachelor's degree attainment is the most powerful predictor of county vulnerability. Community colleges like ASUMH and Ozarka College are well-positioned to address this through expanded 2+2 transfer pathways, short-term credentials in high-demand fields, and adult reengagement initiatives \cite{ozarka_news_2025,asumh_workforce_2025}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/maps_arkansas_dashboard_comprehensive.png}
-\caption{Regional Education and Poverty Indicators: Counties with low degree attainment and high poverty are disproportionately represented in the high-risk cluster.}
-\label{fig:education_poverty_map}
-\end{figure}
-
 \subsection{Develop Regional Dashboards for Ongoing Monitoring}
 To enhance transparency and enable real-time decision-making, the modeling pipeline developed for this study can be translated into a web-based regional dashboard. Such a dashboard could visualize county-level trends, update vulnerability scores as new data becomes available, and offer predictive alerts for counties nearing high-risk thresholds.
 
 \subsection{Align Workforce and Education Planning with Cluster Risk}
 Cluster assignment should be integrated into local planning processes, particularly among WIOA grantees and regional economic development councils. Counties in the \textit{Moderate Risk} group, while less urgent, may benefit from early-intervention strategies such as Career Coach programs, middle-skills pathways, and employer-driven curriculum development \cite{adce_careercoach_2016,wrpdd_plan_2020}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/maps_nca_focused_analysis.png}
-\caption{Targeting Workforce Support: NCA counties show mostly moderate risk, but outliers like Searcy and Woodruff warrant enhanced attention.}
-\label{fig:nca_focused}
-\end{figure}
-
 \subsection{Address Structural Barriers Through Cross-Sector Collaboration}
 Improving workforce outcomes in rural regions requires addressing not only individual skill gaps but also structural barriers such as transportation, childcare, and broadband access. These limitations are particularly acute in the North Central region, where low population density and geographic isolation inhibit labor mobility and digital access.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/statistical_summary_comprehensive.png}
-\caption{Structural Patterns in NCA vs. Statewide: A more homogenous vulnerability profile in NCA suggests both opportunity and constraint for cross-sector planning.}
-\label{fig:nca_structural_summary}
-\end{figure}
 
 \subsection{Prepare for Future Scaling and Longitudinal Analysis}
 To support long-term planning and replicability, this analytical framework should be expanded to include longitudinal trends and cross-state comparisons. Future studies might incorporate additional variables such as health indicators, migration trends, or broadband adoption rates. Over time, the predictive models developed here could inform grant applications, program evaluations, and legislative priorities aimed at reducing rural challenges and fostering economic resilience.
@@ -1168,8 +1140,6 @@ Expanding the digital reach of community colleges into structurally under-served
 \caption{Overlay map of Arkansas counties with 30-mile institutional buffers. Blue circles represent estimated service areas surrounding public colleges and universities. The underlying choropleth shows total county population, with darker blue indicating more populous areas. Counties outlined with dashed black borders are flagged as underserved—falling entirely outside any institutional access zone. Several of these underserved counties, including Jefferson, Mississippi, and St. Francis, also exhibit moderate to high population levels, making them strong candidates for Career and Technical Education (CTE) expansion through mobile delivery, hybrid learning, or satellite programming.}
 \label{fig:educational_access_gap}
 \end{figure}
-
-
 
 \begin{figure}[H]
 \centering
@@ -1296,27 +1266,6 @@ The Cross-Industry Standard Process for Data Mining (CRISP-DM) is a robust, doma
 \label{fig:workflow_diagram}
 \end{figure}
 
-\section{Data Dictionary}
-\label{appendix:data_dictionary}
-
-\begin{table}[H]
-\centering
-\caption{Data Dictionary for Core Variables}
-\label{tab:appendix_data_dictionary}
-\begin{tabularx}{\textwidth}{lX}
-\toprule
-\textbf{Variable} & \textbf{Description} \\
-\midrule
-BachelorsDegreePct & Percent of population with a bachelor’s degree (2023 estimate) \\
-HighSchoolGradPct & Percent of population with a high school diploma or equivalent (2023 estimate) \\
-PovertyRate & Estimated percentage of population below the poverty line (2023) \\
-UnemploymentRate & County-level unemployment rate, not seasonally adjusted (2023) \\
-Population & Total estimated population for each county (2023) \\
-IsNCA & Binary flag indicating membership in North Central Arkansas region \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
 \section{County-Level Indicators (All 75 Arkansas Counties)}
 \label{appendix:county_indicators}
 
@@ -1346,14 +1295,21 @@ This appendix presents full-scale versions of the four bivariate visualizations 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
+\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_bachelorsdegreepct.png}
 \caption{Bivariate Comparison of Educational Attainment: This figure highlights bachelor’s degree attainment across all Arkansas counties, with NCA counties marked distinctly. The visual emphasizes the persistent educational attainment gap faced by rural regions such as North Central Arkansas, where the proportion of residents with bachelor’s degrees tends to fall well below the state average.}
 \label{fig:appendix_bachelors}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
+\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_vulnerabilityscore.png}
+\caption{Bivariate Comparison of Composite Vulnerability Scores: This visualization displays the modeled structural vulnerability score across counties. North Central Arkansas counties appear in the mid-to-high range, reflecting cumulative disadvantage across multiple dimensions including education, poverty, and labor market engagement.}
+\label{fig:appendix_vulnerability}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, trim= 15 15 15 15, clip]{Capstone_Project_Report/images/maps/nca_comparison_povertyrate.png}
 \caption{Bivariate Comparison of Poverty Rates: Several counties in North Central Arkansas appear above the trendline for poverty, suggesting elevated economic burden relative to similarly structured counties. This visualization reinforces the relationship between limited educational access and persistent poverty within the region.}
 \label{fig:appendix_poverty}
 \end{figure}
@@ -1365,12 +1321,7 @@ This appendix presents full-scale versions of the four bivariate visualizations 
 \label{fig:appendix_unemployment}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth, trim=20 20 20 20, clip]{Capstone_Project_Report/images/maps/nca_comparison_vulnerabilityscore.png}
-\caption{Bivariate Comparison of Composite Vulnerability Scores: This visualization displays the modeled structural vulnerability score across counties. North Central Arkansas counties appear in the mid-to-high range, reflecting cumulative disadvantage across multiple dimensions including education, poverty, and labor market engagement.}
-\label{fig:appendix_vulnerability}
-\end{figure}
+
 
 
 
