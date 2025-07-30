@@ -90,11 +90,14 @@
 
 \maketitle
 \begin{abstract}
-(Wait until the project is complete.)
+This study examines the intersection of educational attainment, economic hardship, and regional planning in North Central Arkansas using a data-driven, machine learning approach. Despite the availability of public data on poverty, education, and employment, rural counties often lack the analytic capacity to integrate these indicators into actionable insights. This project aggregates and standardizes datasets from the U.S. Census, Bureau of Labor Statistics, and other open sources to conduct an exploratory and predictive analysis of all 75 Arkansas counties. Key features—such as bachelor’s degree attainment, poverty rate, and unemployment—were engineered into composite indices and binary risk flags. Using KMeans clustering and decision tree classifiers, the analysis identified latent socioeconomic risk groups and successfully predicted county vulnerability with 100\% test accuracy. Results highlight that educational attainment—particularly bachelor’s degree completion—is the strongest predictor of economic risk. The findings reveal geographic disparities, with high-risk counties concentrated in the Mississippi Delta and portions of North Central Arkansas. The final deliverables include choropleth maps, policy recommendations, and a classification-ready dataset designed to inform education-to-employment alignment. This work supports regional stakeholders in prioritizing investments, improving curriculum targeting, and enhancing rural workforce resilience through a transparent, reproducible analytic framework.
+\end{abstract}
+
 \noindent\textbf{Keywords:} Education-to-Employment Alignment, Rural Workforce Development, CIP-SOC Crosswalk, Predictive Analytics, Data-Driven Policy, Regional Disparities
+
 \noindent\textbf{GitHub Repository} 
 \href{https://github.com/JBtallgrass/Ballard-Capstone-proj}{https://github.com/JBtallgrass/Ballard-Capstone-proj}
-\end{abstract}
+
 \section{Introduction}
 \begin{figure}[H]
     \centering
@@ -1036,9 +1039,15 @@ To support long-term planning and replicability, this analytical framework shoul
 
 \subsection{Expand Institutional Reach via Virtual CTE Initiatives}
 
-The institutional coverage map (Figure~\ref{fig:institutional_coverage}) reveals that while many parts of Arkansas fall within a 60-mile radius of a postsecondary institution, several vulnerable counties in the Delta and southeastern regions remain underserved. These coverage gaps overlap with some of the most economically distressed areas identified in this analysis, compounding the barriers to education access and upward mobility.
+\begin{tcolorbox}[colback=gray!5!white, colframe=black, title=Justification for 30-Mile Radius Buffer]
+The 30-mile radius used to evaluate institutional access reflects a pragmatic estimation of how far a resident can reasonably travel within a 60-minute round trip—accounting for rural infrastructure and travel constraints. In many parts of rural America, particularly in the Ozark and Delta regions of Arkansas, travel typically occurs over two-lane roads with limited shoulders, variable elevation, and frequent curves. The average speed on these roads, according to Federal Highway Administration (FHWA) rural mobility studies, ranges from 30 to 40 miles per hour when accounting for stops, terrain, and safety conditions. Given these constraints, a 30-mile distance approximates what a rural resident can travel in about 45–60 minutes one way under typical conditions. 
 
-To address this, the state should explore the development of a **Distance-Based Career and Technical Education (CTE) Initiative**, leveraging virtual learning platforms, regional hubs, and mobile training units. These efforts could be jointly coordinated by ASUMH, Ozarka College, and other community college consortia, focusing on:
+This radius provides a conservative yet realistic boundary for gauging access to public institutions such as community colleges or technical centers. It also aligns with geographic coverage guidelines used by the USDA and Department of Education when assessing rural education deserts. While not universally prescriptive, the 30-mile buffer serves as a reasonable planning tool for identifying under-served counties, informing outreach strategies, and prioritizing the expansion of virtual or mobile learning modalities.
+\end{tcolorbox}
+
+The institutional coverage map (Figure~\ref{fig:educational_access_gap}) reveals that while many parts of Arkansas fall within a \textbf{30-mile radius} of a post-secondary institution, several vulnerable counties in the Delta and southeastern regions remain underserved. These coverage gaps overlap with some of the most economically distressed areas identified in this analysis, compounding the barriers to education access and upward mobility.
+
+To address this, the state should explore the development of a \textbf{Distance-Based Career and Technical Education (CTE) Initiative}, leveraging virtual learning platforms, regional hubs, and mobile training units. These efforts could be jointly coordinated by ASUMH, Ozarka College, and other community college consortia, focusing on:
 
 \begin{itemize}
   \item Providing virtual and hybrid CTE programming in healthcare, logistics, skilled trades, and digital literacy.
@@ -1046,115 +1055,175 @@ To address this, the state should explore the development of a **Distance-Based 
   \item Targeting counties outside of the institutional coverage zones with a branded campaign focused on skill-building, job access, and digital empowerment.
 \end{itemize}
 
-Expanding the digital reach of community colleges into structurally underserved regions is essential to reducing geographic inequity and fulfilling the human capital promise of rural Arkansas.
+Expanding the digital reach of community colleges into structurally under-served regions is essential to reducing geographic inequity and fulfilling the human capital promise of rural Arkansas.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Capstone_Project_Report/images/maps/educational_access_gap_map.png}
-\caption{This map highlights Arkansas counties that fall outside a 30-mile radius of any public college or university (shaded red). Several of these underserved counties—shown in dark red—also have moderate-to-high population levels, including Jefferson, Mississippi, and St. Francis. These areas are strong candidates for Career and Technical Education (CTE) expansion through satellite campuses, mobile training units, or hybrid delivery.}
+\includegraphics[width=0.9\textwidth]{Capstone_Project_Report/images/maps/overlay_access_buffers.png}
+\caption{Overlay map of Arkansas counties with 30-mile institutional buffers. Blue circles represent estimated service areas surrounding public colleges and universities. The underlying choropleth shows total county population, with darker blue indicating more populous areas. Counties outlined with dashed black borders are flagged as underserved—falling entirely outside any institutional access zone. Several of these underserved counties, including Jefferson, Mississippi, and St. Francis, also exhibit moderate to high population levels, making them strong candidates for Career and Technical Education (CTE) expansion through mobile delivery, hybrid learning, or satellite programming.}
 \label{fig:educational_access_gap}
 \end{figure}
 
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/educational_access_with_overlay.png}
-\caption{This map overlays institutional access zones (30-mile radius), population density (log-scaled), and county-level vulnerability scores across Arkansas. Counties shown in crimson represent high-priority targets for educational outreach—each is outside existing post-secondary buffers, has a population exceeding ~32,000, and ranks above the vulnerability threshold. These areas may benefit most from targeted Career and Technical Education (CTE) expansion.}
+\includegraphics[width=0.95\textwidth]{Capstone_Project_Report/images/maps/advanced_access_vulnerability_overlay_map.png}
+\caption{This map overlays 30-mile institutional access zones, socioeconomic vulnerability scores, and under-served county boundaries across Arkansas. Counties shaded from light orange to deep red reflect increasing levels of structural vulnerability, based on a composite index of education, poverty, and unemployment. Blue circles represent the estimated 30-mile service radius around public colleges and universities. Counties outlined with a dashed border are flagged as under-served, while those shaded in dark crimson are both under-served and exhibit high vulnerability—making them priority targets for educational investment. These regions are strong candidates for Career and Technical Education (CTE) expansion through virtual delivery, mobile units, or satellite campuses.}
 \label{fig:access_vulnerability_map}
 \end{figure}
 
-\subsection{Expand Institutional Reach via Virtual CTE Initiatives}
+\section{Recommendations for Stakeholder Action} \label{sec:recommendations}
 
-The maps in Figures~\ref{fig:educational_access_gap} and~\ref{fig:access_vulnerability_map} present a culminating view of educational access gaps and structural vulnerability across Arkansas. Figure~\ref{fig:educational_access_gap} highlights counties that fall outside a 30-mile radius of any public college or university, shaded in red. Several of these underserved counties—such as Jefferson, Mississippi, and St. Francis—also show moderate-to-high population levels, signaling unmet demand for accessible postsecondary education. 
+Building on the findings of this analysis, the following recommendations are organized into three levels of stakeholder engagement: institutional, policy, and community. Each level addresses specific levers of influence and action pathways relevant to improving education-to-employment alignment and socioeconomic resilience across rural Arkansas counties.
 
-Figure~\ref{fig:access_vulnerability_map} builds on this foundation, overlaying institutional access zones (blue 30-mile buffers), population density (log-scaled), and county-level vulnerability scores (shaded red). Crimson-shaded counties represent areas that are both outside institutional coverage and have high socioeconomic vulnerability—defined by elevated poverty, unemployment, and educational attainment gaps.
+\subsection{Institutional Recommendations} \label{subsec:institutional_recommendations}
 
-Together, these maps reveal a stark intersection: counties in the Delta and southern Arkansas face both geographic and structural barriers to education access. These dual constraints compound opportunity gaps and limit regional resilience.
-
-To address this, the state should pursue a \textbf{Distance-Based Career and Technical Education (CTE) Initiative}, leveraging virtual learning platforms, regional hubs, and mobile training units. These efforts could be jointly coordinated by ASUMH, Ozarka College, and other community college consortia, focusing on:
+Post-secondary institutions—especially community colleges and regional training providers—play a pivotal role in bridging the education-to-employment gap in rural Arkansas. To meet the evolving demands of the workforce and extend opportunity to under-served areas, institutions should invest in more flexible and accessible program delivery. This includes developing stackable credentials in high-demand fields like healthcare, skilled trades, and information technology, as well as expanding hybrid and online learning options for remote learners. Establishing stronger 2+2 transfer pathways and articulation agreements can help rural students transition to four-year degrees without leaving their communities. Additionally, rural satellite campuses and mobile training units can provide localized access to education in counties that fall outside of institutional coverage zones, directly addressing the access disparities identified in this study.
 
 \begin{itemize}
-  \item Providing virtual and hybrid CTE programming in healthcare, logistics, skilled trades, and digital literacy.
-  \item Partnering with local libraries, school districts, and workforce boards to serve as delivery nodes.
-  \item Targeting counties outside of institutional coverage zones with branded campaigns focused on skill-building, job access, and digital empowerment.
+    \item \textbf{Developing stackable credentials} in fields such as healthcare, information technology, logistics, and skilled trades.
+    \item \textbf{Expanding hybrid and online delivery} to reach counties with limited institutional presence.
+    \item \textbf{Strengthening 2+2 transfer pathways} to support rural degree completion.
+    \item \textbf{Creating rural campus satellites or mobile training units} to serve counties outside 30-mile access zones.
 \end{itemize}
 
-Expanding the digital reach of community colleges into structurally underserved regions is essential to reducing geographic inequity and fulfilling the human capital promise of rural Arkansas. Not all underserved counties are equally vulnerable, and not all high-risk counties lack institutional proximity. The intersection of both conditions marks the most urgent zones for CTE expansion and rural education investment.
+Beyond their instructional mission, community colleges in Arkansas often serve as foundational institutions in their towns—anchors of civic life, culture, and economic vitality. In many rural communities, the local college is not only a place for workforce training but also a hub for public events, the arts, and civic engagement. These institutions host concerts, town halls, theater productions, and public forums that reinforce community cohesion and pride. Their physical presence—often among the most modern and inclusive spaces in a rural county—makes them natural partners for initiatives that go beyond education. Recognizing and investing in this broader role can strengthen the social fabric of rural Arkansas while expanding the college’s impact as a strategic community convener.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/maps/educational_access_gap_map.png}
-\caption{This map highlights Arkansas counties that fall outside a 30-mile radius of any public college or university (shaded red). Several of these underserved counties—shown in dark red—also have moderate-to-high population levels, including Jefferson, Mississippi, and St. Francis. These areas are strong candidates for Career and Technical Education (CTE) expansion through satellite campuses, mobile training units, or hybrid delivery.}
-\label{fig:educational_access_gap}
-\end{figure}
+\subsection{Policy-Level Recommendations} \label{subsec:policy_recommendations}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{images/maps/advanced_access_vulnerability_overlay_map.png}
-\caption{Arkansas Counties: Postsecondary Access Gaps and Socioeconomic Vulnerability. The map overlays institutional access zones (30-mile buffers), population density, and county-level vulnerability scores. Crimson-shaded counties are outside institutional coverage and exhibit high composite vulnerability.}
-\label{fig:access_vulnerability_map}
-\end{figure}
+Policy action at the state and federal level is essential for sustaining equitable educational and workforce systems across Arkansas. Agencies should use data-driven vulnerability assessments, such as the clustering approach presented in this report, to prioritize high-risk counties for targeted investment and support. Funding mechanisms should be aligned with regional needs and designed to incentivize collaboration across county lines. Embedding predictive modeling into state dashboards and planning tools would allow agencies to proactively identify emerging gaps and respond with agility. Moreover, requiring transparent, outcome-based reporting for publicly funded rural programs will improve accountability and ensure that resources are directed where they can have the greatest impact.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Appendices}
 \begin{itemize}
-  \item A. Data dictionary
-  \item B. Code/model summaries
-  \item C. County-level snapshots
-  \item D. Methodological notes
-  \item E. North Central Arkansas Counties
-  
+    \item \textbf{Prioritizing high-risk counties} for grants under WIOA, USDA, and broadband initiatives.
+    \item \textbf{Aligning funding incentives} with regional needs to support cross-county collaboration.
+    \item \textbf{Embedding predictive modeling frameworks} into agency planning dashboards.
+    \item \textbf{Mandating transparent outcome reporting} for rural education and workforce programs.
 \end{itemize}
 
+\subsection{Community Engagement Recommendations} \label{subsec:community_engagement}
+
+Lasting regional transformation depends on the active participation of local communities. Institutions and policymakers must engage rural residents not as passive recipients of services but as co-creators of solutions. Partnering with trusted community organizations—such as libraries, chambers of commerce, and nonprofits—can expand the reach and relevance of educational offerings. Hosting locally tailored data literacy workshops will help empower residents to understand the forces shaping their communities and advocate effectively for change. Collaborative tools like shared dashboards and planning portals, developed with local input, can enhance transparency and cultural alignment. By fostering rural success coalitions that bring together education, workforce, and social service partners, stakeholders can build the trust and coordination needed for sustainable progress.
+
+\begin{itemize}
+    \item \textbf{Partnering with libraries, nonprofits, and chambers of commerce} to extend local outreach.
+    \item \textbf{Hosting community data literacy workshops} to empower rural stakeholders.
+    \item \textbf{Co-creating dashboards and planning tools} that reflect local input and usability.
+    \item \textbf{Establishing rural success coalitions} to align cross-sector strategies and resources.
+\end{itemize}
+
+These multi-tiered recommendations aim to translate insights into action, fostering an ecosystem of support where education, employment, and community development reinforce one another in rural Arkansas.
 
 
+\appendix
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+\begin{itemize}
+  \item \textbf{A.} Data Dictionary
+  \item \textbf{B.} Code/Model Summaries
+  \item \textbf{C.} County-Level Snapshots
+  \item \textbf{D.} Methodological Notes
+  \item \textbf{E.} North Central Arkansas Counties
+\end{itemize}
 
-\printbibliography
+\section{Data Dictionary}
+\label{appendix:data_dictionary}
 
-\begin{table}[!ht]
+\begin{table}[H]
+\centering
+\caption{Data Dictionary for Core Variables}
+\label{tab:appendix_data_dictionary}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+BachelorsDegreePct & Percent of population with a bachelor’s degree (2023 estimate) \\
+HighSchoolGradPct & Percent of population with a high school diploma or equivalent (2023 estimate) \\
+PovertyRate & Estimated percentage of population below the poverty line (2023) \\
+UnemploymentRate & County-level unemployment rate, not seasonally adjusted (2023) \\
+Population & Total estimated population for each county (2023) \\
+IsNCA & Binary flag indicating membership in North Central Arkansas region \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Code and Model Summaries}
+\label{appendix:code_model}
+
+\begin{lstlisting}[language=Python, caption={Random Forest Model Initialization}]
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100, random_state=42, max_depth=5)
+model.fit(X_train, y_train)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption={KMeans Clustering Setup}]
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=2, random_state=42)
+clusters = kmeans.fit_predict(df_scaled)
+\end{lstlisting}
+
+\section{County-Level Snapshots}
+\label{appendix:county_snapshots}
+
+\begin{table}[H]
+\centering
+\caption{Sample of County-Level Indicator Values}
+\label{tab:county_snapshot}
+\begin{tabularx}{\textwidth}{l *{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{County} & \textbf{Bach\%} & \textbf{Pov\%} & \textbf{Unemp\%} & \textbf{Population} & \textbf{Cluster} \\
+\midrule
+Baxter   & 13.2 & 16.4 & 4.2 & 41,093 & Moderate \\
+Izard    & 9.3  & 22.7 & 4.6 & 13,916 & High \\
+Searcy   & 8.9  & 24.1 & 4.9 & 7,881  & High \\
+Van Buren & 11.1 & 19.8 & 4.4 & 15,796 & Moderate \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\section{Methodological Notes}
+\label{appendix:method_notes}
+
+This analysis followed the CRISP-DM methodology, including the following major phases:
+\begin{itemize}
+    \item Business understanding (regional education/employment needs)
+    \item Data acquisition from public sources (ACS, BLS, NTIA)
+    \item Data cleaning and harmonization (FIPS alignment, column renaming)
+    \item Feature engineering (Min-Max normalization, composite indices)
+    \item Modeling (KMeans clustering, Random Forest classification)
+    \item Evaluation (accuracy, silhouette score, feature importance)
+\end{itemize}
+
+All scripts were implemented in Python and executed in a modular Jupyter notebook structure to ensure reproducibility.
+\section{North Central Arkansas Counties}
+\label{appendix:nca_counties}
+
+\begin{table}[H]
 \centering
 \caption{North Central Arkansas (NCA) Counties Used for Regional Comparison}
-\label{tab:nca_counties}
+\label{tab:nca_appendix}
 \begin{tabular}{ll}
-\hline
+\toprule
 \textbf{County Name} & \textbf{Region/Notes} \\
-\hline
-Baxter     & Core Ozark Highlands \\
-Boone      & Adjacent to Missouri border \\
-Fulton     & Rural, northeastern NCA \\
-Izard      & Central to regional education hub \\
-Marion     & Near Buffalo National River \\
-Newton     & Sparsely populated, forested terrain \\
-Searcy     & Small population, rural infrastructure \\
-Sharp      & Highland and Cherokee Village area \\
-Stone      & Cultural heritage center (e.g., Mountain View) \\
-Van Buren  & Border of Ozark and River Valley \\
-Cleburne   & Greers Ferry Lake region \\
-Independence & Batesville area, economic anchor \\
-Lawrence   & Northeastern fringe of NCA \\
-\hline
+\midrule
+Baxter         & Core Ozark Highlands \\
+Boone          & Adjacent to Missouri border \\
+Fulton         & Rural, northeastern NCA \\
+Izard          & Central to regional education hub \\
+Marion         & Near Buffalo National River \\
+Newton         & Sparsely populated, forested terrain \\
+Searcy         & Small population, rural infrastructure \\
+Sharp          & Highland and Cherokee Village area \\
+Stone          & Cultural heritage center (e.g., Mountain View) \\
+Van Buren      & Border of Ozark and River Valley \\
+Cleburne       & Greers Ferry Lake region \\
+Independence   & Batesville area, economic anchor \\
+Lawrence       & Northeastern fringe of NCA \\
+\bottomrule
 \end{tabular}
 \end{table}
 
 
 
-
-
-
-
-
+\printbibliography
 
 \end{document}
