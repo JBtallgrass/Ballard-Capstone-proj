@@ -27,7 +27,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## 📊 Project: Socioeconomic Analysis of Arkansas Counties
 
-![Access Buffer Overlay](images/maps/overlay_access_buffers.png)
+![Access Buffer Overlay](Capstone_Project_Report/images/maps/overlay_access_buffers.png)
 *Figure: Coverage gaps in institutional reach suggest areas for further intervention.*
 
 ### Bridging Educational and Economic Gaps Through Data Science
@@ -41,7 +41,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## **Executive Summary**
 
-![Cluster Profiles by County](Capstone_Project_Report\images\maps\cluster_profiles_detailed.png)
+![Cluster Profiles by County]()
 *Figure: Arkansas counties grouped by socioeconomic profile (Cluster 1–3).*
 
 This capstone project employs advanced data science techniques to analyze socioeconomic disparities across Arkansas counties, with particular focus on the North Central Arkansas (NCA) region. Using machine learning, statistical analysis, and geospatial visualization, the project identifies county-level patterns of vulnerability and development potential to inform data-driven policy decisions.
