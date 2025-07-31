@@ -41,7 +41,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## **Executive Summary**
 
-![Cluster Profiles by County]()
+![Cluster Profiles by County](Capstone_Project_Report/images/maps/maps_cluster_profiles_detailed.png)
 *Figure: Arkansas counties grouped by socioeconomic profile (Cluster 1–3).*
 
 This capstone project employs advanced data science techniques to analyze socioeconomic disparities across Arkansas counties, with particular focus on the North Central Arkansas (NCA) region. Using machine learning, statistical analysis, and geospatial visualization, the project identifies county-level patterns of vulnerability and development potential to inform data-driven policy decisions.
@@ -81,7 +81,7 @@ This capstone project employs advanced data science techniques to analyze socioe
 
 ## 🎯 Project Overview
 
-![Annotated Arkansas County Map](images/maps/arkansas_all_counties_annotated.png)
+![Annotated Arkansas County Map](Capstone_Project_Report/images/maps/arkansas_all_counties_annotated.png)
 *Figure: All 75 Arkansas counties analyzed, with regional focus highlighted.*
 
 Rural communities face significant challenges in aligning educational programs with workforce needs. This disconnect is exacerbated by fragmented data systems that limit comprehensive regional analysis. This project addresses these challenges by:
@@ -145,14 +145,14 @@ During preliminary analysis, it became clear that limiting the study to NCA coun
 | **Geographic** | Census TIGER/Line | County shapefiles for mapping | 2023 |
 
 **Data Quality**: All datasets undergo standardization, validation, and year-alignment processes.
-![Correlation Matrix](images/maps/correlation_heatmap.png)
+![Correlation Matrix](Capstone_Project_Report/images/maps/images_correlation_heatmap.png)
 *Figure: Pearson correlation among core indicators. Strong inverse relationship between education and poverty.*
 
 ---
 
 ## 🛠️ Technologies & Techniques
 
-![Random Forest Feature Importance](images/feature_importance_rf.png)
+![Random Forest Feature Importance](Capstone_Project_Report/images/maps/feature_importance_rf.png)
 *Figure: Most influential predictors of county vulnerability.*
 
 ### **Core Technologies**
@@ -196,7 +196,7 @@ logging, warnings, functools
 * **Interactive Dashboards**: Multi-panel comparison visualizations
 * **Publication Graphics**: High-resolution, annotated visualizations
 
-![Statistical Summary](images/statistical_summary_comprehensive.png)
+![Statistical Summary](Capstone_Project_Report/images/maps/statistical_summary_comprehensive.png)
 *Figure: Summary of key statistics and distributions across Arkansas counties.*
 
 ---
@@ -250,7 +250,7 @@ Arkansas-County-Analysis/
 ### **Predictive Modeling**
 
 * **Random Forest Accuracy**: 89.2% (cross-validated)
-![Final Confusion Matrix](images/final_confusion_matrix.png)
+![Final Confusion Matrix](Capstone_Project_Report/images/maps/images_final_confusion_matrix.png)
 *Figure: Confusion matrix of final Random Forest model.*
 
 * **Decision Tree Accuracy**: 85.6% (interpretable model)
@@ -261,7 +261,7 @@ Arkansas-County-Analysis/
 * **NCA Counties**: Predominantly Cluster 2 (moderate risk)
 
 * **Vulnerability Score Range**: 0-5 scale across all counties
-  ![Vulnerability Score Heatmap](images/maps_arkansas_vulnerability_heatmap.png)
+  ![Vulnerability Score Heatmap](Capstone_Project_Report/images/maps/maps_arkansas_vulnerability_heatmap.png)
 *Figure: County-level vulnerability scores (0 = low risk, 5 = high risk).*
 
 * **High-Risk Counties**: 12 counties identified for priority intervention
