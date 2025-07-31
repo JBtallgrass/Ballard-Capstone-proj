@@ -27,6 +27,9 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## 📊 Project: Socioeconomic Analysis of Arkansas Counties
 
+![Access Buffer Overlay](images/maps_overlay_access_buffers.png)
+*Figure: Coverage gaps in institutional reach suggest areas for further intervention.*
+
 ### Bridging Educational and Economic Gaps Through Data Science
 
 **Author**: Jason A. Ballard  
@@ -48,7 +51,7 @@ This capstone project employs advanced data science techniques to analyze socioe
 * 🌎 Developed a statewide vulnerability scoring system
 * 🧠 Built predictive models with 85%+ classification accuracy
 * 📊 Generated publication-ready maps and statistical tables
-* 
+
 **Key Findings:**
 
 * Identified 3 distinct county clusters based on socioeconomic characteristics
