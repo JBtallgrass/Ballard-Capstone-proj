@@ -27,7 +27,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## 📊 Project: Socioeconomic Analysis of Arkansas Counties
 
-![Access Buffer Overlay](images/maps_overlay_access_buffers.png)
+![Access Buffer Overlay](images/maps/overlay_access_buffers.png)
 *Figure: Coverage gaps in institutional reach suggest areas for further intervention.*
 
 ### Bridging Educational and Economic Gaps Through Data Science
@@ -41,8 +41,9 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## **Executive Summary**
 
-![Cluster Profiles by County](images/maps_cluster_profiles_detailed.png)
+![Cluster Profiles by County](Capstone_Project_Report\images\maps\cluster_profiles_detailed.png)
 *Figure: Arkansas counties grouped by socioeconomic profile (Cluster 1–3).*
+
 This capstone project employs advanced data science techniques to analyze socioeconomic disparities across Arkansas counties, with particular focus on the North Central Arkansas (NCA) region. Using machine learning, statistical analysis, and geospatial visualization, the project identifies county-level patterns of vulnerability and development potential to inform data-driven policy decisions.
 
 ### 🔍 Highlights
@@ -80,8 +81,9 @@ This capstone project employs advanced data science techniques to analyze socioe
 
 ## 🎯 Project Overview
 
-![Annotated Arkansas County Map](images/maps_arkansas_all_counties_annotated.png)
+![Annotated Arkansas County Map](images/maps/arkansas_all_counties_annotated.png)
 *Figure: All 75 Arkansas counties analyzed, with regional focus highlighted.*
+
 Rural communities face significant challenges in aligning educational programs with workforce needs. This disconnect is exacerbated by fragmented data systems that limit comprehensive regional analysis. This project addresses these challenges by:
 
 1. **Integrating** multiple public datasets into a unified analytical framework
@@ -143,7 +145,7 @@ During preliminary analysis, it became clear that limiting the study to NCA coun
 | **Geographic** | Census TIGER/Line | County shapefiles for mapping | 2023 |
 
 **Data Quality**: All datasets undergo standardization, validation, and year-alignment processes.
-![Correlation Matrix](images/correlation_heatmap.png)
+![Correlation Matrix](images/maps/correlation_heatmap.png)
 *Figure: Pearson correlation among core indicators. Strong inverse relationship between education and poverty.*
 
 ---
