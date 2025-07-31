@@ -7,9 +7,9 @@
 
 ## 🧑‍💼 Jason A. Ballard
 
-### Data and AI Officer | Instructional Systems Specialist | Data Scientist | Educator in Professional Military Education
+### Former Federal Data and AI Officer | Instructional Systems Specialist | Data Scientist | Educator in Data Science |
 
-Welcome! I'm Jason A. Ballard, an experienced leader in data and AI integration, currently serving as the Data and AI Officer for the US Army Combined Arms Center at Fort Leavenworth, Kansas. My work bridges data science, AI strategy, and higher education, focusing on transforming decision-making through data literacy and innovation.
+Welcome! I'm Jason A. Ballard, an experienced leader in data and AI integration, a former Data and AI Officer for the US Army Combined Arms Center at Fort Leavenworth, Kansas. Currently I am working in the Arkansas State University-Mountain Home Computer Science department. My work bridges data science, AI strategy, Workforce Development and higher education, focusing on transforming decision-making through data literacy and innovation.
 
 I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/JBtallgrass?tab=repositories), where I share insights, tools, and resources focused on data literacy and advanced analytics in educational contexts.
 
@@ -21,6 +21,7 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 📍 **LinkedIn**: [Jason A. Ballard](https://www.linkedin.com/in/jasonaballard)  
 📍 **GitHub**: [jbtallgrass](https://github.com/JBtallgrass)
+📍 **Overleaf** [jbseamless71](https://www.overleaf.com/read/kghxxyhzrbhm#ea4af5)
 
 ---
 
@@ -37,8 +38,17 @@ I invite you to explore my GitHub repository, [jbtallgrass](https://github.com/J
 
 ## **Executive Summary**
 
+![Cluster Profiles by County](images/maps_cluster_profiles_detailed.png)
+*Figure: Arkansas counties grouped by socioeconomic profile (Cluster 1–3).*
 This capstone project employs advanced data science techniques to analyze socioeconomic disparities across Arkansas counties, with particular focus on the North Central Arkansas (NCA) region. Using machine learning, statistical analysis, and geospatial visualization, the project identifies county-level patterns of vulnerability and development potential to inform data-driven policy decisions.
 
+### 🔍 Highlights
+
+* 📌 Identified 3 distinct county clusters based on socioeconomic profiles
+* 🌎 Developed a statewide vulnerability scoring system
+* 🧠 Built predictive models with 85%+ classification accuracy
+* 📊 Generated publication-ready maps and statistical tables
+* 
 **Key Findings:**
 
 * Identified 3 distinct county clusters based on socioeconomic characteristics
@@ -67,6 +77,8 @@ This capstone project employs advanced data science techniques to analyze socioe
 
 ## 🎯 Project Overview
 
+![Annotated Arkansas County Map](images/maps_arkansas_all_counties_annotated.png)
+*Figure: All 75 Arkansas counties analyzed, with regional focus highlighted.*
 Rural communities face significant challenges in aligning educational programs with workforce needs. This disconnect is exacerbated by fragmented data systems that limit comprehensive regional analysis. This project addresses these challenges by:
 
 1. **Integrating** multiple public datasets into a unified analytical framework
@@ -128,10 +140,15 @@ During preliminary analysis, it became clear that limiting the study to NCA coun
 | **Geographic** | Census TIGER/Line | County shapefiles for mapping | 2023 |
 
 **Data Quality**: All datasets undergo standardization, validation, and year-alignment processes.
+![Correlation Matrix](images/correlation_heatmap.png)
+*Figure: Pearson correlation among core indicators. Strong inverse relationship between education and poverty.*
 
 ---
 
 ## 🛠️ Technologies & Techniques
+
+![Random Forest Feature Importance](images/feature_importance_rf.png)
+*Figure: Most influential predictors of county vulnerability.*
 
 ### **Core Technologies**
 
@@ -173,6 +190,9 @@ logging, warnings, functools
 * **Statistical Plots**: Box plots, scatter plots, correlation heatmaps
 * **Interactive Dashboards**: Multi-panel comparison visualizations
 * **Publication Graphics**: High-resolution, annotated visualizations
+
+![Statistical Summary](images/statistical_summary_comprehensive.png)
+*Figure: Summary of key statistics and distributions across Arkansas counties.*
 
 ---
 
@@ -225,6 +245,8 @@ Arkansas-County-Analysis/
 ### **Predictive Modeling**
 
 * **Random Forest Accuracy**: 89.2% (cross-validated)
+![Final Confusion Matrix](images/final_confusion_matrix.png)
+*Figure: Confusion matrix of final Random Forest model.*
 
 * **Decision Tree Accuracy**: 85.6% (interpretable model)
 * **Top Predictive Features**: Education Gap, Poverty Rate, Bachelor's Degree Attainment
@@ -234,6 +256,9 @@ Arkansas-County-Analysis/
 * **NCA Counties**: Predominantly Cluster 2 (moderate risk)
 
 * **Vulnerability Score Range**: 0-5 scale across all counties
+  ![Vulnerability Score Heatmap](images/maps_arkansas_vulnerability_heatmap.png)
+*Figure: County-level vulnerability scores (0 = low risk, 5 = high risk).*
+
 * **High-Risk Counties**: 12 counties identified for priority intervention
 
 ---
